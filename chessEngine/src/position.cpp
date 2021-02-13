@@ -27,3 +27,5 @@ void Position::get(uint8_t& row, uint8_t& column) const {
     row = this->row();
     column = this->col();
 }
+
+uint8_t Position::hash() const { return m_internal_position; }

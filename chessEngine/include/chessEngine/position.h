@@ -18,6 +18,9 @@ public:
 
     void get(uint8_t& row, uint8_t& column) const;
 
+    // make the internal representation public, such that this can be used as a key for a hashmap
+    uint8_t hash() const;
+
 private:
     // 6 bits are enough to represent every position on the board
     // however, in C++, the smallest type is 8 bits, therefore we use this

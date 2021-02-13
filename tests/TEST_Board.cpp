@@ -6,6 +6,8 @@
  */
 
 // TODO
-TEST(Board, Constructor) {
-    auto b = Board();
+TEST(Board, EmptyBoard) {
+    auto b = Board::emptyBoard();
+
+    
 }

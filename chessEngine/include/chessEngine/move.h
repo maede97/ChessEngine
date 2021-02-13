@@ -4,11 +4,27 @@
 #include <chessEngine/position.h>
 
 /**
- * This struct contains information about a single move on the game
+ * This class contains information about a single move on the game
  */
-struct Move
+class Move
 {
-    PlayerColor player;
-    Position from;
-    Position to;
+public:
+    Move() = delete;
+    Move(PlayerColor player, PieceType piece, Position from, Position to);
+
+    PlayerColor player() const;
+    PieceType piece() const;
+    Position from() const;
+    Position to() const;
+
+    PlayerColor& player();
+    PieceType& piece();
+    Position& from();
+    Position& to();
+
+private:
+    PlayerColor m_player;
+    PieceType m_piece;
+    Position m_from;
+    Position m_to;
 };

@@ -24,3 +24,7 @@ endif()
 if(${BUILD_TESTS})
     add_subdirectory(tests)
 endif()
+
+add_executable(main main.cpp)
+target_include_directories(main PUBLIC chessEngineLib)
+target_link_libraries(main chessEngineLib)
