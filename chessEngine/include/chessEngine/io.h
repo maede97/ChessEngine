@@ -8,5 +8,9 @@
 class IO
 {
 public:
-    static Board fromForsythEdwards(const char * string);
+    /**
+     * Create a board from the Forsyth-Edwards representation.
+     * See https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation
+     */
+    static Board fromForsythEdwards(const char *string);
 };

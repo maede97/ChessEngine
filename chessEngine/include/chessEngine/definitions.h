@@ -1,10 +1,11 @@
 #pragma once
-#include <iostream>
+#include <string>
 
 /**
  * Player color helper enum
  */
-enum class PlayerColor {
+enum class PlayerColor
+{
     WHITE = 1,
     BLACK = 2
 };
@@ -12,7 +13,8 @@ enum class PlayerColor {
 /**
  * Piece type helper enum
  */
-enum class PieceType {
+enum class PieceType
+{
     PAWN = 1,
     KNIGHT = 2,
     BISHOP = 3,

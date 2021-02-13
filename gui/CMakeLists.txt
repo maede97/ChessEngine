@@ -3,16 +3,6 @@ cmake_minimum_required(VERSION 3.8)
 # ChessEngine
 project(ChessEngineGui)
 
-include(FetchContent)
-macro(fetch what)
-    FetchContent_GetProperties("${what}")
-    if(NOT ${${what}_POPULATED})
-        message(STATUS "fetching ${what} ...")
-        FetchContent_Populate(${what})
-    endif()
-    mark_as_advanced(${${what}_SOURCE_DIR})
-endmacro()
-
 # Add source files
 file(GLOB_RECURSE CXX_SOURCES src/*.cpp)
 
