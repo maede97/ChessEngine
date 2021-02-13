@@ -16,8 +16,7 @@ public:
     uint8_t row() const;
     uint8_t col() const;
 
-    uint8_t &row();
-    uint8_t &col();
+    void get(uint8_t& row, uint8_t& column) const;
 
 private:
     // 6 bits are enough to represent every position on the board
