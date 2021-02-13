@@ -9,6 +9,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: setup
+      run: cd ChessEngine
     - name: creating build
       run: mkdir -p build && cd build
     - name: cmake
