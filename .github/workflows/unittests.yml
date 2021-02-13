@@ -9,8 +9,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: setup
-      run: cd ChessEngine
     - name: Building and running Unittests
       run: |
         mkdir -p build
