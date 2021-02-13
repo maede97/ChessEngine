@@ -1,0 +1,24 @@
+name: Check Unittests
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Building GTest
+      run: |
+        sudo apt-get install libgtest-dev
+        cd /usr/src/googletest
+        sudo cmake .
+        sudo cmake --build . --target install
+    - name: Building and running unit tests
+      run: |
+        mkdir -p build
+        cd build
+        cmake ..
+        make
+        ./tests/unittests
