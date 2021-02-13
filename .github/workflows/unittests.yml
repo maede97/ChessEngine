@@ -9,9 +9,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Building and running Unittests
+    - name: Building GTest
       run: |
         sudo apt-get install libgtest-dev
+        cd /usr/src/googletest
+        sudo cmake .
+        sudo cmake --build . --target install
+    - name: Building and running unit tests
+      run: |
         mkdir -p build
         cd build
         cmake ..

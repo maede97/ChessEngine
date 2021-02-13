@@ -24,6 +24,5 @@ find_package(GTest REQUIRED)
 file(GLOB TEST_SOURCES *.cpp)
 add_executable(unittests ${TEST_SOURCES})
 add_test(NAME unittests COMMAND unittests)
-target_link_libraries(unittests GTest::GTest chessEngineLib)
-target_include_directories(unittests PUBLIC chessEngineLib GTest::GTest
-)
+target_link_libraries(unittests chessEngineLib GTest::GTest GTest::Main)
+target_include_directories(unittests PUBLIC chessEngineLib GTest::GTest)
