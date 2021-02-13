@@ -11,6 +11,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Building and running Unittests
       run: |
+        sudo apt-get install libgtest-dev
         mkdir -p build
         cd build
         cmake ..
