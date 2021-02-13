@@ -30,10 +30,12 @@ public:
 
     static Board defaultBoard();
     static Board emptyBoard();
-
+    
     Board() = delete;
     // create a board by a given position map
     Board(map_t positions);
+
+    size_t numPieces() const;
 
 private:
     friend IO;

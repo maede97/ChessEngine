@@ -39,3 +39,5 @@ Board Board::emptyBoard()
 }
 
 Board::Board(Board::map_t positions) : m_board(positions) {}
+
+size_t Board::numPieces() const { return m_board.size(); }
