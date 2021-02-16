@@ -2,6 +2,7 @@
 #include <chessEngine/io.h>
 #include <iostream>
 
+using namespace chessEngine;
 int main(int argc, char const *argv[])
 {
     Board b = Board::defaultBoard();

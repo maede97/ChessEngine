@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include <chessEngine/position.h>
-
+using namespace chessEngine;
 TEST(Position, Constructor)
 {
     auto p = Position(0, 0);

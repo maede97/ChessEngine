@@ -1,6 +1,6 @@
 #include <chessEngine/version.h>
 #include <gtest/gtest.h>
-
+using namespace chessEngine;
 /**
  * This file contains unit tests for random checks, whether the library is built correctly or not
  */

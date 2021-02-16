@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include <chessEngine/definitions.h>
-
+using namespace chessEngine;
 /**
  * This file contains unit tests for all possible types in the library.
  */

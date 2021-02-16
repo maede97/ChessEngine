@@ -1,5 +1,7 @@
 #include <chessEngine/board.h>
 
+using namespace chessEngine;
+
 Board Board::defaultBoard()
 {
     Board::map_t map;

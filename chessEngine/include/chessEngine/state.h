@@ -4,13 +4,16 @@
 #include <chessEngine/board.h>
 
 #include <vector>
-
-class GameState
+namespace chessEngine
 {
-public:
-    GameState();
+    class GameState
+    {
+    public:
+        GameState();
 
-private:
-    std::vector<Move> m_moves; // all moves previously done
-    Board m_board; // current board
-};
+    private:
+        std::vector<Move> m_moves; // all moves previously done
+        Board m_board;             // current board
+    };
+
+} // namespace chessEngine
