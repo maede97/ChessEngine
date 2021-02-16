@@ -1,4 +1,5 @@
 #include <chessEngine/board.h>
+#include <stdexcept>
 
 using namespace chessEngine;
 
@@ -41,3 +42,27 @@ Board Board::emptyBoard() {
 Board::Board(Board::map_t positions) : m_board(positions) {}
 
 size_t Board::numPieces() const { return m_board.size(); }
+
+void Board::placePiece(const Position &position, const Piece &piece) {
+  // check if we already have a piece in this position.
+  if (m_board.find(position) != m_board.cend()) {
+    throw std::runtime_error("There is already a piece in this position.");
+  }
+
+  m_board.emplace(position, piece);
+}
+
+void Board::removePiece(const Position &position) {
+  if (m_board.find(position) == m_board.cend()) {
+    throw std::runtime_error("There is no piece in this position.");
+  }
+  m_board.erase(position);
+}
+
+Piece Board::getPiece(const Position &position) {
+  map_t::const_iterator it = m_board.find(position);
+  if (it == m_board.cend()) {
+    throw std::runtime_error("There is no piece in this position.");
+  }
+  return it->second;
+}

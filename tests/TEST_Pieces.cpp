@@ -21,3 +21,14 @@ TEST(Piece, Getters) {
   EXPECT_EQ(p.type(), PieceType::PAWN);
   EXPECT_EQ(p.color(), PlayerColor::WHITE);
 }
+
+TEST(Piece, Comparisons) {
+  auto p1 = Piece(PieceType::PAWN, PlayerColor::WHITE);
+  auto p2 = Piece(PieceType::PAWN, PlayerColor::WHITE);
+  auto p3 = Piece(PieceType::PAWN, PlayerColor::BLACK);
+  auto p4 = Piece(PieceType::KNIGHT, PlayerColor::WHITE);
+  EXPECT_EQ(p1, p2);
+  EXPECT_NE(p1, p3);
+  EXPECT_NE(p1, p4);
+  EXPECT_NE(p3, p4);
+}

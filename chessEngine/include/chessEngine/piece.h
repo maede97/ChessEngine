@@ -36,6 +36,20 @@ public:
    */
   PlayerColor &color();
 
+  /**
+   * @brief Helper to check for equality of two pieces.
+   * @param rhs The other piece to check against.
+   * @return Whether the two pieces are equal (in color and type).
+   */
+  bool operator==(const Piece &rhs) const;
+
+  /**
+   * @brief Helper to check for inequality of two pieces.
+   * @param rhs The other piece to check against.
+   * @return Whether the two pieces are not equal (in color or type).
+   */
+  bool operator!=(const Piece &rhs) const;
+
 private:
   PieceType m_type;    ///< Internal type
   PlayerColor m_color; ///< Internal color

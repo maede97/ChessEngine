@@ -75,6 +75,28 @@ public:
    */
   size_t numPieces() const;
 
+  /**
+   * @brief Place a piece on the board.
+   * @param position The position on which the piece should be placed.
+   * @param piece The piece which should be placed.
+   * @throws std::runtime_error If the position is already occupied.
+   */
+  void placePiece(const Position &position, const Piece &piece);
+
+  /**
+   * @brief Removes a piece from the board given a position.
+   * @param position The position from where the piece should be removed.
+   * @throws std::runtime_error If no piece is at that position.
+   */
+  void removePiece(const Position &position);
+
+  /**
+   * @brief Get the piece from a given position.
+   * @param position The position of the piece.
+   * @throws std::runtime_error If no piece is at that position.
+   */
+  Piece getPiece(const Position &position);
+
 private:
   friend IO;     ///< all IO functions should have access to private members.
   map_t m_board; ///< Internal storage of the board state (using map_t).
