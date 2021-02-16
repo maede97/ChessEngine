@@ -10,12 +10,11 @@ jobs:
     steps:
     - name: Build Documentation
       uses: mattnotmitt/doxygen-action@v1.2.3
-      run: mkdir -p build/docs
       with:
-        working-directory: 'build/docs'
-        doxyfile-path: '../../docs/Doxyfile.in'
+        working-directory: 'docs'
+        doxyfile-path: 'Doxyfile.in'
     - name: Publishing Documentation
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: build/docs
+        publish_dir: docs
