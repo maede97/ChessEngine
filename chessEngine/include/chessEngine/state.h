@@ -11,6 +11,6 @@ public:
     GameState();
 
 private:
-    std::vector<Move> m_moves;
-    Board m_board;
+    std::vector<Move> m_moves; // all moves previously done
+    Board m_board; // current board
 };

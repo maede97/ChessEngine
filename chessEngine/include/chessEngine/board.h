@@ -38,6 +38,6 @@ public:
     size_t numPieces() const;
 
 private:
-    friend IO;
+    friend IO; // all IO functions should have access to private members
     map_t m_board;
 };

@@ -10,6 +10,160 @@ Board IO::fromForsythEdwards(const char *feString)
     return board;
 }
 
+std::string IO::writeBoardToString(const Board &board)
+{
+    std::string ret;
+    // start at row = 8 and iterate down
+    for (int r = 7; r > -1; r--)
+    {
+        for (int c = 0; c < 8; c++)
+        {
+            Board::map_t::const_iterator piece = board.m_board.find(Position(r, c));
+            if (piece == board.m_board.cend())
+            {
+                // no piece was found at this position, so print a space
+                ret += " ";
+            }
+            else
+            {
+                switch (piece->second.type())
+                {
+                case PieceType::PAWN:
+                    ret += "P";
+                    break;
+                case PieceType::KNIGHT:
+                    ret += "N";
+                    break;
+                case PieceType::BISHOP:
+                    ret += "B";
+                    break;
+                case PieceType::ROOK:
+                    ret += "R";
+                    break;
+                case PieceType::QUEEN:
+                    ret += "Q";
+                    break;
+                case PieceType::KING:
+                    ret += "K";
+                    break;
+                default:
+                    ret += "?";
+                }
+            }
+        }
+        ret += "\n";
+    }
+
+    return ret.substr(0, ret.length() - 1); // remove the last new line
+}
+
+std::string IO::writeWhitePiecesToString(const Board &board)
+{
+    std::string ret;
+    // start at row = 8 and iterate down
+    for (int r = 7; r > -1; r--)
+    {
+        for (int c = 0; c < 8; c++)
+        {
+            Board::map_t::const_iterator piece = board.m_board.find(Position(r, c));
+            if (piece == board.m_board.cend())
+            {
+                // no piece was found at this position, so print a space
+                ret += " ";
+            }
+            else
+            {
+                if (piece->second.color() == PlayerColor::WHITE)
+                {
+                    switch (piece->second.type())
+                    {
+                    case PieceType::PAWN:
+                        ret += "P";
+                        break;
+                    case PieceType::KNIGHT:
+                        ret += "N";
+                        break;
+                    case PieceType::BISHOP:
+                        ret += "B";
+                        break;
+                    case PieceType::ROOK:
+                        ret += "R";
+                        break;
+                    case PieceType::QUEEN:
+                        ret += "Q";
+                        break;
+                    case PieceType::KING:
+                        ret += "K";
+                        break;
+                    default:
+                        ret += "?";
+                    }
+                }
+                else
+                {
+                    ret += " "; // white piece, add empty
+                }
+            }
+        }
+        ret += "\n";
+    }
+
+    return ret.substr(0, ret.length() - 1); // remove the last new line
+}
+
+std::string IO::writeBlackPiecesToString(const Board &board)
+{
+    std::string ret;
+    // start at row = 8 and iterate down
+    for (int r = 7; r > -1; r--)
+    {
+        for (int c = 0; c < 8; c++)
+        {
+            Board::map_t::const_iterator piece = board.m_board.find(Position(r, c));
+            if (piece == board.m_board.cend())
+            {
+                // no piece was found at this position, so print a space
+                ret += " ";
+            }
+            else
+            {
+                if (piece->second.color() == PlayerColor::BLACK)
+                {
+                    switch (piece->second.type())
+                    {
+                    case PieceType::PAWN:
+                        ret += "P";
+                        break;
+                    case PieceType::KNIGHT:
+                        ret += "N";
+                        break;
+                    case PieceType::BISHOP:
+                        ret += "B";
+                        break;
+                    case PieceType::ROOK:
+                        ret += "R";
+                        break;
+                    case PieceType::QUEEN:
+                        ret += "Q";
+                        break;
+                    case PieceType::KING:
+                        ret += "K";
+                        break;
+                    default:
+                        ret += "?";
+                    }
+                }
+                else
+                {
+                    ret += " "; // white piece, add empty
+                }
+            }
+        }
+        ret += "\n";
+    }
+    return ret.substr(0, ret.length() - 1); // remove the last new line
+}
+
 void IO::writeBoardToConsole(const Board &board, bool invertColors)
 {
     // start at row = 8 and iterate down

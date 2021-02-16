@@ -9,5 +9,5 @@
 TEST(Board, EmptyBoard) {
     auto b = Board::emptyBoard();
 
-    
+    // TODO
 }

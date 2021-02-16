@@ -10,7 +10,7 @@ We shall see how far this goes...
 - GUI frontend (TODO)
 
 ## Unit tests
-Build the project and run the `unittest` binary:
+Build the project and run the `unittests` binary:
 ```[bash]
 cmake ..
 make
