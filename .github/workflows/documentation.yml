@@ -2,7 +2,7 @@ name: Creates and deploys Documentation
 
 on:
   push:
-    branch: master
+    branches: master
 jobs:
   build:
     runs-on: ubuntu-latest
