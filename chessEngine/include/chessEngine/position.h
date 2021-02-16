@@ -17,7 +17,7 @@ public:
    * @brief Constructs a position from a given row and column.
    * @param row The row, starting from 0 (top) to 7 (bottom).
    * @param column The column, starting from 0 (left) to 7 (right).
-   * @throws std::runtime_error if the indices are out of bounds.
+   * @throws std::out_of_range if the indices are out of bounds.
    */
   Position(uint8_t row, uint8_t column);
 
