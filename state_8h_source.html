@@ -71,33 +71,31 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="state_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="definitions_8h.html">chessEngine/definitions.h</a>&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="move_8h.html">chessEngine/move.h</a>&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="board_8h.html">chessEngine/board.h</a>&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="board_8h.html">chessEngine/board.h</a>&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="definitions_8h.html">chessEngine/definitions.h</a>&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="move_8h.html">chessEngine/move.h</a>&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacechessEngine.html">chessEngine</a></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{   </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classchessEngine_1_1GameState.html">   13</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classchessEngine_1_1GameState.html">GameState</a></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classchessEngine_1_1GameState.html#aedcff58ec06e2b0b9bbee3a278212173">   19</a></span>&#160;        <a class="code" href="classchessEngine_1_1GameState.html#aedcff58ec06e2b0b9bbee3a278212173">GameState</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classchessEngine_1_1GameState.html#a943bd32458d6155e20e65ea879611278">   22</a></span>&#160;        std::vector&lt;Move&gt; <a class="code" href="classchessEngine_1_1GameState.html#a943bd32458d6155e20e65ea879611278">m_moves</a>; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classchessEngine_1_1GameState.html#adc24d6b845a1e919739a79c080ca48ab">   23</a></span>&#160;        <a class="code" href="classchessEngine_1_1Board.html">Board</a> <a class="code" href="classchessEngine_1_1GameState.html#adc24d6b845a1e919739a79c080ca48ab">m_board</a>;             </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    };</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;} <span class="comment">// namespace chessEngine</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacechessEngine.html">chessEngine</a> {</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classchessEngine_1_1GameState.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classchessEngine_1_1GameState.html">GameState</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classchessEngine_1_1GameState.html#aedcff58ec06e2b0b9bbee3a278212173">   17</a></span>&#160;  <a class="code" href="classchessEngine_1_1GameState.html#aedcff58ec06e2b0b9bbee3a278212173">GameState</a>();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classchessEngine_1_1GameState.html#a943bd32458d6155e20e65ea879611278">   20</a></span>&#160;  std::vector&lt;Move&gt; <a class="code" href="classchessEngine_1_1GameState.html#a943bd32458d6155e20e65ea879611278">m_moves</a>; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classchessEngine_1_1GameState.html#adc24d6b845a1e919739a79c080ca48ab">   21</a></span>&#160;  <a class="code" href="classchessEngine_1_1Board.html">Board</a> <a class="code" href="classchessEngine_1_1GameState.html#adc24d6b845a1e919739a79c080ca48ab">m_board</a>;             </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;} <span class="comment">// namespace chessEngine</span></div>
 <div class="ttc" id="aboard_8h_html"><div class="ttname"><a href="board_8h.html">board.h</a></div></div>
-<div class="ttc" id="aclasschessEngine_1_1Board_html"><div class="ttname"><a href="classchessEngine_1_1Board.html">chessEngine::Board</a></div><div class="ttdoc">Class to store a chess board.</div><div class="ttdef"><b>Definition:</b> board.h:49</div></div>
-<div class="ttc" id="aclasschessEngine_1_1GameState_html"><div class="ttname"><a href="classchessEngine_1_1GameState.html">chessEngine::GameState</a></div><div class="ttdoc">Class to hold the current state of the game.</div><div class="ttdef"><b>Definition:</b> state.h:14</div></div>
-<div class="ttc" id="aclasschessEngine_1_1GameState_html_a943bd32458d6155e20e65ea879611278"><div class="ttname"><a href="classchessEngine_1_1GameState.html#a943bd32458d6155e20e65ea879611278">chessEngine::GameState::m_moves</a></div><div class="ttdeci">std::vector&lt; Move &gt; m_moves</div><div class="ttdoc">All moves previously done in this game.</div><div class="ttdef"><b>Definition:</b> state.h:22</div></div>
-<div class="ttc" id="aclasschessEngine_1_1GameState_html_adc24d6b845a1e919739a79c080ca48ab"><div class="ttname"><a href="classchessEngine_1_1GameState.html#adc24d6b845a1e919739a79c080ca48ab">chessEngine::GameState::m_board</a></div><div class="ttdeci">Board m_board</div><div class="ttdoc">Current Board.</div><div class="ttdef"><b>Definition:</b> state.h:23</div></div>
+<div class="ttc" id="aclasschessEngine_1_1Board_html"><div class="ttname"><a href="classchessEngine_1_1Board.html">chessEngine::Board</a></div><div class="ttdoc">Class to store a chess board.</div><div class="ttdef"><b>Definition:</b> board.h:41</div></div>
+<div class="ttc" id="aclasschessEngine_1_1GameState_html"><div class="ttname"><a href="classchessEngine_1_1GameState.html">chessEngine::GameState</a></div><div class="ttdoc">Class to hold the current state of the game.</div><div class="ttdef"><b>Definition:</b> state.h:12</div></div>
+<div class="ttc" id="aclasschessEngine_1_1GameState_html_a943bd32458d6155e20e65ea879611278"><div class="ttname"><a href="classchessEngine_1_1GameState.html#a943bd32458d6155e20e65ea879611278">chessEngine::GameState::m_moves</a></div><div class="ttdeci">std::vector&lt; Move &gt; m_moves</div><div class="ttdoc">All moves previously done in this game.</div><div class="ttdef"><b>Definition:</b> state.h:20</div></div>
+<div class="ttc" id="aclasschessEngine_1_1GameState_html_adc24d6b845a1e919739a79c080ca48ab"><div class="ttname"><a href="classchessEngine_1_1GameState.html#adc24d6b845a1e919739a79c080ca48ab">chessEngine::GameState::m_board</a></div><div class="ttdeci">Board m_board</div><div class="ttdoc">Current Board.</div><div class="ttdef"><b>Definition:</b> state.h:21</div></div>
 <div class="ttc" id="aclasschessEngine_1_1GameState_html_aedcff58ec06e2b0b9bbee3a278212173"><div class="ttname"><a href="classchessEngine_1_1GameState.html#aedcff58ec06e2b0b9bbee3a278212173">chessEngine::GameState::GameState</a></div><div class="ttdeci">GameState()</div></div>
 <div class="ttc" id="adefinitions_8h_html"><div class="ttname"><a href="definitions_8h.html">definitions.h</a></div></div>
 <div class="ttc" id="amove_8h_html"><div class="ttname"><a href="move_8h.html">move.h</a></div></div>
-<div class="ttc" id="anamespacechessEngine_html"><div class="ttname"><a href="namespacechessEngine.html">chessEngine</a></div><div class="ttdef"><b>Definition:</b> board.h:8</div></div>
+<div class="ttc" id="anamespacechessEngine_html"><div class="ttname"><a href="namespacechessEngine.html">chessEngine</a></div><div class="ttdef"><b>Definition:</b> board.h:7</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
