@@ -2,8 +2,7 @@ name: Creates and deploys Documentation
 
 on:
   push:
-    branch: [master, feature-doxygen-gh-pages]
-
+    branch: master
 jobs:
   build:
     runs-on: ubuntu-latest
