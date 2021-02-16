@@ -1,5 +1,6 @@
 # ChessEngine
-![Check Unittests](https://github.com/maede97/ChessEngine/workflows/Check%20Unittests/badge.svg)
+![Build](https://img.shields.io/github/workflow/status/maede97/ChessEngine/Check%20Unittests)
+![Documentation](https://img.shields.io/github/workflow/status/maede97/ChessEngine/Creates%20and%20deploys%20Documentation?label=Documentation)
 
 My try in creating a chess engine from scratch, using optimizations.
 
