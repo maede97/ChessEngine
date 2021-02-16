@@ -7,15 +7,17 @@ using namespace chessEngine;
 
 TEST(Piece, Constructor) {
   auto p = Piece(PieceType::PAWN, PlayerColor::WHITE);
+  SUCCEED();
 }
 
 TEST(Piece, SetConstructor) {
   auto p = Piece{PieceType::PAWN, PlayerColor::WHITE};
+  SUCCEED();
 }
 
 TEST(Piece, Getters) {
   auto p = Piece{PieceType::PAWN, PlayerColor::WHITE};
 
-  ASSERT_EQ(p.type(), PieceType::PAWN);
-  ASSERT_EQ(p.color(), PlayerColor::WHITE);
+  EXPECT_EQ(p.type(), PieceType::PAWN);
+  EXPECT_EQ(p.color(), PlayerColor::WHITE);
 }
