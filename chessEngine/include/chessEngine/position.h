@@ -21,7 +21,7 @@ namespace chessEngine
          * @param column The column, starting from 0 (left) to 7 (right).
          * @throws std::runtime_error if the indices are out of bounds.
          */
-        Position(uint8_t row, uint8_t col);
+        Position(uint8_t row, uint8_t column);
 
         /**
          * @brief Getter for the row

@@ -13,9 +13,11 @@ namespace chessEngine
    {
    public:
       /**
-     * Create a board from the Forsyth-Edwards representation.
-     * See https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation
-     */
+       * @brief Create a board from the Forsyth-Edwards representation.
+       * See https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation
+       * @param string The string to create the board from.
+       * @todo This is not implemented yet.
+       */
       static Board fromForsythEdwards(const char *string);
 
       /**
