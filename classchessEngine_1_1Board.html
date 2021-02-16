@@ -77,37 +77,50 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Class to store a chess board.  
+ <a href="classchessEngine_1_1Board.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="board_8h_source.html">board.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:ac382a26eff7a1d0717737c9c56c0107c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#ac382a26eff7a1d0717737c9c56c0107c">map_t</a> = std::unordered_map&lt; <a class="el" href="classchessEngine_1_1Position.html">Position</a>, <a class="el" href="classchessEngine_1_1Piece.html">Piece</a>, <a class="el" href="structchessEngine_1_1KeyHash.html">KeyHash</a>, <a class="el" href="structchessEngine_1_1KeyEqual.html">KeyEqual</a> &gt;</td></tr>
+<tr class="memdesc:ac382a26eff7a1d0717737c9c56c0107c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type to use for storing the board inside a map. This map should have O(1) write and read.  <a href="classchessEngine_1_1Board.html#ac382a26eff7a1d0717737c9c56c0107c">More...</a><br /></td></tr>
 <tr class="separator:ac382a26eff7a1d0717737c9c56c0107c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a60bbfba2925f8c7bd8e62a773eb519a6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#a60bbfba2925f8c7bd8e62a773eb519a6">Board</a> ()=delete</td></tr>
+<tr class="memdesc:a60bbfba2925f8c7bd8e62a773eb519a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">We do not allow a default constructor.  <a href="classchessEngine_1_1Board.html#a60bbfba2925f8c7bd8e62a773eb519a6">More...</a><br /></td></tr>
 <tr class="separator:a60bbfba2925f8c7bd8e62a773eb519a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40d5490e173beb9618f930b4a6b63647"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#a40d5490e173beb9618f930b4a6b63647">Board</a> (<a class="el" href="classchessEngine_1_1Board.html#ac382a26eff7a1d0717737c9c56c0107c">map_t</a> positions)</td></tr>
+<tr class="memdesc:a40d5490e173beb9618f930b4a6b63647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a board from a given position map.  <a href="classchessEngine_1_1Board.html#a40d5490e173beb9618f930b4a6b63647">More...</a><br /></td></tr>
 <tr class="separator:a40d5490e173beb9618f930b4a6b63647"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab942fb8b6f36e20fbeea211fe9a09ba6"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#ab942fb8b6f36e20fbeea211fe9a09ba6">numPieces</a> () const</td></tr>
+<tr class="memdesc:ab942fb8b6f36e20fbeea211fe9a09ba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper to get the number of pieces on this board.  <a href="classchessEngine_1_1Board.html#ab942fb8b6f36e20fbeea211fe9a09ba6">More...</a><br /></td></tr>
 <tr class="separator:ab942fb8b6f36e20fbeea211fe9a09ba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aeb0a7657a63c87a1fd4cabf9a71a4777"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classchessEngine_1_1Board.html">Board</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#aeb0a7657a63c87a1fd4cabf9a71a4777">defaultBoard</a> ()</td></tr>
+<tr class="memdesc:aeb0a7657a63c87a1fd4cabf9a71a4777"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a default chess starting board.  <a href="classchessEngine_1_1Board.html#aeb0a7657a63c87a1fd4cabf9a71a4777">More...</a><br /></td></tr>
 <tr class="separator:aeb0a7657a63c87a1fd4cabf9a71a4777"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c09cf249326d407c204b5ca59c27cd2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classchessEngine_1_1Board.html">Board</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#a0c09cf249326d407c204b5ca59c27cd2">emptyBoard</a> ()</td></tr>
+<tr class="memdesc:a0c09cf249326d407c204b5ca59c27cd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an empty chess board.  <a href="classchessEngine_1_1Board.html#a0c09cf249326d407c204b5ca59c27cd2">More...</a><br /></td></tr>
 <tr class="separator:a0c09cf249326d407c204b5ca59c27cd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:adfb9bb78e8f110fc0de97143a4639c9d"><td class="memItemLeft" align="right" valign="top">friend&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#adfb9bb78e8f110fc0de97143a4639c9d">IO</a></td></tr>
+<tr class="memdesc:adfb9bb78e8f110fc0de97143a4639c9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">all <a class="el" href="classchessEngine_1_1IO.html" title="This class contains various helpers to read/write chess boards.">IO</a> functions should have access to private members.  <a href="classchessEngine_1_1Board.html#adfb9bb78e8f110fc0de97143a4639c9d">More...</a><br /></td></tr>
 <tr class="separator:adfb9bb78e8f110fc0de97143a4639c9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52821144f40f7fb6fa11661e4366c18d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classchessEngine_1_1Board.html#ac382a26eff7a1d0717737c9c56c0107c">map_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#a52821144f40f7fb6fa11661e4366c18d">m_board</a></td></tr>
+<tr class="memdesc:a52821144f40f7fb6fa11661e4366c18d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal storage of the board state (using map_t).  <a href="classchessEngine_1_1Board.html#a52821144f40f7fb6fa11661e4366c18d">More...</a><br /></td></tr>
 <tr class="separator:a52821144f40f7fb6fa11661e4366c18d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class to store a chess board. </p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ac382a26eff7a1d0717737c9c56c0107c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac382a26eff7a1d0717737c9c56c0107c">&#9670;&nbsp;</a></span>map_t</h2>
 
@@ -119,6 +132,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The type to use for storing the board inside a map. This map should have O(1) write and read. </p>
 
 </div>
 </div>
@@ -146,6 +161,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>We do not allow a default constructor. </p>
+
 </div>
 </div>
 <a id="a40d5490e173beb9618f930b4a6b63647"></a>
@@ -163,6 +180,14 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Create a board from a given position map. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">positions</td><td>A map (using map_t) with all the chess pieces. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -190,6 +215,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates a default chess starting board. </p>
+<dl class="section return"><dt>Returns</dt><dd>The chess board created. </dd></dl>
+
 </div>
 </div>
 <a id="a0c09cf249326d407c204b5ca59c27cd2"></a>
@@ -215,6 +243,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates an empty chess board. </p>
+<dl class="section return"><dt>Returns</dt><dd>The chess board created. </dd></dl>
+
 </div>
 </div>
 <a id="ab942fb8b6f36e20fbeea211fe9a09ba6"></a>
@@ -231,6 +262,9 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Helper to get the number of pieces on this board. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of pieces. </dd></dl>
 
 </div>
 </div>
@@ -255,6 +289,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>all <a class="el" href="classchessEngine_1_1IO.html" title="This class contains various helpers to read/write chess boards.">IO</a> functions should have access to private members. </p>
+
 </div>
 </div>
 <a id="a52821144f40f7fb6fa11661e4366c18d"></a>
@@ -276,6 +312,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Internal storage of the board state (using map_t). </p>
 
 </div>
 </div>

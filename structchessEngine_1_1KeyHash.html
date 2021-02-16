@@ -74,14 +74,20 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Helper to return the hash of a position.  
+ <a href="structchessEngine_1_1KeyHash.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="board_8h_source.html">board.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae00a2a7a9d2175512c677339202d36e7"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structchessEngine_1_1KeyHash.html#ae00a2a7a9d2175512c677339202d36e7">operator()</a> (const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;k) const</td></tr>
+<tr class="memdesc:ae00a2a7a9d2175512c677339202d36e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the hash of a position.  <a href="structchessEngine_1_1KeyHash.html#ae00a2a7a9d2175512c677339202d36e7">More...</a><br /></td></tr>
 <tr class="separator:ae00a2a7a9d2175512c677339202d36e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Helper to return the hash of a position. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ae00a2a7a9d2175512c677339202d36e7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae00a2a7a9d2175512c677339202d36e7">&#9670;&nbsp;</a></span>operator()()</h2>
 
@@ -105,6 +111,15 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the hash of a position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">k</td><td>The position from which to generate the hash. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The hash calculated from <a class="el" href="classchessEngine_1_1Position.html#a5c7b502b4a2fb3d9e9430bf706de7a2a" title="A hash of the current position, which is unique for each position on the board.">Position::hash</a> </dd></dl>
 
 </div>
 </div>

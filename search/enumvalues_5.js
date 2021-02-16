@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['white_124',['WHITE',['../namespacechessEngine.html#a0e3db173099459967c9a248c6289e3caab5bf627e448384cf3a4c35121ca6008d',1,'chessEngine']]]
+  ['white_128',['WHITE',['../namespacechessEngine.html#a0e3db173099459967c9a248c6289e3caab5bf627e448384cf3a4c35121ca6008d',1,'chessEngine']]]
 ];

@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['writeblackpiecestostring_100',['writeBlackPiecesToString',['../classchessEngine_1_1IO.html#a1bce97c38bf85306429bdb64177e219e',1,'chessEngine::IO']]],
-  ['writeboardtoconsole_101',['writeBoardToConsole',['../classchessEngine_1_1IO.html#af2917e9cba29a68530a7800c2f0a7120',1,'chessEngine::IO']]],
-  ['writeboardtostring_102',['writeBoardToString',['../classchessEngine_1_1IO.html#ab44e72165915aeebbadd96af4dac7975',1,'chessEngine::IO']]],
-  ['writewhitepiecestostring_103',['writeWhitePiecesToString',['../classchessEngine_1_1IO.html#a8adffa1fd0f106c2d70d066ebacec21e',1,'chessEngine::IO']]]
+  ['version_103',['version',['../classchessEngine_1_1Version.html#a06730503833289b141e7ba63f64feefc',1,'chessEngine::Version']]]
 ];

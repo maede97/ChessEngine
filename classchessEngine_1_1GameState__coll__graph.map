@@ -1,4 +1,4 @@
 <map id="chessEngine::GameState" name="chessEngine::GameState">
-<area shape="rect" id="node1" title=" " alt="" coords="5,95,173,121"/>
-<area shape="rect" id="node2" href="$classchessEngine_1_1Board.html" title=" " alt="" coords="21,5,157,32"/>
+<area shape="rect" id="node1" title="Class to hold the current state of the game." alt="" coords="5,95,173,121"/>
+<area shape="rect" id="node2" href="$classchessEngine_1_1Board.html" title="Class to store a chess board." alt="" coords="21,5,157,32"/>
 </map>

@@ -74,14 +74,20 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Helper to check for two positions to be equal.  
+ <a href="structchessEngine_1_1KeyEqual.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="board_8h_source.html">board.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a69b794abc98cf10a0df4326f2dbcd852"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structchessEngine_1_1KeyEqual.html#a69b794abc98cf10a0df4326f2dbcd852">operator()</a> (const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;lhs, const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;rhs) const</td></tr>
+<tr class="memdesc:a69b794abc98cf10a0df4326f2dbcd852"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two positions based on their hash (which is unique).  <a href="structchessEngine_1_1KeyEqual.html#a69b794abc98cf10a0df4326f2dbcd852">More...</a><br /></td></tr>
 <tr class="separator:a69b794abc98cf10a0df4326f2dbcd852"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Helper to check for two positions to be equal. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a69b794abc98cf10a0df4326f2dbcd852"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a69b794abc98cf10a0df4326f2dbcd852">&#9670;&nbsp;</a></span>operator()()</h2>
 
@@ -115,6 +121,16 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Compares two positions based on their hash (which is unique). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>The first position to compare. </td></tr>
+    <tr><td class="paramname">rhs</td><td>The second position to compare. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether the positions are the same based on their hash. </dd></dl>
 
 </div>
 </div>
