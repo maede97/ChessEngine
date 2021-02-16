@@ -1,6 +1,8 @@
 #include <chessEngine/io.h>
 #include <iostream>
 
+using namespace chessEngine;
+
 Board IO::fromForsythEdwards(const char *feString)
 {
     Board board = Board::emptyBoard();

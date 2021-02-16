@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include <chessEngine/piece.h>
-
+using namespace chessEngine;
 /**
  * This file contains unit tests for the Piece class.
  */

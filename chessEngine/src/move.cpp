@@ -1,5 +1,7 @@
 #include <chessEngine/move.h>
 
+using namespace chessEngine;
+
 Move::Move(PlayerColor player, PieceType piece, Position from, Position to) : m_player(player), m_piece(piece), m_from(from), m_to(to) {}
 
 PlayerColor Move::player() const { return m_player; }

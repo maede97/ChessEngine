@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include <chessEngine/io.h>
-
+using namespace chessEngine;
 TEST(IO, ForsythEdwardsEmpty)
 {
     // no pieces on board, white next, no castling, no en-passant, no half-move, initial full-move

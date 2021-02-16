@@ -4,40 +4,45 @@
 #include <chessEngine/piece.h>
 #include <chessEngine/position.h>
 
-// forward declaration of IO class for friend
-class IO;
-
-struct KeyHash
+namespace chessEngine
 {
-    std::size_t operator()(const Position &k) const
+
+    // forward declaration of IO class for friend
+    class IO;
+
+    struct KeyHash
     {
-        return k.hash();
-    }
-};
+        std::size_t operator()(const Position &k) const
+        {
+            return k.hash();
+        }
+    };
 
-struct KeyEqual
-{
-    bool operator()(const Position &lhs, const Position &rhs) const
+    struct KeyEqual
     {
-        return lhs.hash() == rhs.hash();
-    }
-};
+        bool operator()(const Position &lhs, const Position &rhs) const
+        {
+            return lhs.hash() == rhs.hash();
+        }
+    };
 
-class Board
-{
-public:
-    using map_t = std::unordered_map<Position, Piece, KeyHash, KeyEqual>;
+    class Board
+    {
+    public:
+        using map_t = std::unordered_map<Position, Piece, KeyHash, KeyEqual>;
 
-    static Board defaultBoard();
-    static Board emptyBoard();
-    
-    Board() = delete;
-    // create a board by a given position map
-    Board(map_t positions);
+        static Board defaultBoard();
+        static Board emptyBoard();
 
-    size_t numPieces() const;
+        Board() = delete;
+        // create a board by a given position map
+        Board(map_t positions);
 
-private:
-    friend IO; // all IO functions should have access to private members
-    map_t m_board;
-};
+        size_t numPieces() const;
+
+    private:
+        friend IO; // all IO functions should have access to private members
+        map_t m_board;
+    };
+
+} // namespace chessEngine

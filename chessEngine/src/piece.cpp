@@ -1,5 +1,7 @@
 #include <chessEngine/piece.h>
 
+using namespace chessEngine;
+
 Piece::Piece(PieceType type, PlayerColor color) : m_type(type), m_color(color)
 {
 }

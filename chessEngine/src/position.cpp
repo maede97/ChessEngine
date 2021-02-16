@@ -1,6 +1,8 @@
 #include <chessEngine/position.h>
 #include <stdexcept>
 
+using namespace chessEngine;
+
 Position::Position(uint8_t row, uint8_t column)
 {
     // sanity checks
