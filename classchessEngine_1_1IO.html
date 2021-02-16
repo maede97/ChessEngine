@@ -81,9 +81,12 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a715d32734127d7dab6e2ff2101d07424"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classchessEngine_1_1Board.html">Board</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1IO.html#a715d32734127d7dab6e2ff2101d07424">fromForsythEdwards</a> (const char *string)</td></tr>
-<tr class="memdesc:a715d32734127d7dab6e2ff2101d07424"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a board from the Forsyth-Edwards representation.  <a href="classchessEngine_1_1IO.html#a715d32734127d7dab6e2ff2101d07424">More...</a><br /></td></tr>
-<tr class="separator:a715d32734127d7dab6e2ff2101d07424"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae42c0407afeb57595c0105faaaae60aa"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classchessEngine_1_1GameState.html">GameState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1IO.html#ae42c0407afeb57595c0105faaaae60aa">fromForsythEdwards</a> (const char *string)</td></tr>
+<tr class="memdesc:ae42c0407afeb57595c0105faaaae60aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a gamestate from the Forsyth-Edwards representation.  <a href="classchessEngine_1_1IO.html#ae42c0407afeb57595c0105faaaae60aa">More...</a><br /></td></tr>
+<tr class="separator:ae42c0407afeb57595c0105faaaae60aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55accd19b1c780b943ceb4fe6ce809a6"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1IO.html#a55accd19b1c780b943ceb4fe6ce809a6">toForsythEdwards</a> (const <a class="el" href="classchessEngine_1_1GameState.html">GameState</a> &amp;state)</td></tr>
+<tr class="memdesc:a55accd19b1c780b943ceb4fe6ce809a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a Forsyth-Edwards string from a given gamestate.  <a href="classchessEngine_1_1IO.html#a55accd19b1c780b943ceb4fe6ce809a6">More...</a><br /></td></tr>
+<tr class="separator:a55accd19b1c780b943ceb4fe6ce809a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab44e72165915aeebbadd96af4dac7975"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1IO.html#ab44e72165915aeebbadd96af4dac7975">writeBoardToString</a> (const <a class="el" href="classchessEngine_1_1Board.html">Board</a> &amp;board)</td></tr>
 <tr class="memdesc:ab44e72165915aeebbadd96af4dac7975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a simpler board representation to a string.  <a href="classchessEngine_1_1IO.html#ab44e72165915aeebbadd96af4dac7975">More...</a><br /></td></tr>
 <tr class="separator:ab44e72165915aeebbadd96af4dac7975"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -100,8 +103,8 @@ Static Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class contains various helpers to read/write chess boards. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a715d32734127d7dab6e2ff2101d07424"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a715d32734127d7dab6e2ff2101d07424">&#9670;&nbsp;</a></span>fromForsythEdwards()</h2>
+<a id="ae42c0407afeb57595c0105faaaae60aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae42c0407afeb57595c0105faaaae60aa">&#9670;&nbsp;</a></span>fromForsythEdwards()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -110,7 +113,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classchessEngine_1_1Board.html">Board</a> chessEngine::IO::fromForsythEdwards </td>
+          <td class="memname">static <a class="el" href="classchessEngine_1_1GameState.html">GameState</a> chessEngine::IO::fromForsythEdwards </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>string</em></td><td>)</td>
@@ -124,7 +127,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Create a board from the Forsyth-Edwards representation. </p>
+<p>Create a gamestate from the Forsyth-Edwards representation. </p>
 <p>See <a href="https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation">https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation</a> </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">string</td><td>The string to create the board from. </td></tr>
@@ -132,6 +135,41 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>This is not implemented yet. </dd></dl>
+
+</div>
+</div>
+<a id="a55accd19b1c780b943ceb4fe6ce809a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55accd19b1c780b943ceb4fe6ce809a6">&#9670;&nbsp;</a></span>toForsythEdwards()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string chessEngine::IO::toForsythEdwards </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classchessEngine_1_1GameState.html">GameState</a> &amp;&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create a Forsyth-Edwards string from a given gamestate. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>The state to create the string from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>This is not implemented yet. </dd></dl>
 
 </div>
 </div>
