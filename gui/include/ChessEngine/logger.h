@@ -1,21 +1,20 @@
 #pragma once
 
 #include "utils.h"
-#include <vector>
 #include <imgui.h>
+#include <vector>
 
 CHESS_NAMESPACE_BEGIN
 
-class Logger
-{
+class Logger {
 public:
-    static void logInfo(std::string what);
-    static void logWarning(std::string what);
+  static void logInfo(std::string what);
+  static void logWarning(std::string what);
 
-    static void displayConsole(int max = -1);
+  static void displayConsole(int max = -1);
 
 private:
-    static std::vector<std::pair<ImVec4, std::string>> entries;
+  static std::vector<std::pair<ImVec4, std::string>> entries;
 };
 
 CHESS_NAMESPACE_END

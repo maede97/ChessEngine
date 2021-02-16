@@ -1,5 +1,5 @@
-#include <gtest/gtest.h>
 #include <chessEngine/board.h>
+#include <gtest/gtest.h>
 using namespace chessEngine;
 /**
  * This file contains unit tests for the board class.
@@ -7,7 +7,7 @@ using namespace chessEngine;
 
 // TODO
 TEST(Board, EmptyBoard) {
-    auto b = Board::emptyBoard();
+  auto b = Board::emptyBoard();
 
-    // TODO
+  // TODO
 }
