@@ -99,6 +99,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab942fb8b6f36e20fbeea211fe9a09ba6"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#ab942fb8b6f36e20fbeea211fe9a09ba6">numPieces</a> () const</td></tr>
 <tr class="memdesc:ab942fb8b6f36e20fbeea211fe9a09ba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper to get the number of pieces on this board.  <a href="classchessEngine_1_1Board.html#ab942fb8b6f36e20fbeea211fe9a09ba6">More...</a><br /></td></tr>
 <tr class="separator:ab942fb8b6f36e20fbeea211fe9a09ba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d45e238fa8724cec7aa1f59ab303e75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#a9d45e238fa8724cec7aa1f59ab303e75">placePiece</a> (const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;position, const <a class="el" href="classchessEngine_1_1Piece.html">Piece</a> &amp;piece)</td></tr>
+<tr class="memdesc:a9d45e238fa8724cec7aa1f59ab303e75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place a piece on the board.  <a href="classchessEngine_1_1Board.html#a9d45e238fa8724cec7aa1f59ab303e75">More...</a><br /></td></tr>
+<tr class="separator:a9d45e238fa8724cec7aa1f59ab303e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac86fc8b1034a8e1e8f182a0509f04029"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#ac86fc8b1034a8e1e8f182a0509f04029">removePiece</a> (const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;position)</td></tr>
+<tr class="memdesc:ac86fc8b1034a8e1e8f182a0509f04029"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a piece from the board given a position.  <a href="classchessEngine_1_1Board.html#ac86fc8b1034a8e1e8f182a0509f04029">More...</a><br /></td></tr>
+<tr class="separator:ac86fc8b1034a8e1e8f182a0509f04029"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a253614e8c3c6643a2f8988fb95d68ba9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classchessEngine_1_1Piece.html">Piece</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#a253614e8c3c6643a2f8988fb95d68ba9">getPiece</a> (const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;position)</td></tr>
+<tr class="memdesc:a253614e8c3c6643a2f8988fb95d68ba9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the piece from a given position.  <a href="classchessEngine_1_1Board.html#a253614e8c3c6643a2f8988fb95d68ba9">More...</a><br /></td></tr>
+<tr class="separator:a253614e8c3c6643a2f8988fb95d68ba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -249,6 +258,38 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a253614e8c3c6643a2f8988fb95d68ba9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a253614e8c3c6643a2f8988fb95d68ba9">&#9670;&nbsp;</a></span>getPiece()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classchessEngine_1_1Piece.html">Piece</a> chessEngine::Board::getPiece </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;&#160;</td>
+          <td class="paramname"><em>position</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the piece from a given position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>The position of the piece. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>If no piece is at that position. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ab942fb8b6f36e20fbeea211fe9a09ba6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab942fb8b6f36e20fbeea211fe9a09ba6">&#9670;&nbsp;</a></span>numPieces()</h2>
 
@@ -266,6 +307,81 @@ Private Attributes</h2></td></tr>
 
 <p>Helper to get the number of pieces on this board. </p>
 <dl class="section return"><dt>Returns</dt><dd>The number of pieces. </dd></dl>
+
+</div>
+</div>
+<a id="a9d45e238fa8724cec7aa1f59ab303e75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d45e238fa8724cec7aa1f59ab303e75">&#9670;&nbsp;</a></span>placePiece()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chessEngine::Board::placePiece </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classchessEngine_1_1Piece.html">Piece</a> &amp;&#160;</td>
+          <td class="paramname"><em>piece</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Place a piece on the board. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>The position on which the piece should be placed. </td></tr>
+    <tr><td class="paramname">piece</td><td>The piece which should be placed. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>If the position is already occupied. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac86fc8b1034a8e1e8f182a0509f04029"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac86fc8b1034a8e1e8f182a0509f04029">&#9670;&nbsp;</a></span>removePiece()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chessEngine::Board::removePiece </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;&#160;</td>
+          <td class="paramname"><em>position</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes a piece from the board given a position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>The position from where the piece should be removed. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>If no piece is at that position. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

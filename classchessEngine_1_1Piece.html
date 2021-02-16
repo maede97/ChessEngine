@@ -100,6 +100,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa3fd8fecb189f53822dd90a7cd087f8f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacechessEngine.html#a0e3db173099459967c9a248c6289e3ca">PlayerColor</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Piece.html#aa3fd8fecb189f53822dd90a7cd087f8f">color</a> ()</td></tr>
 <tr class="memdesc:aa3fd8fecb189f53822dd90a7cd087f8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the color.  <a href="classchessEngine_1_1Piece.html#aa3fd8fecb189f53822dd90a7cd087f8f">More...</a><br /></td></tr>
 <tr class="separator:aa3fd8fecb189f53822dd90a7cd087f8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1622e308539ebf83b2013f5431a9e982"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Piece.html#a1622e308539ebf83b2013f5431a9e982">operator==</a> (const <a class="el" href="classchessEngine_1_1Piece.html">Piece</a> &amp;rhs) const</td></tr>
+<tr class="memdesc:a1622e308539ebf83b2013f5431a9e982"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper to check for equality of two pieces.  <a href="classchessEngine_1_1Piece.html#a1622e308539ebf83b2013f5431a9e982">More...</a><br /></td></tr>
+<tr class="separator:a1622e308539ebf83b2013f5431a9e982"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebda2440df86506694f5239473a8aa8f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Piece.html#aebda2440df86506694f5239473a8aa8f">operator!=</a> (const <a class="el" href="classchessEngine_1_1Piece.html">Piece</a> &amp;rhs) const</td></tr>
+<tr class="memdesc:aebda2440df86506694f5239473a8aa8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper to check for inequality of two pieces.  <a href="classchessEngine_1_1Piece.html#aebda2440df86506694f5239473a8aa8f">More...</a><br /></td></tr>
+<tr class="separator:aebda2440df86506694f5239473a8aa8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -213,6 +219,60 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Getter for the color. </p>
+
+</div>
+</div>
+<a id="aebda2440df86506694f5239473a8aa8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebda2440df86506694f5239473a8aa8f">&#9670;&nbsp;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chessEngine::Piece::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classchessEngine_1_1Piece.html">Piece</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Helper to check for inequality of two pieces. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td>The other piece to check against. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether the two pieces are not equal (in color or type). </dd></dl>
+
+</div>
+</div>
+<a id="a1622e308539ebf83b2013f5431a9e982"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1622e308539ebf83b2013f5431a9e982">&#9670;&nbsp;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chessEngine::Piece::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classchessEngine_1_1Piece.html">Piece</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Helper to check for equality of two pieces. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td>The other piece to check against. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether the two pieces are equal (in color and type). </dd></dl>
 
 </div>
 </div>
