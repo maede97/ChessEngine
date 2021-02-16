@@ -5,25 +5,25 @@ namespace chessEngine
 {
 
     /**
- * Player color helper enum
- */
+     * @brief Enum which stores all possible player colors.
+     */
     enum class PlayerColor
     {
-        WHITE = 1,
-        BLACK = 2
+        WHITE = 1, ///< w
+        BLACK = 2 ///< b
     };
 
     /**
- * Piece type helper enum
- */
+     * @brief Enum which stores all possible piece types.
+     */
     enum class PieceType
     {
-        PAWN = 1,
-        KNIGHT = 2,
-        BISHOP = 3,
-        ROOK = 4,
-        QUEEN = 5,
-        KING = 6
+        PAWN = 1, ///< P
+        KNIGHT = 2, ///< N
+        BISHOP = 3, ///< B
+        ROOK = 4, ///< R
+        QUEEN = 5, ///< Q
+        KING = 6 ///< K
     };
 
 } // namespace chessEngine
