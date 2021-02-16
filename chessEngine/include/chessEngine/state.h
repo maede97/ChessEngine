@@ -16,6 +16,17 @@ public:
    */
   GameState();
 
+  /**
+   * @brief Sets the board of this GameState.
+   * @param board The board to set.
+   */
+  void setBoard(const Board &board);
+
+  /**
+   * @brief Returns the current board.
+   */
+  Board getBoard() const;
+
 private:
   std::vector<Move> m_moves; ///< All moves previously done in this game.
   Board m_board;             ///< Current Board

@@ -3,12 +3,20 @@
 
 using namespace chessEngine;
 
-Board IO::fromForsythEdwards(const char *feString) {
+GameState IO::fromForsythEdwards(const char *feString) {
   Board board = Board::emptyBoard();
+  GameState ret;
 
   // TODO
 
-  return board;
+  ret.setBoard(board);
+  return ret;
+}
+
+std::string IO::toForsythEdwards(const GameState &state) {
+  std::string ret;
+
+  return ret;
 }
 
 std::string IO::writeBoardToString(const Board &board) {

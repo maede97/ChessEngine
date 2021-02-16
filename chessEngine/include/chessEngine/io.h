@@ -1,6 +1,6 @@
 #pragma once
 
-#include <chessEngine/board.h>
+#include <chessEngine/state.h>
 #include <string>
 
 namespace chessEngine {
@@ -11,13 +11,20 @@ namespace chessEngine {
 class IO {
 public:
   /**
-   * @brief Create a board from the Forsyth-Edwards representation.
+   * @brief Create a gamestate from the Forsyth-Edwards representation.
    *
    * See https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation
    * @param string The string to create the board from.
    * @todo This is not implemented yet.
    */
-  static Board fromForsythEdwards(const char *string);
+  static GameState fromForsythEdwards(const char *string);
+
+  /**
+   * @brief Create a Forsyth-Edwards string from a given gamestate.
+   * @param state The state to create the string from.
+   * @todo This is not implemented yet.
+   */
+  static std::string toForsythEdwards(const GameState &state);
 
   /**
    * @brief Write a simpler board representation to a string.
