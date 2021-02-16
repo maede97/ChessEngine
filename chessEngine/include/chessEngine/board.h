@@ -50,6 +50,7 @@ namespace chessEngine
     public:
         /**
          * @brief The type to use for storing the board inside a map.
+         * 
          * This map should have O(1) write and read.
          */
         using map_t = std::unordered_map<Position, Piece, KeyHash, KeyEqual>;

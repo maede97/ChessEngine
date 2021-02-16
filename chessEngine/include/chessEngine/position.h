@@ -48,6 +48,7 @@ namespace chessEngine
     private:
         /**
          * @brief The internal position store.
+         * 
          * 6 bits are enough to represent every position on the board
          * however, in C++, the smallest type is 8 bits, therefore we use this
          */
