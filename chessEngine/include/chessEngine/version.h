@@ -1,15 +1,22 @@
 #pragma once
+
 namespace chessEngine
 {
-
-#ifndef ENGINE_VERSION
-#define ENGINE_VERSION 1.0
-
-    inline double getVersion()
+    /** 
+     * @brief Class which holds information about the current Version of this engine.
+     */
+    class Version
     {
-        return ENGINE_VERSION;
-    }
+    public:
+        /**
+         * @brief Returns the current version of this engine.
+         */
+        static double version();
 
-#endif
+        /**
+         * @brief Returns the changelog of this engine.
+         */
+        static const char *changelog();
+    };
 
 } // namespace chessEngine

@@ -3,7 +3,6 @@
 
 namespace chessEngine
 {
-
     /**
      * @brief Enum which stores all possible player colors.
      */
