@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['bishop_115',['BISHOP',['../definitions_8h.html#a12ed9719bbdf7bc596ff7a6f4bf3f021a1834d375f684613c725d039a10db1976',1,'definitions.h']]],
-  ['black_116',['BLACK',['../definitions_8h.html#a563f124dad4693d4ab6081493d1b5c4ba08d0012388564e95c3b4a7407cf04965',1,'definitions.h']]]
+  ['bishop_117',['BISHOP',['../namespacechessEngine.html#a0a4ae963ec379905420b849d2ec1c5e9a1834d375f684613c725d039a10db1976',1,'chessEngine']]],
+  ['black_118',['BLACK',['../namespacechessEngine.html#a0e3db173099459967c9a248c6289e3caa08d0012388564e95c3b4a7407cf04965',1,'chessEngine']]]
 ];

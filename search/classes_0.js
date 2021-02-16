@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['board_60',['Board',['../classBoard.html',1,'']]]
+  ['board_61',['Board',['../classchessEngine_1_1Board.html',1,'chessEngine']]]
 ];

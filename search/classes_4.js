@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['move_65',['Move',['../classMove.html',1,'']]]
+  ['move_66',['Move',['../classchessEngine_1_1Move.html',1,'chessEngine']]]
 ];

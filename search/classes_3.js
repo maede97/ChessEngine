@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['keyequal_63',['KeyEqual',['../structKeyEqual.html',1,'']]],
-  ['keyhash_64',['KeyHash',['../structKeyHash.html',1,'']]]
+  ['keyequal_64',['KeyEqual',['../structchessEngine_1_1KeyEqual.html',1,'chessEngine']]],
+  ['keyhash_65',['KeyHash',['../structchessEngine_1_1KeyHash.html',1,'chessEngine']]]
 ];

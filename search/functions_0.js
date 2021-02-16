@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['board_77',['Board',['../classBoard.html#a3e11ce152fab26acaabf423f86edef2e',1,'Board::Board()=delete'],['../classBoard.html#af4a18cca92a178e22dbc9be8dc3207e1',1,'Board::Board(map_t positions)']]]
+  ['board_79',['Board',['../classchessEngine_1_1Board.html#a60bbfba2925f8c7bd8e62a773eb519a6',1,'chessEngine::Board::Board()=delete'],['../classchessEngine_1_1Board.html#a40d5490e173beb9618f930b4a6b63647',1,'chessEngine::Board::Board(map_t positions)']]]
 ];

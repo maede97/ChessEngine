@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['pawn_37',['PAWN',['../definitions_8h.html#a12ed9719bbdf7bc596ff7a6f4bf3f021a3acd2a53aca11e0f883236ea27a3b627',1,'definitions.h']]],
-  ['piece_38',['Piece',['../classPiece.html',1,'']]],
-  ['piece_39',['piece',['../classMove.html#a2936efccfad038f2a8113b4a0f409a17',1,'Move::piece() const'],['../classMove.html#abd044e082c1b1f7669386cba29acbe98',1,'Move::piece()']]],
-  ['piece_40',['Piece',['../classPiece.html#a94f27d668cfa7c174f0b112245f4de7e',1,'Piece::Piece()=delete'],['../classPiece.html#a1f4a48fc59da47238aa8b58d15881aa2',1,'Piece::Piece(PieceType type, PlayerColor color)']]],
-  ['piece_2eh_41',['piece.h',['../piece_8h.html',1,'']]],
-  ['piecetype_42',['PieceType',['../definitions_8h.html#a12ed9719bbdf7bc596ff7a6f4bf3f021',1,'definitions.h']]],
-  ['player_43',['player',['../classMove.html#a14457fc2615d95537f2558be2614f0a2',1,'Move::player() const'],['../classMove.html#a8db4dd70f55d2ad81fce9f197565e578',1,'Move::player()']]],
-  ['playercolor_44',['PlayerColor',['../definitions_8h.html#a563f124dad4693d4ab6081493d1b5c4b',1,'definitions.h']]],
-  ['position_45',['Position',['../classPosition.html',1,'Position'],['../classPosition.html#a8cd926f0fa78fb4638dccd310e474e9a',1,'Position::Position()=delete'],['../classPosition.html#a2d5f0f6f8476bff0189efb2165606056',1,'Position::Position(uint8_t row, uint8_t col)']]],
-  ['position_2eh_46',['position.h',['../position_8h.html',1,'']]]
+  ['pawn_38',['PAWN',['../namespacechessEngine.html#a0a4ae963ec379905420b849d2ec1c5e9a3acd2a53aca11e0f883236ea27a3b627',1,'chessEngine']]],
+  ['piece_39',['Piece',['../classchessEngine_1_1Piece.html',1,'chessEngine']]],
+  ['piece_40',['piece',['../classchessEngine_1_1Move.html#a769b4038960b2ac9cd34ab673e081000',1,'chessEngine::Move::piece() const'],['../classchessEngine_1_1Move.html#a66db67721528536d0364a6c4cfb8b370',1,'chessEngine::Move::piece()']]],
+  ['piece_41',['Piece',['../classchessEngine_1_1Piece.html#af95a6832752d0cc26236c5ae4c960057',1,'chessEngine::Piece::Piece()=delete'],['../classchessEngine_1_1Piece.html#a908ac42614c976c83d9e7bbe22553f3b',1,'chessEngine::Piece::Piece(PieceType type, PlayerColor color)']]],
+  ['piece_2eh_42',['piece.h',['../piece_8h.html',1,'']]],
+  ['piecetype_43',['PieceType',['../namespacechessEngine.html#a0a4ae963ec379905420b849d2ec1c5e9',1,'chessEngine']]],
+  ['player_44',['player',['../classchessEngine_1_1Move.html#a0690afbd163821cce5d64375aa55ef82',1,'chessEngine::Move::player() const'],['../classchessEngine_1_1Move.html#aae9251a37b26ee5dea827cf4c1a55902',1,'chessEngine::Move::player()']]],
+  ['playercolor_45',['PlayerColor',['../namespacechessEngine.html#a0e3db173099459967c9a248c6289e3ca',1,'chessEngine']]],
+  ['position_46',['Position',['../classchessEngine_1_1Position.html',1,'chessEngine::Position'],['../classchessEngine_1_1Position.html#a7f0360e3e25ad0abde5da65cb7cd78ae',1,'chessEngine::Position::Position()=delete'],['../classchessEngine_1_1Position.html#af64e88ab54ccbf7253c84b9c231c8569',1,'chessEngine::Position::Position(uint8_t row, uint8_t col)']]],
+  ['position_2eh_47',['position.h',['../position_8h.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['defaultboard_80',['defaultBoard',['../classBoard.html#a438240ece734e2ff98d14af30f8cb043',1,'Board']]]
+  ['defaultboard_82',['defaultBoard',['../classchessEngine_1_1Board.html#aeb0a7657a63c87a1fd4cabf9a71a4777',1,'chessEngine::Board']]]
 ];

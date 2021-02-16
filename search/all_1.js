@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['chessengine_4',['ChessEngine',['../index.html',1,'']]],
-  ['col_5',['col',['../classPosition.html#a9e39cd660a1e00eae1b91370b4adbe0f',1,'Position']]],
-  ['color_6',['color',['../classPiece.html#a63b5cd264791c7a6d86b20742396994a',1,'Piece::color() const'],['../classPiece.html#aea5b8abc176c3ef4c5fbed02608c534b',1,'Piece::color()']]]
+  ['chessengine_4',['chessEngine',['../namespacechessEngine.html',1,'']]],
+  ['chessengine_5',['ChessEngine',['../index.html',1,'']]],
+  ['col_6',['col',['../classchessEngine_1_1Position.html#a2e71c495b7dd4498fda16177b6878f3a',1,'chessEngine::Position']]],
+  ['color_7',['color',['../classchessEngine_1_1Piece.html#a9172584f1978d168d1b05b103f49b6f8',1,'chessEngine::Piece::color() const'],['../classchessEngine_1_1Piece.html#aa3fd8fecb189f53822dd90a7cd087f8f',1,'chessEngine::Piece::color()']]]
 ];

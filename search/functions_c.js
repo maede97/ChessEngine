@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['to_96',['to',['../classMove.html#a7dbd200091d4ca36e54db98190cbc693',1,'Move::to() const'],['../classMove.html#a62e0d496e0b2368cf573e78d3e82f1fb',1,'Move::to()']]],
-  ['type_97',['type',['../classPiece.html#a099bcf4db9b928bc9850d0cfacbf3f25',1,'Piece::type() const'],['../classPiece.html#a822a7ffeb5b64109c28f9aaded0ec31d',1,'Piece::type()']]]
+  ['to_98',['to',['../classchessEngine_1_1Move.html#a22dd5ce7a32f105f61c1176c71ae839d',1,'chessEngine::Move::to() const'],['../classchessEngine_1_1Move.html#a60e4517bae73323a6844a43ba372379f',1,'chessEngine::Move::to()']]],
+  ['type_99',['type',['../classchessEngine_1_1Piece.html#a214402e3921ee9e3855c06cac59f8975',1,'chessEngine::Piece::type() const'],['../classchessEngine_1_1Piece.html#ac12e0a77ee6c3bcb656e25575f1c1e9f',1,'chessEngine::Piece::type()']]]
 ];
