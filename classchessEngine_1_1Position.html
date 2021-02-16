@@ -100,6 +100,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5c7b502b4a2fb3d9e9430bf706de7a2a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Position.html#a5c7b502b4a2fb3d9e9430bf706de7a2a">hash</a> () const</td></tr>
 <tr class="memdesc:a5c7b502b4a2fb3d9e9430bf706de7a2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A hash of the current position, which is unique for each position on the board.  <a href="classchessEngine_1_1Position.html#a5c7b502b4a2fb3d9e9430bf706de7a2a">More...</a><br /></td></tr>
 <tr class="separator:a5c7b502b4a2fb3d9e9430bf706de7a2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48df49b9c552c5bff3787ecdea85c69c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Position.html#a48df49b9c552c5bff3787ecdea85c69c">operator==</a> (const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;rhs) const</td></tr>
+<tr class="memdesc:a48df49b9c552c5bff3787ecdea85c69c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two positions for equality.  <a href="classchessEngine_1_1Position.html#a48df49b9c552c5bff3787ecdea85c69c">More...</a><br /></td></tr>
+<tr class="separator:a48df49b9c552c5bff3787ecdea85c69c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6985670d67ff478da114b8793ec37a75"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Position.html#a6985670d67ff478da114b8793ec37a75">operator!=</a> (const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;rhs) const</td></tr>
+<tr class="memdesc:a6985670d67ff478da114b8793ec37a75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two positions for inequality.  <a href="classchessEngine_1_1Position.html#a6985670d67ff478da114b8793ec37a75">More...</a><br /></td></tr>
+<tr class="separator:a6985670d67ff478da114b8793ec37a75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -173,7 +179,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::runtime_error</td><td>if the indices are out of bounds. </td></tr>
+    <tr><td class="paramname">std::out_of_range</td><td>if the indices are out of bounds. </td></tr>
   </table>
   </dd>
 </dl>
@@ -254,6 +260,60 @@ Private Attributes</h2></td></tr>
 
 <p>A hash of the current position, which is unique for each position on the board. </p>
 <dl class="section return"><dt>Returns</dt><dd>The hash value (8 bits suffice for 64 positions). </dd></dl>
+
+</div>
+</div>
+<a id="a6985670d67ff478da114b8793ec37a75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6985670d67ff478da114b8793ec37a75">&#9670;&nbsp;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chessEngine::Position::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compare two positions for inequality. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td>The right hand side of the comparison. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether the two positions are not equal. </dd></dl>
+
+</div>
+</div>
+<a id="a48df49b9c552c5bff3787ecdea85c69c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48df49b9c552c5bff3787ecdea85c69c">&#9670;&nbsp;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chessEngine::Position::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compare two positions for equality. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td>The right hand side of the comparison. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether the two positions are equal. </dd></dl>
 
 </div>
 </div>
