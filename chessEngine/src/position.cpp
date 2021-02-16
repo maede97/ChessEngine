@@ -25,3 +25,11 @@ void Position::get(uint8_t &row, uint8_t &column) const {
 }
 
 uint8_t Position::hash() const { return m_internal_position; }
+
+bool Position::operator==(const Position &rhs) const {
+  return rhs.hash() == this->hash();
+}
+
+bool Position::operator!=(const Position &rhs) const {
+  return !operator==(rhs);
+}

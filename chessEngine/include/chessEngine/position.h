@@ -44,6 +44,20 @@ public:
    */
   uint8_t hash() const;
 
+  /**
+   * @brief Compare two positions for equality.
+   * @param rhs The right hand side of the comparison.
+   * @return Whether the two positions are equal.
+   */
+  bool operator==(const Position &rhs) const;
+
+  /**
+   * @brief Compare two positions for inequality.
+   * @param rhs The right hand side of the comparison.
+   * @return Whether the two positions are not equal.
+   */
+  bool operator!=(const Position &rhs) const;
+
 private:
   /**
    * @brief The internal position store.
