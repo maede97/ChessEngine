@@ -1,0 +1,12 @@
+<map id="state.h" name="state.h">
+<area shape="rect" id="node1" title=" " alt="" coords="244,5,305,32"/>
+<area shape="rect" id="node2" href="$definitions_8h.html" title=" " alt="" coords="5,229,173,256"/>
+<area shape="rect" id="node4" href="$move_8h.html" title=" " alt="" coords="121,80,263,107"/>
+<area shape="rect" id="node7" href="$board_8h.html" title=" " alt="" coords="287,80,430,107"/>
+<area shape="rect" id="node10" title=" " alt="" coords="453,80,512,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="62,304,117,331"/>
+<area shape="rect" id="node5" href="$position_8h.html" title=" " alt="" coords="143,155,297,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="197,229,275,256"/>
+<area shape="rect" id="node8" title=" " alt="" coords="487,155,598,181"/>
+<area shape="rect" id="node9" href="$piece_8h.html" title=" " alt="" coords="321,155,463,181"/>
+</map>

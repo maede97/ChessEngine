@@ -1,0 +1,9 @@
+<map id="board.h" name="board.h">
+<area shape="rect" id="node1" title=" " alt="" coords="179,5,243,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,80,116,107"/>
+<area shape="rect" id="node3" href="$piece_8h.html" title=" " alt="" coords="141,80,282,107"/>
+<area shape="rect" id="node6" href="$position_8h.html" title=" " alt="" coords="306,80,461,107"/>
+<area shape="rect" id="node4" href="$definitions_8h.html" title=" " alt="" coords="166,155,257,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="184,229,239,256"/>
+<area shape="rect" id="node7" title=" " alt="" coords="345,155,422,181"/>
+</map>
