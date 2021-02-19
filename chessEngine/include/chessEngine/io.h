@@ -15,9 +15,10 @@ public:
    *
    * See https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation
    * @param string The string to create the board from.
-   * @todo This is not implemented yet.
+   * @todo This is only partly implemented. The board is read correctly, but the
+   * other information is still neglected.
    */
-  static GameState fromForsythEdwards(const char *string);
+  static GameState fromForsythEdwards(const char *festring);
 
   /**
    * @brief Create a Forsyth-Edwards string from a given gamestate.

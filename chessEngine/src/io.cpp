@@ -1,5 +1,6 @@
 #include <chessEngine/io.h>
 #include <iostream>
+#include <string>
 
 using namespace chessEngine;
 
@@ -7,7 +8,91 @@ GameState IO::fromForsythEdwards(const char *feString) {
   Board board = Board::emptyBoard();
   GameState ret;
 
-  // TODO
+  std::string string = std::string(feString);
+
+  int pos = 0;
+  for (int i = 7; i > -1; i--) {
+    int column = 0;
+    // read until we have a /, but at most 8 steps
+    while (true) // column is increased below
+    {
+      if (string.at(pos) == '/') {
+        // we found a /, move to next row
+        pos++;
+        break;
+      } else if (column == 8) {
+        pos++;
+        break;
+      } else {
+        // read number or character
+        if (std::isdigit(string.at(pos))) {
+          column +=
+              string.at(pos) - '0'; // convert to ascii code and subtract 0
+          pos++;
+        } else {
+          // place a piece
+          switch (string.at(pos)) {
+          case 'p':
+            board.placePiece(Position(i, column),
+                             Piece(PieceType::PAWN, PlayerColor::BLACK));
+            break;
+          case 'n':
+            board.placePiece(Position(i, column),
+                             Piece(PieceType::KNIGHT, PlayerColor::BLACK));
+            break;
+          case 'b':
+            board.placePiece(Position(i, column),
+                             Piece(PieceType::BISHOP, PlayerColor::BLACK));
+            break;
+          case 'r':
+            board.placePiece(Position(i, column),
+                             Piece(PieceType::ROOK, PlayerColor::BLACK));
+            break;
+          case 'q':
+            board.placePiece(Position(i, column),
+                             Piece(PieceType::QUEEN, PlayerColor::BLACK));
+            break;
+          case 'k':
+            board.placePiece(Position(i, column),
+                             Piece(PieceType::KING, PlayerColor::BLACK));
+            break;
+          case 'P':
+            board.placePiece(Position(i, column),
+                             Piece(PieceType::PAWN, PlayerColor::WHITE));
+            break;
+          case 'N':
+            board.placePiece(Position(i, column),
+                             Piece(PieceType::KNIGHT, PlayerColor::WHITE));
+            break;
+          case 'B':
+            board.placePiece(Position(i, column),
+                             Piece(PieceType::BISHOP, PlayerColor::WHITE));
+            break;
+          case 'R':
+            board.placePiece(Position(i, column),
+                             Piece(PieceType::ROOK, PlayerColor::WHITE));
+            break;
+          case 'Q':
+            board.placePiece(Position(i, column),
+                             Piece(PieceType::QUEEN, PlayerColor::WHITE));
+            break;
+          case 'K':
+            board.placePiece(Position(i, column),
+                             Piece(PieceType::KING, PlayerColor::WHITE));
+            break;
+          default:
+            throw std::runtime_error("Unknown character found.");
+            break;
+          }
+          // move a column to the right
+          column++;
+          pos++;
+        }
+      }
+    }
+  }
+
+  // read further information about the game
 
   ret.setBoard(board);
   return ret;
@@ -15,6 +100,8 @@ GameState IO::fromForsythEdwards(const char *feString) {
 
 std::string IO::toForsythEdwards(const GameState &state) {
   std::string ret;
+
+  // TODO
 
   return ret;
 }
