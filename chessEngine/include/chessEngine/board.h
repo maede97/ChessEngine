@@ -125,6 +125,7 @@ public:
    * @brief Gets an 2D array of all valid moves of the given piece.
    * @param position The position of the piece to get the valid moves.
    * @throws std::runtime_error If no piece is in this position.
+   * @attention This does not cover attack moves from pawns!
    */
   std::vector<std::vector<bool>> getValidMoves(const Position &position);
 
