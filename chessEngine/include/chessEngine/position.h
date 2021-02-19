@@ -32,7 +32,7 @@ public:
   uint8_t col() const;
 
   /**
-   * @copydoc Positiion::col()
+   * @copydoc Position::col()
    */
   uint8_t column() const;
 
