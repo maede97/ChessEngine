@@ -99,6 +99,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a38553b67bd2453d00b0ca82e5aa86241"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classchessEngine_1_1Board.html">Board</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a38553b67bd2453d00b0ca82e5aa86241">getBoard</a> () const</td></tr>
 <tr class="memdesc:a38553b67bd2453d00b0ca82e5aa86241"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current board.  <a href="classchessEngine_1_1GameState.html#a38553b67bd2453d00b0ca82e5aa86241">More...</a><br /></td></tr>
 <tr class="separator:a38553b67bd2453d00b0ca82e5aa86241"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dc43576d68da9a94d5a402726248d89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a5dc43576d68da9a94d5a402726248d89">setNextPlayer</a> (<a class="el" href="namespacechessEngine.html#a0e3db173099459967c9a248c6289e3ca">PlayerColor</a> next)</td></tr>
+<tr class="memdesc:a5dc43576d68da9a94d5a402726248d89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the next player to play.  <a href="classchessEngine_1_1GameState.html#a5dc43576d68da9a94d5a402726248d89">More...</a><br /></td></tr>
+<tr class="separator:a5dc43576d68da9a94d5a402726248d89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd23965b48c38030bc639f164903e0a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#abd23965b48c38030bc639f164903e0a4">setCastleInformation</a> (bool whiteKingSide, bool whiteQueenSide, bool blackKingSide, bool blackQueenSide)</td></tr>
+<tr class="memdesc:abd23965b48c38030bc639f164903e0a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set castle information.  <a href="classchessEngine_1_1GameState.html#abd23965b48c38030bc639f164903e0a4">More...</a><br /></td></tr>
+<tr class="separator:abd23965b48c38030bc639f164903e0a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa71264df519d90ea2648d772608df3e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#aa71264df519d90ea2648d772608df3e4">setHalfMoves</a> (unsigned int halfMoves)</td></tr>
+<tr class="memdesc:aa71264df519d90ea2648d772608df3e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the half moves. That is the number of halfmoves since the last capture or pawn advance.  <a href="classchessEngine_1_1GameState.html#aa71264df519d90ea2648d772608df3e4">More...</a><br /></td></tr>
+<tr class="separator:aa71264df519d90ea2648d772608df3e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec786b784dfffb03d24ea70594dd3900"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#aec786b784dfffb03d24ea70594dd3900">setFullMoves</a> (unsigned int fullMoves)</td></tr>
+<tr class="memdesc:aec786b784dfffb03d24ea70594dd3900"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the full moves. Starts at 1 and gets increased after blacks move.  <a href="classchessEngine_1_1GameState.html#aec786b784dfffb03d24ea70594dd3900">More...</a><br /></td></tr>
+<tr class="separator:aec786b784dfffb03d24ea70594dd3900"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -108,10 +120,28 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:adc24d6b845a1e919739a79c080ca48ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classchessEngine_1_1Board.html">Board</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#adc24d6b845a1e919739a79c080ca48ab">m_board</a></td></tr>
 <tr class="memdesc:adc24d6b845a1e919739a79c080ca48ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current <a class="el" href="classchessEngine_1_1Board.html" title="Class to store a chess board.">Board</a>.  <a href="classchessEngine_1_1GameState.html#adc24d6b845a1e919739a79c080ca48ab">More...</a><br /></td></tr>
 <tr class="separator:adc24d6b845a1e919739a79c080ca48ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac29cf57aa9bc3eec80d2f4e5d7d05e01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacechessEngine.html#a0e3db173099459967c9a248c6289e3ca">PlayerColor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#ac29cf57aa9bc3eec80d2f4e5d7d05e01">m_nextPlayer</a></td></tr>
+<tr class="separator:ac29cf57aa9bc3eec80d2f4e5d7d05e01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3ef1abaf42a41e7d3157621a4290458"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#ae3ef1abaf42a41e7d3157621a4290458">m_whiteCastleKingSide</a></td></tr>
+<tr class="memdesc:ae3ef1abaf42a41e7d3157621a4290458"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the white player can castle king side.  <a href="classchessEngine_1_1GameState.html#ae3ef1abaf42a41e7d3157621a4290458">More...</a><br /></td></tr>
+<tr class="separator:ae3ef1abaf42a41e7d3157621a4290458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2e81f7f6d23138f8119c5b479587e9e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#af2e81f7f6d23138f8119c5b479587e9e">m_whiteCastleQueenSide</a></td></tr>
+<tr class="memdesc:af2e81f7f6d23138f8119c5b479587e9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the white player can castle queen side.  <a href="classchessEngine_1_1GameState.html#af2e81f7f6d23138f8119c5b479587e9e">More...</a><br /></td></tr>
+<tr class="separator:af2e81f7f6d23138f8119c5b479587e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d4a2556bcc7a5f18a6030f5be98f46c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a9d4a2556bcc7a5f18a6030f5be98f46c">m_blackCastleKingSide</a></td></tr>
+<tr class="memdesc:a9d4a2556bcc7a5f18a6030f5be98f46c"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the black player can castle king side.  <a href="classchessEngine_1_1GameState.html#a9d4a2556bcc7a5f18a6030f5be98f46c">More...</a><br /></td></tr>
+<tr class="separator:a9d4a2556bcc7a5f18a6030f5be98f46c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac590f99481676cce51c797eeaeaf127e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#ac590f99481676cce51c797eeaeaf127e">m_blackCastleQueenSide</a></td></tr>
+<tr class="memdesc:ac590f99481676cce51c797eeaeaf127e"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the black player can castle queen side.  <a href="classchessEngine_1_1GameState.html#ac590f99481676cce51c797eeaeaf127e">More...</a><br /></td></tr>
+<tr class="separator:ac590f99481676cce51c797eeaeaf127e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19942309ce42955d10de1c7982532a42"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a19942309ce42955d10de1c7982532a42">m_halfMoves</a> = 0</td></tr>
+<tr class="separator:a19942309ce42955d10de1c7982532a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85c80d7e7e34a804c3c11fffaba7fb91"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a85c80d7e7e34a804c3c11fffaba7fb91">m_fullMoves</a> = 1</td></tr>
+<tr class="separator:a85c80d7e7e34a804c3c11fffaba7fb91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to hold the current state of the game. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>This class is still incomplete. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>This class is still incomplete. In addition, all unittests are still needed. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aedcff58ec06e2b0b9bbee3a278212173"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aedcff58ec06e2b0b9bbee3a278212173">&#9670;&nbsp;</a></span>GameState()</h2>
@@ -177,7 +207,188 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="abd23965b48c38030bc639f164903e0a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd23965b48c38030bc639f164903e0a4">&#9670;&nbsp;</a></span>setCastleInformation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chessEngine::GameState::setCastleInformation </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>whiteKingSide</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>whiteQueenSide</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>blackKingSide</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>blackQueenSide</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set castle information. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">whiteKingSide</td><td>If the white player can castle king side. </td></tr>
+    <tr><td class="paramname">whiteQueenSide</td><td>If the white player can castle queen side. </td></tr>
+    <tr><td class="paramname">blackKingSide</td><td>If the black player can castle king side. </td></tr>
+    <tr><td class="paramname">blackQueenSide</td><td>If the black player can castle queen side. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aec786b784dfffb03d24ea70594dd3900"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec786b784dfffb03d24ea70594dd3900">&#9670;&nbsp;</a></span>setFullMoves()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chessEngine::GameState::setFullMoves </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>fullMoves</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the full moves. Starts at 1 and gets increased after blacks move. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fullMoves</td><td>The number to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa71264df519d90ea2648d772608df3e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa71264df519d90ea2648d772608df3e4">&#9670;&nbsp;</a></span>setHalfMoves()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chessEngine::GameState::setHalfMoves </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>halfMoves</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the half moves. That is the number of halfmoves since the last capture or pawn advance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">halfMoves</td><td>The number to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5dc43576d68da9a94d5a402726248d89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dc43576d68da9a94d5a402726248d89">&#9670;&nbsp;</a></span>setNextPlayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chessEngine::GameState::setNextPlayer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacechessEngine.html#a0e3db173099459967c9a248c6289e3ca">PlayerColor</a>&#160;</td>
+          <td class="paramname"><em>next</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the next player to play. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">next</td><td>The player which can play next. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a9d4a2556bcc7a5f18a6030f5be98f46c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d4a2556bcc7a5f18a6030f5be98f46c">&#9670;&nbsp;</a></span>m_blackCastleKingSide</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chessEngine::GameState::m_blackCastleKingSide</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">      <span class="keyword">false</span></div>
+</div><!-- fragment -->
+<p>If the black player can castle king side. </p>
+
+</div>
+</div>
+<a id="ac590f99481676cce51c797eeaeaf127e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac590f99481676cce51c797eeaeaf127e">&#9670;&nbsp;</a></span>m_blackCastleQueenSide</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chessEngine::GameState::m_blackCastleQueenSide</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">      <span class="keyword">false</span></div>
+</div><!-- fragment -->
+<p>If the black player can castle queen side. </p>
+
+</div>
+</div>
 <a id="adc24d6b845a1e919739a79c080ca48ab"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adc24d6b845a1e919739a79c080ca48ab">&#9670;&nbsp;</a></span>m_board</h2>
 
@@ -202,6 +413,52 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a85c80d7e7e34a804c3c11fffaba7fb91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85c80d7e7e34a804c3c11fffaba7fb91">&#9670;&nbsp;</a></span>m_fullMoves</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int chessEngine::GameState::m_fullMoves = 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The number of the full move. It starts at 1, and is incremented after Black's move. </p>
+
+</div>
+</div>
+<a id="a19942309ce42955d10de1c7982532a42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19942309ce42955d10de1c7982532a42">&#9670;&nbsp;</a></span>m_halfMoves</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int chessEngine::GameState::m_halfMoves = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This is the number of halfmoves since the last capture or pawn advance </p>
+
+</div>
+</div>
 <a id="a943bd32458d6155e20e65ea879611278"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a943bd32458d6155e20e65ea879611278">&#9670;&nbsp;</a></span>m_moves</h2>
 
@@ -223,6 +480,80 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>All moves previously done in this game. </p>
+
+</div>
+</div>
+<a id="ac29cf57aa9bc3eec80d2f4e5d7d05e01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac29cf57aa9bc3eec80d2f4e5d7d05e01">&#9670;&nbsp;</a></span>m_nextPlayer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacechessEngine.html#a0e3db173099459967c9a248c6289e3ca">PlayerColor</a> chessEngine::GameState::m_nextPlayer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae3ef1abaf42a41e7d3157621a4290458"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3ef1abaf42a41e7d3157621a4290458">&#9670;&nbsp;</a></span>m_whiteCastleKingSide</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chessEngine::GameState::m_whiteCastleKingSide</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">      <span class="keyword">false</span></div>
+</div><!-- fragment -->
+<p>If the white player can castle king side. </p>
+
+</div>
+</div>
+<a id="af2e81f7f6d23138f8119c5b479587e9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2e81f7f6d23138f8119c5b479587e9e">&#9670;&nbsp;</a></span>m_whiteCastleQueenSide</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chessEngine::GameState::m_whiteCastleQueenSide</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">      <span class="keyword">false</span></div>
+</div><!-- fragment -->
+<p>If the white player can castle queen side. </p>
 
 </div>
 </div>
