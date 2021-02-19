@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['to_72',['to',['../classchessEngine_1_1Move.html#a22dd5ce7a32f105f61c1176c71ae839d',1,'chessEngine::Move::to() const'],['../classchessEngine_1_1Move.html#a60e4517bae73323a6844a43ba372379f',1,'chessEngine::Move::to()']]],
-  ['todo_20list_73',['Todo List',['../todo.html',1,'']]],
-  ['toforsythedwards_74',['toForsythEdwards',['../classchessEngine_1_1IO.html#a55accd19b1c780b943ceb4fe6ce809a6',1,'chessEngine::IO']]],
-  ['type_75',['type',['../classchessEngine_1_1Piece.html#a214402e3921ee9e3855c06cac59f8975',1,'chessEngine::Piece::type() const'],['../classchessEngine_1_1Piece.html#ac12e0a77ee6c3bcb656e25575f1c1e9f',1,'chessEngine::Piece::type()']]]
+  ['setboard_68',['setBoard',['../classchessEngine_1_1GameState.html#ac17309755843e125b556ace923d3a39f',1,'chessEngine::GameState']]],
+  ['setcastleinformation_69',['setCastleInformation',['../classchessEngine_1_1GameState.html#abd23965b48c38030bc639f164903e0a4',1,'chessEngine::GameState']]],
+  ['setfullmoves_70',['setFullMoves',['../classchessEngine_1_1GameState.html#aec786b784dfffb03d24ea70594dd3900',1,'chessEngine::GameState']]],
+  ['sethalfmoves_71',['setHalfMoves',['../classchessEngine_1_1GameState.html#aa71264df519d90ea2648d772608df3e4',1,'chessEngine::GameState']]],
+  ['setnextplayer_72',['setNextPlayer',['../classchessEngine_1_1GameState.html#a5dc43576d68da9a94d5a402726248d89',1,'chessEngine::GameState']]],
+  ['state_2eh_73',['state.h',['../state_8h.html',1,'']]]
 ];

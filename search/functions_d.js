@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['to_135',['to',['../classchessEngine_1_1Move.html#a22dd5ce7a32f105f61c1176c71ae839d',1,'chessEngine::Move::to() const'],['../classchessEngine_1_1Move.html#a60e4517bae73323a6844a43ba372379f',1,'chessEngine::Move::to()']]],
-  ['toforsythedwards_136',['toForsythEdwards',['../classchessEngine_1_1IO.html#a55accd19b1c780b943ceb4fe6ce809a6',1,'chessEngine::IO']]],
-  ['type_137',['type',['../classchessEngine_1_1Piece.html#a214402e3921ee9e3855c06cac59f8975',1,'chessEngine::Piece::type() const'],['../classchessEngine_1_1Piece.html#ac12e0a77ee6c3bcb656e25575f1c1e9f',1,'chessEngine::Piece::type()']]]
+  ['removepiece_132',['removePiece',['../classchessEngine_1_1Board.html#ac86fc8b1034a8e1e8f182a0509f04029',1,'chessEngine::Board']]],
+  ['row_133',['row',['../classchessEngine_1_1Position.html#a8abf11bd7d2236496ec17234331e164b',1,'chessEngine::Position']]]
 ];

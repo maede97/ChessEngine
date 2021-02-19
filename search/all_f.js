@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['setboard_66',['setBoard',['../classchessEngine_1_1GameState.html#ac17309755843e125b556ace923d3a39f',1,'chessEngine::GameState']]],
-  ['setcastleinformation_67',['setCastleInformation',['../classchessEngine_1_1GameState.html#abd23965b48c38030bc639f164903e0a4',1,'chessEngine::GameState']]],
-  ['setfullmoves_68',['setFullMoves',['../classchessEngine_1_1GameState.html#aec786b784dfffb03d24ea70594dd3900',1,'chessEngine::GameState']]],
-  ['sethalfmoves_69',['setHalfMoves',['../classchessEngine_1_1GameState.html#aa71264df519d90ea2648d772608df3e4',1,'chessEngine::GameState']]],
-  ['setnextplayer_70',['setNextPlayer',['../classchessEngine_1_1GameState.html#a5dc43576d68da9a94d5a402726248d89',1,'chessEngine::GameState']]],
-  ['state_2eh_71',['state.h',['../state_8h.html',1,'']]]
+  ['readme_2emd_64',['README.md',['../README_8md.html',1,'']]],
+  ['removepiece_65',['removePiece',['../classchessEngine_1_1Board.html#ac86fc8b1034a8e1e8f182a0509f04029',1,'chessEngine::Board']]],
+  ['rook_66',['ROOK',['../namespacechessEngine.html#a0a4ae963ec379905420b849d2ec1c5e9a97c60a3a4e61ee21e3f38a2f950fe293',1,'chessEngine']]],
+  ['row_67',['row',['../classchessEngine_1_1Position.html#a8abf11bd7d2236496ec17234331e164b',1,'chessEngine::Position']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['numpieces_118',['numPieces',['../classchessEngine_1_1Board.html#ab942fb8b6f36e20fbeea211fe9a09ba6',1,'chessEngine::Board']]]
+  ['isvalid_120',['isValid',['../classchessEngine_1_1Move.html#afd576a412326a8d22da19c5a1309e364',1,'chessEngine::Move']]]
 ];

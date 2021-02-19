@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['version_138',['version',['../classchessEngine_1_1Version.html#a06730503833289b141e7ba63f64feefc',1,'chessEngine::Version']]]
+  ['setboard_134',['setBoard',['../classchessEngine_1_1GameState.html#ac17309755843e125b556ace923d3a39f',1,'chessEngine::GameState']]],
+  ['setcastleinformation_135',['setCastleInformation',['../classchessEngine_1_1GameState.html#abd23965b48c38030bc639f164903e0a4',1,'chessEngine::GameState']]],
+  ['setfullmoves_136',['setFullMoves',['../classchessEngine_1_1GameState.html#aec786b784dfffb03d24ea70594dd3900',1,'chessEngine::GameState']]],
+  ['sethalfmoves_137',['setHalfMoves',['../classchessEngine_1_1GameState.html#aa71264df519d90ea2648d772608df3e4',1,'chessEngine::GameState']]],
+  ['setnextplayer_138',['setNextPlayer',['../classchessEngine_1_1GameState.html#a5dc43576d68da9a94d5a402726248d89',1,'chessEngine::GameState']]]
 ];

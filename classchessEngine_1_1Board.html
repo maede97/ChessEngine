@@ -114,6 +114,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af98bfdd970c461dd113419331bba6084"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#af98bfdd970c461dd113419331bba6084">operator!=</a> (const <a class="el" href="classchessEngine_1_1Board.html">Board</a> &amp;board) const</td></tr>
 <tr class="memdesc:af98bfdd970c461dd113419331bba6084"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two boards piece by piece.  <a href="classchessEngine_1_1Board.html#af98bfdd970c461dd113419331bba6084">More...</a><br /></td></tr>
 <tr class="separator:af98bfdd970c461dd113419331bba6084"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36c359b12e6f846f8c72723b9c27c5fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#a36c359b12e6f846f8c72723b9c27c5fb">applyMove</a> (const <a class="el" href="classchessEngine_1_1Move.html">Move</a> &amp;move)</td></tr>
+<tr class="memdesc:a36c359b12e6f846f8c72723b9c27c5fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a move to the board.  <a href="classchessEngine_1_1Board.html#a36c359b12e6f846f8c72723b9c27c5fb">More...</a><br /></td></tr>
+<tr class="separator:a36c359b12e6f846f8c72723b9c27c5fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -208,6 +211,38 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a36c359b12e6f846f8c72723b9c27c5fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36c359b12e6f846f8c72723b9c27c5fb">&#9670;&nbsp;</a></span>applyMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chessEngine::Board::applyMove </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classchessEngine_1_1Move.html">Move</a> &amp;&#160;</td>
+          <td class="paramname"><em>move</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Applies a move to the board. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">move</td><td>The move to apply. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>If the piece is not at the start position of the move. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aeb0a7657a63c87a1fd4cabf9a71a4777"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeb0a7657a63c87a1fd4cabf9a71a4777">&#9670;&nbsp;</a></span>defaultBoard()</h2>
 

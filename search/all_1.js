@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['changelog_4',['changelog',['../classchessEngine_1_1Version.html#afa9a1cb8b4dc6cc7472ba3eac9dc3f1e',1,'chessEngine::Version']]],
-  ['chessengine_5',['chessEngine',['../namespacechessEngine.html',1,'']]],
-  ['chessengine_6',['ChessEngine',['../index.html',1,'']]],
-  ['col_7',['col',['../classchessEngine_1_1Position.html#a2e71c495b7dd4498fda16177b6878f3a',1,'chessEngine::Position']]],
-  ['color_8',['color',['../classchessEngine_1_1Piece.html#a9172584f1978d168d1b05b103f49b6f8',1,'chessEngine::Piece::color() const'],['../classchessEngine_1_1Piece.html#aa3fd8fecb189f53822dd90a7cd087f8f',1,'chessEngine::Piece::color()']]],
-  ['column_9',['column',['../classchessEngine_1_1Position.html#afa7c59407c3c40b2f3e4ae588a662acb',1,'chessEngine::Position']]]
+  ['bishop_1',['BISHOP',['../namespacechessEngine.html#a0a4ae963ec379905420b849d2ec1c5e9a1834d375f684613c725d039a10db1976',1,'chessEngine']]],
+  ['black_2',['BLACK',['../namespacechessEngine.html#a0e3db173099459967c9a248c6289e3caa08d0012388564e95c3b4a7407cf04965',1,'chessEngine']]],
+  ['board_3',['Board',['../classchessEngine_1_1Board.html#a60bbfba2925f8c7bd8e62a773eb519a6',1,'chessEngine::Board::Board()=delete'],['../classchessEngine_1_1Board.html#a40d5490e173beb9618f930b4a6b63647',1,'chessEngine::Board::Board(map_t positions)'],['../classchessEngine_1_1Board.html',1,'chessEngine::Board']]],
+  ['board_2eh_4',['board.h',['../board_8h.html',1,'']]]
 ];

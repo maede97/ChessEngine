@@ -121,6 +121,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a60e4517bae73323a6844a43ba372379f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Move.html#a60e4517bae73323a6844a43ba372379f">to</a> ()</td></tr>
 <tr class="memdesc:a60e4517bae73323a6844a43ba372379f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for end position.  <a href="classchessEngine_1_1Move.html#a60e4517bae73323a6844a43ba372379f">More...</a><br /></td></tr>
 <tr class="separator:a60e4517bae73323a6844a43ba372379f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd576a412326a8d22da19c5a1309e364"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Move.html#afd576a412326a8d22da19c5a1309e364">isValid</a> (bool attack=false) const</td></tr>
+<tr class="memdesc:afd576a412326a8d22da19c5a1309e364"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if this move is valid based on the current piece.  <a href="classchessEngine_1_1Move.html#afd576a412326a8d22da19c5a1309e364">More...</a><br /></td></tr>
+<tr class="separator:afd576a412326a8d22da19c5a1309e364"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -254,6 +257,34 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Getter for the start position. </p>
+
+</div>
+</div>
+<a id="afd576a412326a8d22da19c5a1309e364"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd576a412326a8d22da19c5a1309e364">&#9670;&nbsp;</a></span>isValid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chessEngine::Move::isValid </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>attack</em> = <code>false</code></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if this move is valid based on the current piece. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">attack</td><td>Whether this piece attacks with this move (required for proper Pawn movement check). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section attention"><dt>Attention</dt><dd>This does not check for pieces inbetween! </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>Not all unit tests are implemented yet. </dd></dl>
 
 </div>
 </div>

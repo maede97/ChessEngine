@@ -1,14 +1,7 @@
 var searchData=
 [
-  ['pawn_50',['PAWN',['../namespacechessEngine.html#a0a4ae963ec379905420b849d2ec1c5e9a3acd2a53aca11e0f883236ea27a3b627',1,'chessEngine']]],
-  ['piece_51',['Piece',['../classchessEngine_1_1Piece.html',1,'chessEngine']]],
-  ['piece_52',['piece',['../classchessEngine_1_1Move.html#a769b4038960b2ac9cd34ab673e081000',1,'chessEngine::Move::piece() const'],['../classchessEngine_1_1Move.html#a66db67721528536d0364a6c4cfb8b370',1,'chessEngine::Move::piece()']]],
-  ['piece_53',['Piece',['../classchessEngine_1_1Piece.html#af95a6832752d0cc26236c5ae4c960057',1,'chessEngine::Piece::Piece()=delete'],['../classchessEngine_1_1Piece.html#a908ac42614c976c83d9e7bbe22553f3b',1,'chessEngine::Piece::Piece(PieceType type, PlayerColor color)']]],
-  ['piece_2eh_54',['piece.h',['../piece_8h.html',1,'']]],
-  ['piecetype_55',['PieceType',['../namespacechessEngine.html#a0a4ae963ec379905420b849d2ec1c5e9',1,'chessEngine']]],
-  ['placepiece_56',['placePiece',['../classchessEngine_1_1Board.html#a9d45e238fa8724cec7aa1f59ab303e75',1,'chessEngine::Board']]],
-  ['player_57',['player',['../classchessEngine_1_1Move.html#a0690afbd163821cce5d64375aa55ef82',1,'chessEngine::Move::player() const'],['../classchessEngine_1_1Move.html#aae9251a37b26ee5dea827cf4c1a55902',1,'chessEngine::Move::player()']]],
-  ['playercolor_58',['PlayerColor',['../namespacechessEngine.html#a0e3db173099459967c9a248c6289e3ca',1,'chessEngine']]],
-  ['position_59',['Position',['../classchessEngine_1_1Position.html',1,'chessEngine::Position'],['../classchessEngine_1_1Position.html#a7f0360e3e25ad0abde5da65cb7cd78ae',1,'chessEngine::Position::Position()=delete'],['../classchessEngine_1_1Position.html#a128fc5836b7e8feb5a260a9e2a2a4034',1,'chessEngine::Position::Position(uint8_t row, uint8_t column)']]],
-  ['position_2eh_60',['position.h',['../position_8h.html',1,'']]]
+  ['operator_21_3d_48',['operator!=',['../classchessEngine_1_1Board.html#af98bfdd970c461dd113419331bba6084',1,'chessEngine::Board::operator!=()'],['../classchessEngine_1_1Piece.html#aebda2440df86506694f5239473a8aa8f',1,'chessEngine::Piece::operator!=()'],['../classchessEngine_1_1Position.html#a6985670d67ff478da114b8793ec37a75',1,'chessEngine::Position::operator!=()']]],
+  ['operator_28_29_49',['operator()',['../structchessEngine_1_1KeyHash.html#ae00a2a7a9d2175512c677339202d36e7',1,'chessEngine::KeyHash::operator()()'],['../structchessEngine_1_1KeyEqual.html#a69b794abc98cf10a0df4326f2dbcd852',1,'chessEngine::KeyEqual::operator()()']]],
+  ['operator_3c_3c_50',['operator&lt;&lt;',['../board_8h.html#ab52c982203e3e6d1cbdc490f405df049',1,'operator&lt;&lt;(std::ostream &amp;os, const chessEngine::Board &amp;board):&#160;board.h'],['../piece_8h.html#a24830fcea45b1902ca6e030217476702',1,'operator&lt;&lt;(std::ostream &amp;os, const chessEngine::Piece &amp;piece):&#160;piece.h'],['../position_8h.html#a5ea6e369b475d60b8c3dac15daf13973',1,'operator&lt;&lt;(std::ostream &amp;os, const chessEngine::Position &amp;position):&#160;position.h']]],
+  ['operator_3d_3d_51',['operator==',['../classchessEngine_1_1Board.html#acf6bdb2689b967d8c676e7c8822630d8',1,'chessEngine::Board::operator==()'],['../classchessEngine_1_1Piece.html#a1622e308539ebf83b2013f5431a9e982',1,'chessEngine::Piece::operator==()'],['../classchessEngine_1_1Position.html#a48df49b9c552c5bff3787ecdea85c69c',1,'chessEngine::Position::operator==()']]]
 ];

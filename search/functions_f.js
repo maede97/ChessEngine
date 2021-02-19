@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['writeblackpiecestostring_139',['writeBlackPiecesToString',['../classchessEngine_1_1IO.html#a1bce97c38bf85306429bdb64177e219e',1,'chessEngine::IO']]],
-  ['writeboardtoconsole_140',['writeBoardToConsole',['../classchessEngine_1_1IO.html#af2917e9cba29a68530a7800c2f0a7120',1,'chessEngine::IO']]],
-  ['writeboardtostring_141',['writeBoardToString',['../classchessEngine_1_1IO.html#ab44e72165915aeebbadd96af4dac7975',1,'chessEngine::IO']]],
-  ['writewhitepiecestostring_142',['writeWhitePiecesToString',['../classchessEngine_1_1IO.html#a8adffa1fd0f106c2d70d066ebacec21e',1,'chessEngine::IO']]]
+  ['to_139',['to',['../classchessEngine_1_1Move.html#a22dd5ce7a32f105f61c1176c71ae839d',1,'chessEngine::Move::to() const'],['../classchessEngine_1_1Move.html#a60e4517bae73323a6844a43ba372379f',1,'chessEngine::Move::to()']]],
+  ['toforsythedwards_140',['toForsythEdwards',['../classchessEngine_1_1IO.html#a55accd19b1c780b943ceb4fe6ce809a6',1,'chessEngine::IO']]],
+  ['type_141',['type',['../classchessEngine_1_1Piece.html#a214402e3921ee9e3855c06cac59f8975',1,'chessEngine::Piece::type() const'],['../classchessEngine_1_1Piece.html#ac12e0a77ee6c3bcb656e25575f1c1e9f',1,'chessEngine::Piece::type()']]]
 ];
