@@ -26,6 +26,7 @@ public:
    * @brief Getter for the row
    */
   uint8_t row() const;
+
   /**
    * @brief Getter for the column
    */

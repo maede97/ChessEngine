@@ -4,6 +4,7 @@
 #include <chessEngine/position.h>
 
 namespace chessEngine {
+
 /**
  * @brief This class contains information about a single move on the game
  */
@@ -27,14 +28,17 @@ public:
    * @brief Getter for the player.
    */
   PlayerColor player() const;
+
   /**
    * @brief Getter for the piece.
    */
   PieceType piece() const;
+
   /**
    * @brief Getter for the start position.
    */
   Position from() const;
+
   /**
    * @brief Getter for the end position.
    */
@@ -44,14 +48,17 @@ public:
    * @brief Setter for the player.
    */
   PlayerColor &player();
+
   /**
    * @brief Setter for the piece.
    */
   PieceType &piece();
+
   /**
    * @brief Setter for start position.
    */
   Position &from();
+
   /**
    * @brief Setter for end position.
    */
