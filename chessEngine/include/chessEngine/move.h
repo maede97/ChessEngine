@@ -69,7 +69,6 @@ public:
    * @param attack Whether this piece attacks with this move (required for
    * proper Pawn movement check).
    * @attention This does not check for pieces inbetween!
-   * @todo Not all unit tests are implemented yet.
    */
   bool isValid(bool attack = false) const;
 
