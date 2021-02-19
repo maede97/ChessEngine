@@ -101,3 +101,24 @@ TEST(Board, Equality) {
   EXPECT_EQ(b1, b2);
   EXPECT_EQ(b2, b1);
 }
+
+TEST(Board, ApplyMove) {
+  auto b = Board::emptyBoard();
+
+  Move m =
+      Move(PlayerColor::WHITE, PieceType::PAWN, Position(1, 0), Position(2, 0));
+
+  EXPECT_THROW(b.applyMove(m), std::runtime_error);
+
+  auto b2 = Board::defaultBoard();
+  EXPECT_NO_THROW(b2.applyMove(m));
+
+  EXPECT_THROW(b2.getPiece(Position(1, 0)), std::runtime_error);
+  EXPECT_EQ(b2.getPiece(Position(2, 0)),
+            Piece(PieceType::PAWN, PlayerColor::WHITE));
+
+  Move m2 =
+      Move(PlayerColor::WHITE, PieceType::ROOK, Position(0, 0), Position(2, 0));
+  // this should not work as we move onto the same field the rook is on
+  EXPECT_THROW(b2.applyMove(m2), std::runtime_error);
+}

@@ -64,6 +64,15 @@ public:
    */
   Position &to();
 
+  /**
+   * @brief Checks if this move is valid based on the current piece.
+   * @param attack Whether this piece attacks with this move (required for
+   * proper Pawn movement check).
+   * @attention This does not check for pieces inbetween!
+   * @todo Not all unit tests are implemented yet.
+   */
+  bool isValid(bool attack = false) const;
+
 private:
   PlayerColor m_player; ///< Internal player storage.
   PieceType m_piece;    ///< Internal piece storage.

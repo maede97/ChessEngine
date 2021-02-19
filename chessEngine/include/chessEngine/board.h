@@ -1,5 +1,6 @@
 #pragma once
 
+#include <chessEngine/move.h>
 #include <chessEngine/piece.h>
 #include <chessEngine/position.h>
 #include <unordered_map>
@@ -110,6 +111,14 @@ public:
    * @return Whether the two boards are not equal.
    */
   bool operator!=(const Board &board) const;
+
+  /**
+   * @brief Applies a move to the board.
+   * @param move The move to apply.
+   * @throws std::runtime_error If the piece is not at the start position of the
+   * move.
+   */
+  void applyMove(const Move &move);
 
 private:
   friend IO;     ///< all IO functions should have access to private members.

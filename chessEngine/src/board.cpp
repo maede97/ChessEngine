@@ -103,6 +103,32 @@ bool Board::operator==(const Board &other) const {
 
 bool Board::operator!=(const Board &other) const { return !operator==(other); }
 
+void Board::applyMove(const Move &move) {
+  auto found = m_board.find(move.from());
+  if (found == m_board.cend()) {
+    throw std::runtime_error(
+        "This move is not valid because the from position is actually empty.");
+  }
+  if (found->second.type() != move.piece() ||
+      found->second.color() != move.player()) {
+    throw std::runtime_error(
+        "This move is invalid because the piece does not match.");
+  }
+  Piece currentPiece = found->second;
+
+  auto to = m_board.find(move.to());
+  if (to != m_board.cend()) {
+    // the to location is not empty
+    // we throw an error here, because this field should be empty
+    throw std::runtime_error("Move to location is not empty. Move invalid.");
+  }
+
+  // now move the piece
+  // --> remove it in the old place and add in the new
+  removePiece(move.from());
+  placePiece(move.to(), currentPiece);
+}
+
 std::ostream &operator<<(std::ostream &os, const Board &board) {
   os << IO::writeBoardToString(board);
   return os;

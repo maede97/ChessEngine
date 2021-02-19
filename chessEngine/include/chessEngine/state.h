@@ -62,7 +62,7 @@ private:
   std::vector<Move> m_moves; ///< All moves previously done in this game.
   Board m_board;             ///< Current Board
 
-  PlayerColor m_nextPlayer;
+  PlayerColor m_nextPlayer; ///< The player which comes next.
   bool m_whiteCastleKingSide =
       false; ///< If the white player can castle king side
   bool m_whiteCastleQueenSide =
@@ -72,12 +72,12 @@ private:
   bool m_blackCastleQueenSide =
       false; ///< If the black player can castle queen side
 
-  // TODO: enpassant tiles
-
   unsigned int m_halfMoves = 0; ///< This is the number of halfmoves since the
                                 ///< last capture or pawn advance
   unsigned int m_fullMoves = 1; ///< The number of the full move. It starts at
                                 ///< 1, and is incremented after Black's move.
+
+  // TODO: store enpassant information
 };
 
 } // namespace chessEngine
