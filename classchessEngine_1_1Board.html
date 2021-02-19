@@ -105,9 +105,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac86fc8b1034a8e1e8f182a0509f04029"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#ac86fc8b1034a8e1e8f182a0509f04029">removePiece</a> (const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;position)</td></tr>
 <tr class="memdesc:ac86fc8b1034a8e1e8f182a0509f04029"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a piece from the board given a position.  <a href="classchessEngine_1_1Board.html#ac86fc8b1034a8e1e8f182a0509f04029">More...</a><br /></td></tr>
 <tr class="separator:ac86fc8b1034a8e1e8f182a0509f04029"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a253614e8c3c6643a2f8988fb95d68ba9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classchessEngine_1_1Piece.html">Piece</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#a253614e8c3c6643a2f8988fb95d68ba9">getPiece</a> (const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;position)</td></tr>
-<tr class="memdesc:a253614e8c3c6643a2f8988fb95d68ba9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the piece from a given position.  <a href="classchessEngine_1_1Board.html#a253614e8c3c6643a2f8988fb95d68ba9">More...</a><br /></td></tr>
-<tr class="separator:a253614e8c3c6643a2f8988fb95d68ba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3708a938653f145342c33a154b5d5580"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classchessEngine_1_1Piece.html">Piece</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#a3708a938653f145342c33a154b5d5580">getPiece</a> (const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;position) const</td></tr>
+<tr class="memdesc:a3708a938653f145342c33a154b5d5580"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the piece from a given position.  <a href="classchessEngine_1_1Board.html#a3708a938653f145342c33a154b5d5580">More...</a><br /></td></tr>
+<tr class="separator:a3708a938653f145342c33a154b5d5580"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf6bdb2689b967d8c676e7c8822630d8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#acf6bdb2689b967d8c676e7c8822630d8">operator==</a> (const <a class="el" href="classchessEngine_1_1Board.html">Board</a> &amp;board) const</td></tr>
+<tr class="memdesc:acf6bdb2689b967d8c676e7c8822630d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two boards piece by piece.  <a href="classchessEngine_1_1Board.html#acf6bdb2689b967d8c676e7c8822630d8">More...</a><br /></td></tr>
+<tr class="separator:acf6bdb2689b967d8c676e7c8822630d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af98bfdd970c461dd113419331bba6084"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#af98bfdd970c461dd113419331bba6084">operator!=</a> (const <a class="el" href="classchessEngine_1_1Board.html">Board</a> &amp;board) const</td></tr>
+<tr class="memdesc:af98bfdd970c461dd113419331bba6084"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two boards piece by piece.  <a href="classchessEngine_1_1Board.html#af98bfdd970c461dd113419331bba6084">More...</a><br /></td></tr>
+<tr class="separator:af98bfdd970c461dd113419331bba6084"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -258,8 +264,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a253614e8c3c6643a2f8988fb95d68ba9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a253614e8c3c6643a2f8988fb95d68ba9">&#9670;&nbsp;</a></span>getPiece()</h2>
+<a id="a3708a938653f145342c33a154b5d5580"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3708a938653f145342c33a154b5d5580">&#9670;&nbsp;</a></span>getPiece()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -269,7 +275,7 @@ Private Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;&#160;</td>
           <td class="paramname"><em>position</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -307,6 +313,60 @@ Private Attributes</h2></td></tr>
 
 <p>Helper to get the number of pieces on this board. </p>
 <dl class="section return"><dt>Returns</dt><dd>The number of pieces. </dd></dl>
+
+</div>
+</div>
+<a id="af98bfdd970c461dd113419331bba6084"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af98bfdd970c461dd113419331bba6084">&#9670;&nbsp;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chessEngine::Board::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classchessEngine_1_1Board.html">Board</a> &amp;&#160;</td>
+          <td class="paramname"><em>board</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compare two boards piece by piece. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">board</td><td>The other board to compare to. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether the two boards are not equal. </dd></dl>
+
+</div>
+</div>
+<a id="acf6bdb2689b967d8c676e7c8822630d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf6bdb2689b967d8c676e7c8822630d8">&#9670;&nbsp;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chessEngine::Board::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classchessEngine_1_1Board.html">Board</a> &amp;&#160;</td>
+          <td class="paramname"><em>board</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compare two boards piece by piece. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">board</td><td>The other board to compare to. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether the two boards are equal. </dd></dl>
 
 </div>
 </div>

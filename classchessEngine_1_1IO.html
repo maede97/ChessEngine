@@ -81,9 +81,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ae42c0407afeb57595c0105faaaae60aa"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classchessEngine_1_1GameState.html">GameState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1IO.html#ae42c0407afeb57595c0105faaaae60aa">fromForsythEdwards</a> (const char *string)</td></tr>
-<tr class="memdesc:ae42c0407afeb57595c0105faaaae60aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a gamestate from the Forsyth-Edwards representation.  <a href="classchessEngine_1_1IO.html#ae42c0407afeb57595c0105faaaae60aa">More...</a><br /></td></tr>
-<tr class="separator:ae42c0407afeb57595c0105faaaae60aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f665a07f2dcc43bf5f8b665a1a41648"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classchessEngine_1_1GameState.html">GameState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1IO.html#a1f665a07f2dcc43bf5f8b665a1a41648">fromForsythEdwards</a> (const char *festring)</td></tr>
+<tr class="memdesc:a1f665a07f2dcc43bf5f8b665a1a41648"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a gamestate from the Forsyth-Edwards representation.  <a href="classchessEngine_1_1IO.html#a1f665a07f2dcc43bf5f8b665a1a41648">More...</a><br /></td></tr>
+<tr class="separator:a1f665a07f2dcc43bf5f8b665a1a41648"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55accd19b1c780b943ceb4fe6ce809a6"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1IO.html#a55accd19b1c780b943ceb4fe6ce809a6">toForsythEdwards</a> (const <a class="el" href="classchessEngine_1_1GameState.html">GameState</a> &amp;state)</td></tr>
 <tr class="memdesc:a55accd19b1c780b943ceb4fe6ce809a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a Forsyth-Edwards string from a given gamestate.  <a href="classchessEngine_1_1IO.html#a55accd19b1c780b943ceb4fe6ce809a6">More...</a><br /></td></tr>
 <tr class="separator:a55accd19b1c780b943ceb4fe6ce809a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -103,8 +103,8 @@ Static Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class contains various helpers to read/write chess boards. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ae42c0407afeb57595c0105faaaae60aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae42c0407afeb57595c0105faaaae60aa">&#9670;&nbsp;</a></span>fromForsythEdwards()</h2>
+<a id="a1f665a07f2dcc43bf5f8b665a1a41648"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f665a07f2dcc43bf5f8b665a1a41648">&#9670;&nbsp;</a></span>fromForsythEdwards()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -116,7 +116,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">static <a class="el" href="classchessEngine_1_1GameState.html">GameState</a> chessEngine::IO::fromForsythEdwards </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>string</em></td><td>)</td>
+          <td class="paramname"><em>festring</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -134,7 +134,7 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>This is not implemented yet. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>This is only partly implemented. The board is read correctly, but the other information is still neglected. </dd></dl>
 
 </div>
 </div>
