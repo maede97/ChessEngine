@@ -126,6 +126,7 @@ public:
    * @param position The position of the piece to get the valid moves.
    * @throws std::runtime_error If no piece is in this position.
    * @attention This does not cover attack moves from pawns!
+   * @todo Filter out moves which are not possible because of other pieces in the way.
    */
   std::vector<std::vector<bool>> getValidMoves(const Position &position);
 
