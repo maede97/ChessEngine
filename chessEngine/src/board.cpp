@@ -1,4 +1,6 @@
 #include <chessEngine/board.h>
+#include <chessEngine/io.h>
+#include <iostream>
 #include <stdexcept>
 
 using namespace chessEngine;
@@ -56,13 +58,52 @@ void Board::removePiece(const Position &position) {
   if (m_board.find(position) == m_board.cend()) {
     throw std::runtime_error("There is no piece in this position.");
   }
-  m_board.erase(position);
+  int erased = m_board.erase(position);
+  if (erased == 0) {
+    throw std::runtime_error("Could not erase this position.");
+  } else {
+  }
 }
 
-Piece Board::getPiece(const Position &position) {
+Piece Board::getPiece(const Position &position) const {
   map_t::const_iterator it = m_board.find(position);
   if (it == m_board.cend()) {
     throw std::runtime_error("There is no piece in this position.");
   }
   return it->second;
+}
+
+bool Board::operator==(const Board &other) const {
+  // there are three cases:
+  // 1. the two boards do not have the same number of pieces --> not equal
+  // 2. the two boards have the same number of pieces AND some are not in the
+  // same position --> not equal
+  // 3. the two boards have the same number of pieces AND ALL are in the same
+  // position --> equal
+  if (numPieces() != other.numPieces()) {
+    // case 1
+    return false;
+  }
+  for (auto piece : m_board) {
+    try {
+      Piece other_p = other.getPiece(piece.first);
+
+      if (other_p != piece.second) {
+        // case 2: we have a different piece in this position
+        return false;
+      }
+    } catch (std::runtime_error e) {
+      // case 2: there is an empty position on the second board
+      return false;
+    }
+  }
+  // case 3
+  return true;
+}
+
+bool Board::operator!=(const Board &other) const { return !operator==(other); }
+
+std::ostream &operator<<(std::ostream &os, const Board &board) {
+  os << IO::writeBoardToString(board);
+  return os;
 }

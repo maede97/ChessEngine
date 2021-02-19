@@ -37,8 +37,16 @@ TEST(Position, Comparisons) {
   auto p2 = Position(0, 0);
   auto p3 = Position(0, 1);
   auto p4 = Position(1, 0);
+
   EXPECT_EQ(p1, p2);
+  EXPECT_EQ(p2, p1);
+
   EXPECT_NE(p1, p3);
+  EXPECT_NE(p3, p1);
+
   EXPECT_NE(p1, p4);
+  EXPECT_NE(p4, p1);
+
   EXPECT_NE(p3, p4);
+  EXPECT_NE(p4, p3);
 }

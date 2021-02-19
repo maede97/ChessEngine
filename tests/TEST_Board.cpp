@@ -60,6 +60,8 @@ TEST(Board, RemovePiece) {
   b.removePiece(Position(0, 0));
   b.removePiece(Position(0, 1));
   EXPECT_THROW(b.removePiece(Position(2, 0)), std::runtime_error);
+
+  EXPECT_THROW(b.getPiece(Position(2, 0)), std::runtime_error);
 }
 
 TEST(Board, GetPiece) {
@@ -73,4 +75,29 @@ TEST(Board, GetPiece) {
             Piece(PieceType::ROOK, PlayerColor::BLACK));
   EXPECT_EQ(b.getPiece(Position(6, 0)),
             Piece(PieceType::PAWN, PlayerColor::BLACK));
+}
+
+TEST(Board, Equality) {
+  auto b1 = Board::defaultBoard();
+  auto b2 = Board::defaultBoard();
+  auto b3 = Board::emptyBoard();
+
+  EXPECT_EQ(b1, b2);
+  EXPECT_EQ(b2, b1);
+
+  EXPECT_NE(b1, b3);
+  EXPECT_NE(b3, b1);
+
+  EXPECT_NE(b2, b3);
+  EXPECT_NE(b3, b2);
+
+  b1.removePiece(Position(0, 0));
+
+  EXPECT_NE(b1, b2);
+  EXPECT_NE(b2, b1);
+
+  b2.removePiece(Position(0, 0));
+
+  EXPECT_EQ(b1, b2);
+  EXPECT_EQ(b2, b1);
 }

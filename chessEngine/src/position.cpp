@@ -19,6 +19,8 @@ uint8_t Position::row() const {
 
 uint8_t Position::col() const { return m_internal_position % 8; }
 
+uint8_t Position::column() const { return col(); }
+
 void Position::get(uint8_t &row, uint8_t &column) const {
   row = this->row();
   column = this->col();
@@ -32,4 +34,9 @@ bool Position::operator==(const Position &rhs) const {
 
 bool Position::operator!=(const Position &rhs) const {
   return !operator==(rhs);
+}
+
+std::ostream &operator<<(std::ostream &out, const Position &position) {
+  out << "Pos(" << (int)position.row() << "/" << (int)position.column() << ")";
+  return out;
 }

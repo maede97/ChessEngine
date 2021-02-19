@@ -27,8 +27,16 @@ TEST(Piece, Comparisons) {
   auto p2 = Piece(PieceType::PAWN, PlayerColor::WHITE);
   auto p3 = Piece(PieceType::PAWN, PlayerColor::BLACK);
   auto p4 = Piece(PieceType::KNIGHT, PlayerColor::WHITE);
+
   EXPECT_EQ(p1, p2);
+  EXPECT_EQ(p2, p1);
+
   EXPECT_NE(p1, p3);
+  EXPECT_NE(p3, p1);
+
   EXPECT_NE(p1, p4);
+  EXPECT_NE(p4, p1);
+
   EXPECT_NE(p3, p4);
+  EXPECT_NE(p4, p3);
 }

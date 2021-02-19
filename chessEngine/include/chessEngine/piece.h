@@ -1,5 +1,6 @@
 #pragma once
 #include "definitions.h"
+#include <iostream>
 
 namespace chessEngine {
 /**
@@ -56,3 +57,10 @@ private:
 };
 
 } // namespace chessEngine
+
+/**
+ * @brief Print a piece to a stream.
+ * @param os The stream to write to.
+ * @param piece The piece to print.
+ */
+std::ostream &operator<<(std::ostream &os, const chessEngine::Piece &piece);

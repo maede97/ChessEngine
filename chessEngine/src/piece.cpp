@@ -16,3 +16,8 @@ bool Piece::operator==(const Piece &rhs) const {
 }
 
 bool Piece::operator!=(const Piece &rhs) const { return !operator==(rhs); }
+
+std::ostream &operator<<(std::ostream &out, const Piece &piece) {
+  out << "Piece(" << (int)piece.type() << "/" << (int)piece.color() << ")";
+  return out;
+}

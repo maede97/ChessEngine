@@ -95,7 +95,21 @@ public:
    * @param position The position of the piece.
    * @throws std::runtime_error If no piece is at that position.
    */
-  Piece getPiece(const Position &position);
+  Piece getPiece(const Position &position) const;
+
+  /**
+   * @brief Compare two boards piece by piece.
+   * @param board The other board to compare to.
+   * @return Whether the two boards are equal.
+   */
+  bool operator==(const Board &board) const;
+
+  /**
+   * @brief Compare two boards piece by piece.
+   * @param board The other board to compare to.
+   * @return Whether the two boards are not equal.
+   */
+  bool operator!=(const Board &board) const;
 
 private:
   friend IO;     ///< all IO functions should have access to private members.
@@ -103,3 +117,10 @@ private:
 };
 
 } // namespace chessEngine
+
+/**
+ * @brief Print a board to a stream.
+ * @param os The stream to write to.
+ * @param board The board to print.
+ */
+std::ostream &operator<<(std::ostream &os, const chessEngine::Board &board);

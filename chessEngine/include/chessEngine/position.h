@@ -1,6 +1,7 @@
 #pragma once
 
 #include <inttypes.h>
+#include <iostream>
 
 namespace chessEngine {
 /**
@@ -29,6 +30,11 @@ public:
    * @brief Getter for the column
    */
   uint8_t col() const;
+
+  /**
+   * @copydoc Positiion::col()
+   */
+  uint8_t column() const;
 
   /**
    * @brief Getter for row and column.
@@ -69,3 +75,11 @@ private:
 };
 
 } // namespace chessEngine
+
+/**
+ * @brief Print a position to a stream.
+ * @param os The stream to write to.
+ * @param position The position to print.
+ */
+std::ostream &operator<<(std::ostream &os,
+                         const chessEngine::Position &position);
