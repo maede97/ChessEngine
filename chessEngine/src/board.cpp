@@ -133,3 +133,25 @@ std::ostream &operator<<(std::ostream &os, const Board &board) {
   os << IO::writeBoardToString(board);
   return os;
 }
+
+std::vector<std::vector<bool>> Board::getValidMoves(const Position &position) {
+  std::vector<std::vector<bool>> ret;
+  std::vector<bool> empty;
+  empty.resize(8, false);
+  ret.resize(8, empty);
+
+  auto it = m_board.find(position);
+  if (it == m_board.cend()) {
+    throw std::runtime_error("There is no piece in this position.");
+  }
+
+  for (int i = 7; i > -1; i--) {
+    for (int j = 0; j < 8; j++) {
+      ret[i][j] =
+          Move(it->second.color(), it->second.type(), it->first, Position(i, j))
+              .isValid();
+    }
+  }
+
+  return ret;
+}

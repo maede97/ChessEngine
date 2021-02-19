@@ -5,6 +5,8 @@ using namespace chessEngine;
 Piece::Piece(PieceType type, PlayerColor color)
     : m_type(type), m_color(color) {}
 
+Piece::Piece(PlayerColor color, PieceType type) : Piece(type, color) {}
+
 PieceType Piece::type() const { return m_type; }
 PlayerColor Piece::color() const { return m_color; }
 

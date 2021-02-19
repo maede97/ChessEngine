@@ -4,6 +4,7 @@
 #include <chessEngine/piece.h>
 #include <chessEngine/position.h>
 #include <unordered_map>
+#include <vector>
 
 namespace chessEngine {
 // forward declaration of IO class for friend
@@ -119,6 +120,13 @@ public:
    * move.
    */
   void applyMove(const Move &move);
+
+  /**
+   * @brief Gets an 2D array of all valid moves of the given piece.
+   * @param position The position of the piece to get the valid moves.
+   * @throws std::runtime_error If no piece is in this position.
+   */
+  std::vector<std::vector<bool>> getValidMoves(const Position &position);
 
 private:
   friend IO;     ///< all IO functions should have access to private members.

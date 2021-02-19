@@ -20,6 +20,11 @@ public:
   Piece(PieceType type, PlayerColor color);
 
   /**
+   * @copydoc Piece::Piece(PieceType type, PlayerColor color)
+   */
+  Piece(PlayerColor color, PieceType type);
+
+  /**
    * @brief Getter for the type.
    */
   PieceType type() const;
