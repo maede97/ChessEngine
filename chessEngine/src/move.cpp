@@ -16,6 +16,10 @@ Position &Move::from() { return m_from; }
 Position &Move::to() { return m_to; }
 
 bool Move::isValid(bool attack) const {
+  // if we stay on the same piece, this is not a valid move.
+  if (m_to == m_from)
+    return false;
+
   switch (m_piece) {
   case PieceType::PAWN: {
     // if white, can only move towards positive row count
@@ -120,7 +124,7 @@ bool Move::isValid(bool attack) const {
     bool true_if = case1 && !case2 && !case3 || !case1 && case2 && !case3 ||
                    !case1 && !case2 && case3;
 
-    if (true_if)
+    if (!true_if)
       return false;
 
     break;
@@ -136,12 +140,13 @@ bool Move::isValid(bool attack) const {
     bool case2 = std::abs(m_from.row() - m_to.row()) == 0 &&
                  std::abs(m_from.col() - m_to.col()) == 1;
     bool case3 = std::abs(m_from.row() - m_to.row()) ==
-                 std::abs(m_from.col() - m_to.col());
+                     std::abs(m_from.col() - m_to.col()) &&
+                 std::abs(m_from.row() - m_to.row()) == 1;
 
     bool true_if = case1 && !case2 && !case3 || !case1 && case2 && !case3 ||
                    !case1 && !case2 && case3;
 
-    if (true_if)
+    if (!true_if)
       return false;
 
     break;
