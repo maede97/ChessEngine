@@ -145,6 +145,8 @@ void Application::run() {
       bool isCheck = false;
       bool isAttack = false;
 
+      bool globalCheck = false;
+
       // DRAW THE BOARD
       for (int i = 7; i > -1; i--) {
         for (int j = 0; j < 8; j++) {
@@ -191,6 +193,7 @@ void Application::run() {
               }
               if (board->isCheckMove(m)) {
                 isCheck = true;
+                globalCheck = true;
               }
             }
 
@@ -265,7 +268,7 @@ void Application::run() {
         ImGui::NewLine();
       }
 
-      if (isCheck) {
+      if (globalCheck) {
         ImGui::Text("CHECK!");
       }
 
