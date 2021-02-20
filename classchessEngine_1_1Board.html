@@ -129,6 +129,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad54e8cf921aad2b4c2e6d1b3d042f190"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#ad54e8cf921aad2b4c2e6d1b3d042f190">isCheckMove</a> (const <a class="el" href="classchessEngine_1_1Move.html">Move</a> &amp;move) const</td></tr>
 <tr class="memdesc:ad54e8cf921aad2b4c2e6d1b3d042f190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a certain move is a check move.  <a href="classchessEngine_1_1Board.html#ad54e8cf921aad2b4c2e6d1b3d042f190">More...</a><br /></td></tr>
 <tr class="separator:ad54e8cf921aad2b4c2e6d1b3d042f190"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28b19903b38ba79c41fffd6abdb27e9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#a28b19903b38ba79c41fffd6abdb27e9a">getCheckInfo</a> (bool &amp;whiteCheck, bool &amp;blackCheck) const</td></tr>
+<tr class="memdesc:a28b19903b38ba79c41fffd6abdb27e9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get info about the check status of the board.  <a href="classchessEngine_1_1Board.html#a28b19903b38ba79c41fffd6abdb27e9a">More...</a><br /></td></tr>
+<tr class="separator:a28b19903b38ba79c41fffd6abdb27e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -308,6 +311,43 @@ Private Attributes</h2></td></tr>
 
 <p>Creates an empty chess board. </p>
 <dl class="section return"><dt>Returns</dt><dd>The chess board created. </dd></dl>
+
+</div>
+</div>
+<a id="a28b19903b38ba79c41fffd6abdb27e9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28b19903b38ba79c41fffd6abdb27e9a">&#9670;&nbsp;</a></span>getCheckInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chessEngine::Board::getCheckInfo </td>
+          <td>(</td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>whiteCheck</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>blackCheck</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get info about the check status of the board. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">whiteCheck</td><td>If the white king is in check. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">blackCheck</td><td>If the black king is in check. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

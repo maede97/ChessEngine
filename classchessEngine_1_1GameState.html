@@ -99,9 +99,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a38553b67bd2453d00b0ca82e5aa86241"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classchessEngine_1_1Board.html">Board</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a38553b67bd2453d00b0ca82e5aa86241">getBoard</a> () const</td></tr>
 <tr class="memdesc:a38553b67bd2453d00b0ca82e5aa86241"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current board.  <a href="classchessEngine_1_1GameState.html#a38553b67bd2453d00b0ca82e5aa86241">More...</a><br /></td></tr>
 <tr class="separator:a38553b67bd2453d00b0ca82e5aa86241"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11d48ad07b2dfbeb631c5cada78181ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a11d48ad07b2dfbeb631c5cada78181ba">applyMove</a> (const <a class="el" href="classchessEngine_1_1Move.html">Move</a> &amp;move)</td></tr>
+<tr class="memdesc:a11d48ad07b2dfbeb631c5cada78181ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a full chess move.  <a href="classchessEngine_1_1GameState.html#a11d48ad07b2dfbeb631c5cada78181ba">More...</a><br /></td></tr>
+<tr class="separator:a11d48ad07b2dfbeb631c5cada78181ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5dc43576d68da9a94d5a402726248d89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a5dc43576d68da9a94d5a402726248d89">setNextPlayer</a> (<a class="el" href="namespacechessEngine.html#a0e3db173099459967c9a248c6289e3ca">PlayerColor</a> next)</td></tr>
 <tr class="memdesc:a5dc43576d68da9a94d5a402726248d89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the next player to play.  <a href="classchessEngine_1_1GameState.html#a5dc43576d68da9a94d5a402726248d89">More...</a><br /></td></tr>
 <tr class="separator:a5dc43576d68da9a94d5a402726248d89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2756a226bed662e818c749033c01c90"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacechessEngine.html#a0e3db173099459967c9a248c6289e3ca">PlayerColor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#aa2756a226bed662e818c749033c01c90">getNextPlayer</a> () const</td></tr>
+<tr class="memdesc:aa2756a226bed662e818c749033c01c90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next player to play.  <a href="classchessEngine_1_1GameState.html#aa2756a226bed662e818c749033c01c90">More...</a><br /></td></tr>
+<tr class="separator:aa2756a226bed662e818c749033c01c90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd23965b48c38030bc639f164903e0a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#abd23965b48c38030bc639f164903e0a4">setCastleInformation</a> (bool whiteKingSide, bool whiteQueenSide, bool blackKingSide, bool blackQueenSide)</td></tr>
 <tr class="memdesc:abd23965b48c38030bc639f164903e0a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set castle information.  <a href="classchessEngine_1_1GameState.html#abd23965b48c38030bc639f164903e0a4">More...</a><br /></td></tr>
 <tr class="separator:abd23965b48c38030bc639f164903e0a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -163,6 +169,38 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a11d48ad07b2dfbeb631c5cada78181ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11d48ad07b2dfbeb631c5cada78181ba">&#9670;&nbsp;</a></span>applyMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chessEngine::GameState::applyMove </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classchessEngine_1_1Move.html">Move</a> &amp;&#160;</td>
+          <td class="paramname"><em>move</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Applies a full chess move. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">move</td><td>The move to apply. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>If the move is from the wrong player or if the move is invalid. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a38553b67bd2453d00b0ca82e5aa86241"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a38553b67bd2453d00b0ca82e5aa86241">&#9670;&nbsp;</a></span>getBoard()</h2>
 
@@ -179,6 +217,25 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the current board. </p>
+
+</div>
+</div>
+<a id="aa2756a226bed662e818c749033c01c90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2756a226bed662e818c749033c01c90">&#9670;&nbsp;</a></span>getNextPlayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacechessEngine.html#a0e3db173099459967c9a248c6289e3ca">PlayerColor</a> chessEngine::GameState::getNextPlayer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the next player to play. </p>
 
 </div>
 </div>
