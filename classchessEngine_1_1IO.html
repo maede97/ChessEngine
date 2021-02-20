@@ -99,6 +99,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:af2917e9cba29a68530a7800c2f0a7120"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1IO.html#af2917e9cba29a68530a7800c2f0a7120">writeBoardToConsole</a> (const <a class="el" href="classchessEngine_1_1Board.html">Board</a> &amp;board, bool invertColors=false)</td></tr>
 <tr class="memdesc:af2917e9cba29a68530a7800c2f0a7120"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a board to the console.  <a href="classchessEngine_1_1IO.html#af2917e9cba29a68530a7800c2f0a7120">More...</a><br /></td></tr>
 <tr class="separator:af2917e9cba29a68530a7800c2f0a7120"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b1b7bc3c40e95fe22ac73f0a5129582"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1IO.html#a9b1b7bc3c40e95fe22ac73f0a5129582">pieceToChar</a> (const <a class="el" href="namespacechessEngine.html#a0e3db173099459967c9a248c6289e3ca">PlayerColor</a> &amp;color, const <a class="el" href="namespacechessEngine.html#a0a4ae963ec379905420b849d2ec1c5e9">PieceType</a> &amp;type)</td></tr>
+<tr class="memdesc:a9b1b7bc3c40e95fe22ac73f0a5129582"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the corresponding chess character (unicode, therefore 4 chars) for the given piece.  <a href="classchessEngine_1_1IO.html#a9b1b7bc3c40e95fe22ac73f0a5129582">More...</a><br /></td></tr>
+<tr class="separator:a9b1b7bc3c40e95fe22ac73f0a5129582"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a156c2b05891b89e57f0db60f7a4aef75"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1IO.html#a156c2b05891b89e57f0db60f7a4aef75">pieceToCharSimple</a> (const <a class="el" href="namespacechessEngine.html#a0e3db173099459967c9a248c6289e3ca">PlayerColor</a> &amp;color, const <a class="el" href="namespacechessEngine.html#a0a4ae963ec379905420b849d2ec1c5e9">PieceType</a> &amp;type)</td></tr>
+<tr class="memdesc:a156c2b05891b89e57f0db60f7a4aef75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the corresponding chess character (ascii, 2 chars) for the given piece.  <a href="classchessEngine_1_1IO.html#a156c2b05891b89e57f0db60f7a4aef75">More...</a><br /></td></tr>
+<tr class="separator:a156c2b05891b89e57f0db60f7a4aef75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class contains various helpers to read/write chess boards. </p>
@@ -134,7 +140,98 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>This is only partly implemented. The board is read correctly, but the other information is still neglected. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>This is only partly implemented. The board is read correctly, but the other information is still neglected. </dd></dl>
+
+</div>
+</div>
+<a id="a9b1b7bc3c40e95fe22ac73f0a5129582"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b1b7bc3c40e95fe22ac73f0a5129582">&#9670;&nbsp;</a></span>pieceToChar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const char* chessEngine::IO::pieceToChar </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacechessEngine.html#a0e3db173099459967c9a248c6289e3ca">PlayerColor</a> &amp;&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespacechessEngine.html#a0a4ae963ec379905420b849d2ec1c5e9">PieceType</a> &amp;&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the corresponding chess character (unicode, therefore 4 chars) for the given piece. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>The color of the piece. </td></tr>
+    <tr><td class="paramname">type</td><td>The type of the piece. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section attention"><dt>Attention</dt><dd>The returned char array might not be in your character set. Use pieceToCharSimple for an ASCII-representation. </dd></dl>
+
+</div>
+</div>
+<a id="a156c2b05891b89e57f0db60f7a4aef75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a156c2b05891b89e57f0db60f7a4aef75">&#9670;&nbsp;</a></span>pieceToCharSimple()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const char* chessEngine::IO::pieceToCharSimple </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacechessEngine.html#a0e3db173099459967c9a248c6289e3ca">PlayerColor</a> &amp;&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespacechessEngine.html#a0a4ae963ec379905420b849d2ec1c5e9">PieceType</a> &amp;&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the corresponding chess character (ascii, 2 chars) for the given piece. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>The color of the piece. </td></tr>
+    <tr><td class="paramname">type</td><td>The type of the piece. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -169,7 +266,7 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>This is not implemented yet. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo:</a></b></dt><dd>This is not implemented yet. </dd></dl>
 
 </div>
 </div>
