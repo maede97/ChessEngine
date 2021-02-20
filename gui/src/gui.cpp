@@ -1,4 +1,4 @@
-#include <ChessEngine/gui.h>
+#include <ChessEngineGui/gui.h>
 #include <iostream>
 #include <stdexcept>
 #include <vector>
@@ -6,7 +6,9 @@
 #include <imgui_impl_glfw.h>
 #include <imgui_impl_opengl3.h>
 
-#include <ChessEngine/logger.h>
+#include <ChessEngineGui/logger.h>
+
+#include <chessEngine/io.h>
 
 CHESS_NAMESPACE_BEGIN
 
@@ -53,11 +55,15 @@ Application::Application(int width, int height, const char *title)
   ImGui::StyleColorsDark();
   ImGui_ImplGlfw_InitForOpenGL(window, true);
   ImGui_ImplOpenGL3_Init("#version 130");
+
+  board = new chessEngine::Board(chessEngine::Board::emptyBoard());
 }
 
 Application::~Application() {
   glfwDestroyWindow(window);
   glfwTerminate();
+
+  delete board;
 }
 
 void Application::run() {
@@ -81,6 +87,133 @@ void Application::run() {
       // Draw all imgui stuff here
       ImGui::Begin("Log");
       Logger::displayConsole(10);
+      ImGui::End();
+
+      ImGui::Begin("Board");
+
+      // COMBOBOX FOR COLOR
+
+      const char *itemColor[] = {"White", "Black"};
+      static const char *current_item_color = "White";
+      if (ImGui::BeginCombo("##comboColor", current_item_color)) {
+        for (int i = 0; i < IM_ARRAYSIZE(itemColor); i++) {
+          bool is_selected = (current_item_color == itemColor[i]);
+          if (ImGui::Selectable(itemColor[i], is_selected)) {
+            current_item_color = itemColor[i]; // udpate
+            currentPlayerColor = chessEngine::PlayerColor(i + 1);
+
+            if (clickedPosition) {
+              board->removePiece(*clickedPosition);
+              delete clickedPosition;
+              clickedPosition = nullptr;
+            }
+          }
+          if (is_selected) {
+            ImGui::SetItemDefaultFocus();
+          }
+        }
+        ImGui::EndCombo();
+      }
+
+      // COMBOBOX FOR TYPE
+
+      const char *items[] = {"Pawn", "Knight", "Bishop",
+                             "Rook", "Queen",  "King"};
+      static const char *current_item = "Pawn";
+
+      if (ImGui::BeginCombo("##comboType", current_item)) {
+        for (int i = 0; i < IM_ARRAYSIZE(items); i++) {
+          bool is_selected = (current_item == items[i]);
+          if (ImGui::Selectable(items[i], is_selected)) {
+            current_item = items[i]; // udpate
+            currentPieceType = chessEngine::PieceType(i + 1);
+
+            if (clickedPosition) {
+              board->removePiece(*clickedPosition);
+              delete clickedPosition;
+              clickedPosition = nullptr;
+            }
+          }
+          if (is_selected) {
+            ImGui::SetItemDefaultFocus();
+          }
+        }
+        ImGui::EndCombo();
+      }
+
+      // CHECK VALID MOVES
+
+      std::vector<std::vector<bool>> validMoves;
+
+      if (clickedPosition) {
+        // check for validity
+        validMoves = board->getValidMoves(*clickedPosition);
+      }
+
+      // DRAW THE BOARD
+      for (int i = 7; i > -1; i--) {
+        for (int j = 0; j < 8; j++) {
+          ImGui::PushID(i * 8 + j);
+          // Push a color based on i and j
+          if ((i + j) % 2 != 0) {
+            ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(1, 1, 1, 1));
+            ImGui::PushStyleColor(ImGuiCol_ButtonHovered,
+                                  ImVec4(0.5, 0.5, 0.5, 1));
+            ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0, 0, 0, 1));
+          } else {
+            ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0, 0, 0, 1));
+            ImGui::PushStyleColor(ImGuiCol_ButtonHovered,
+                                  ImVec4(0.5, 0.5, 0.5, 1));
+            ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1, 1, 1, 1));
+          }
+
+          if (clickedPosition) {
+            const char *toPrint = " ";
+
+            // if valid move, change the char to print
+            if (validMoves.size() > 0 && validMoves[i][j]) {
+              toPrint = "O";
+            }
+
+            // we have a clicked position, draw this button differently
+            if (chessEngine::Position(i, j) == *clickedPosition) {
+              if (ImGui::Button(chessEngine::IO::pieceToCharSimple(
+                                    currentPlayerColor, currentPieceType),
+                                ImVec2(50, 50))) {
+                // reset
+                board->removePiece(*clickedPosition);
+                delete clickedPosition;
+                clickedPosition = nullptr;
+              }
+            } else {
+              if (ImGui::Button(toPrint, ImVec2(50, 50))) {
+                // new position
+                board->removePiece(*clickedPosition);
+                delete clickedPosition;
+                clickedPosition = new chessEngine::Position(i, j);
+                board->placePiece(
+                    *clickedPosition,
+                    chessEngine::Piece(currentPieceType, currentPlayerColor));
+              }
+            }
+          } else {
+            // a button click will set the clickedPosition
+            if (ImGui::Button("", ImVec2(50, 50))) {
+              clickedPosition = new chessEngine::Position(i, j);
+              board->placePiece(
+                  *clickedPosition,
+                  chessEngine::Piece(currentPieceType, currentPlayerColor));
+            }
+          }
+
+          ImGui::SameLine();
+
+          ImGui::PopStyleColor(3);
+          ImGui::PopID();
+        }
+        ImGui::NewLine();
+      }
+
       ImGui::End();
     }
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include <ChessEngine/utils.h>
+#include <ChessEngineGui/utils.h>
 #include <chrono>
 
 CHESS_NAMESPACE_BEGIN

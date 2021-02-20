@@ -1,4 +1,4 @@
-#include <ChessEngine/logger.h>
+#include <ChessEngineGui/logger.h>
 
 CHESS_NAMESPACE_BEGIN
 

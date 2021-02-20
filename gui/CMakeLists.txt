@@ -54,5 +54,5 @@ target_compile_definitions(ChessEngineGui PUBLIC -DIMGUI_IMPL_OPENGL_LOADER_GLAD
 target_sources(ChessEngineGui PUBLIC ${IMGUI_SOURCES} ${imgui_SOURCE_DIR}/backends/imgui_impl_glfw.cpp ${imgui_SOURCE_DIR}/backends/imgui_impl_opengl3.cpp)
 
 add_dependencies(ChessEngineGui glfw)
-target_include_directories(ChessEngineGui PUBLIC include ext/glfw glad ${imgui_SOURCE_DIR} ${imgui_SOURCE_DIR}/backends chessEngine)
-target_link_libraries(ChessEngineGui chessEngineLib glfw glad sqlite3)
+target_include_directories(ChessEngineGui PUBLIC include ext/glfw glad ${imgui_SOURCE_DIR} ${imgui_SOURCE_DIR}/backends chessEngineLib)
+target_link_libraries(ChessEngineGui chessEngineLib glfw glad)

@@ -1,4 +1,4 @@
-#include <ChessEngine/timer.h>
+#include <ChessEngineGui/timer.h>
 
 CHESS_NAMESPACE_BEGIN
 

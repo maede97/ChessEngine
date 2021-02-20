@@ -1,7 +1,7 @@
-#include <ChessEngine/gui.h>
+#include <ChessEngineGui/gui.h>
 
 int main(int argc, char const *argv[]) {
-  ChessEngine::Application app;
+  ChessEngineGui::Application app;
   app.run();
 
   return 0;

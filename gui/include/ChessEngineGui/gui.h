@@ -1,9 +1,12 @@
-#include <ChessEngine/utils.h>
+#pragma once
+
+#include <ChessEngineGui/timer.h>
+#include <ChessEngineGui/utils.h>
+
+#include <chessEngine/board.h>
 
 #include <GLFW/glfw3.h>
 #include <glad/glad.h>
-
-#include <ChessEngine/timer.h>
 
 #include <imgui.h>
 
@@ -12,7 +15,7 @@ CHESS_NAMESPACE_BEGIN
 class Application {
 public:
   Application(int width = 1200, int height = 800,
-              const char *title = "ChessEngine");
+              const char *title = "ChessEngineGui");
 
   ~Application();
 
@@ -36,6 +39,11 @@ private:
   int width, height;
 
   Timer fpsTimer;
+
+  chessEngine::Board *board = nullptr;
+  chessEngine::Position *clickedPosition = nullptr;
+  chessEngine::PieceType currentPieceType = chessEngine::PieceType::PAWN;
+  chessEngine::PlayerColor currentPlayerColor = chessEngine::PlayerColor::WHITE;
 };
 
 CHESS_NAMESPACE_END
