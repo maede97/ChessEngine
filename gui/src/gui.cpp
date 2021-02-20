@@ -154,6 +154,10 @@ void Application::run() {
       for (int i = 7; i > -1; i--) {
         for (int j = 0; j < 8; j++) {
           ImGui::PushID(i * 8 + j);
+
+          // no spacing between buttons
+
+          ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(0, 0));
           // Push a color based on i and j
           if ((i + j) % 2 != 0) {
             ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(1, 1, 1, 1));
@@ -209,6 +213,7 @@ void Application::run() {
           ImGui::SameLine();
 
           ImGui::PopStyleColor(3);
+          ImGui::PopStyleVar();
           ImGui::PopID();
         }
         ImGui::NewLine();
