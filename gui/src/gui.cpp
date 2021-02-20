@@ -56,7 +56,7 @@ Application::Application(int width, int height, const char *title)
   ImGui_ImplGlfw_InitForOpenGL(window, true);
   ImGui_ImplOpenGL3_Init("#version 130");
 
-  board = new chessEngine::Board(chessEngine::Board::emptyBoard());
+  board = new chessEngine::Board(chessEngine::Board::defaultBoard());
 }
 
 Application::~Application() {
@@ -170,13 +170,26 @@ void Application::run() {
                                   ImVec4(0.5, 0.5, 0.5, 1));
             ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1, 1, 1, 1));
           }
-
+          const char *toPrint = " ";
+          try {
+            // try to get the real value at this position
+            chessEngine::Piece pieceAt =
+                board->getPiece(chessEngine::Position(i, j));
+            toPrint = chessEngine::IO::pieceToCharSimple(pieceAt);
+          } catch (std::runtime_error e) {
+            // pass
+          }
           if (clickedPosition) {
-            const char *toPrint = " ";
-
             // if valid move, change the char to print
             if (validMoves.size() > 0 && validMoves[i][j]) {
-              toPrint = "O";
+              chessEngine::Move m = chessEngine::Move(
+                  currentPlayerColor, currentPieceType, *clickedPosition,
+                  chessEngine::Position(i, j));
+              if (board->isAttackMove(m)) {
+                toPrint = "X";
+              } else {
+                toPrint = "O";
+              }
             }
 
             // we have a clicked position, draw this button differently
@@ -188,6 +201,7 @@ void Application::run() {
                 board->removePiece(*clickedPosition);
                 delete clickedPosition;
                 clickedPosition = nullptr;
+                validMoves.clear();
               }
             } else {
               if (ImGui::Button(toPrint, ImVec2(50, 50))) {
@@ -198,15 +212,18 @@ void Application::run() {
                 board->placePiece(
                     *clickedPosition,
                     chessEngine::Piece(currentPieceType, currentPlayerColor));
+                // we had a change in the move, recompute the valid moves.
+                validMoves = board->getValidMoves(*clickedPosition);
               }
             }
           } else {
             // a button click will set the clickedPosition
-            if (ImGui::Button("", ImVec2(50, 50))) {
+            if (ImGui::Button(toPrint, ImVec2(50, 50))) {
               clickedPosition = new chessEngine::Position(i, j);
               board->placePiece(
                   *clickedPosition,
                   chessEngine::Piece(currentPieceType, currentPlayerColor));
+              validMoves = board->getValidMoves(*clickedPosition);
             }
           }
 
