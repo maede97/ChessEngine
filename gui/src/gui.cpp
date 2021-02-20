@@ -141,18 +141,17 @@ void Application::run() {
         ImGui::EndCombo();
       }
 
-      // CHECK VALID MOVES
-
-      std::vector<std::vector<bool>> validMoves;
-
-      if (clickedPosition) {
-        // check for validity
-        validMoves = board->getValidMoves(*clickedPosition);
-      }
+      bool isValid = false;
+      bool isCheck = false;
+      bool isAttack = false;
 
       // DRAW THE BOARD
       for (int i = 7; i > -1; i--) {
         for (int j = 0; j < 8; j++) {
+          isValid = false;
+          isCheck = false;
+          isAttack = false;
+
           ImGui::PushID(i * 8 + j);
 
           // no spacing between buttons
@@ -160,11 +159,13 @@ void Application::run() {
           ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(0, 0));
           // Push a color based on i and j
           if ((i + j) % 2 != 0) {
+            // white
             ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(1, 1, 1, 1));
             ImGui::PushStyleColor(ImGuiCol_ButtonHovered,
                                   ImVec4(0.5, 0.5, 0.5, 1));
             ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0, 0, 0, 1));
           } else {
+            // black
             ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0, 0, 0, 1));
             ImGui::PushStyleColor(ImGuiCol_ButtonHovered,
                                   ImVec4(0.5, 0.5, 0.5, 1));
@@ -180,20 +181,41 @@ void Application::run() {
             // pass
           }
           if (clickedPosition) {
-            // if valid move, change the char to print
-            if (validMoves.size() > 0 && validMoves[i][j]) {
-              chessEngine::Move m = chessEngine::Move(
-                  currentPlayerColor, currentPieceType, *clickedPosition,
-                  chessEngine::Position(i, j));
+            chessEngine::Move m = chessEngine::Move(
+                currentPlayerColor, currentPieceType, *clickedPosition,
+                chessEngine::Position(i, j));
+            if (board->isValid(m)) {
+              isValid = true;
               if (board->isAttackMove(m)) {
-                toPrint = "X";
-              } else {
-                toPrint = "O";
+                isAttack = true;
               }
+              if (board->isCheckMove(m)) {
+                isCheck = true;
+              }
+            }
+
+            if (isValid) {
+              // light blue
+              ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.6, 0.84, 0.9, 1));
+            }
+
+            if (isAttack) {
+              // light red
+              ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.7, 0, 0, 1));
+            }
+
+            if (isCheck) {
+              // dark red, force white color
+              ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.2, 0, 0, 1));
+              ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1, 1, 1, 1));
             }
 
             // we have a clicked position, draw this button differently
             if (chessEngine::Position(i, j) == *clickedPosition) {
+              // make a green square and force dark font
+              ImGui::PushStyleColor(ImGuiCol_Button,
+                                    ImVec4(0.56, 0.93, 0.59, 1));
+              ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0, 0, 0, 1));
               if (ImGui::Button(chessEngine::IO::pieceToCharSimple(
                                     currentPlayerColor, currentPieceType),
                                 ImVec2(50, 50))) {
@@ -201,8 +223,8 @@ void Application::run() {
                 board->removePiece(*clickedPosition);
                 delete clickedPosition;
                 clickedPosition = nullptr;
-                validMoves.clear();
               }
+              ImGui::PopStyleColor(2);
             } else {
               if (ImGui::Button(toPrint, ImVec2(50, 50))) {
                 // new position
@@ -212,8 +234,6 @@ void Application::run() {
                 board->placePiece(
                     *clickedPosition,
                     chessEngine::Piece(currentPieceType, currentPlayerColor));
-                // we had a change in the move, recompute the valid moves.
-                validMoves = board->getValidMoves(*clickedPosition);
               }
             }
           } else {
@@ -223,8 +243,17 @@ void Application::run() {
               board->placePiece(
                   *clickedPosition,
                   chessEngine::Piece(currentPieceType, currentPlayerColor));
-              validMoves = board->getValidMoves(*clickedPosition);
             }
+          }
+          if (isValid) {
+            ImGui::PopStyleColor();
+          }
+          if (isCheck) {
+            // remove dark font as well
+            ImGui::PopStyleColor(2);
+          }
+          if (isAttack) {
+            ImGui::PopStyleColor();
           }
 
           ImGui::SameLine();
@@ -234,6 +263,10 @@ void Application::run() {
           ImGui::PopID();
         }
         ImGui::NewLine();
+      }
+
+      if (isCheck) {
+        ImGui::Text("CHECK!");
       }
 
       ImGui::End();
