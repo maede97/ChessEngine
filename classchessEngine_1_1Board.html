@@ -123,6 +123,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae25f9d6d520d366b9c0def87fed3b2ec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#ae25f9d6d520d366b9c0def87fed3b2ec">isValid</a> (const <a class="el" href="classchessEngine_1_1Move.html">Move</a> &amp;move) const</td></tr>
 <tr class="memdesc:ae25f9d6d520d366b9c0def87fed3b2ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether a certain move is valid based on current board.  <a href="classchessEngine_1_1Board.html#ae25f9d6d520d366b9c0def87fed3b2ec">More...</a><br /></td></tr>
 <tr class="separator:ae25f9d6d520d366b9c0def87fed3b2ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c4e0ac7b4bd7e19d0f1fb372a2927c1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#a6c4e0ac7b4bd7e19d0f1fb372a2927c1">isAttackMove</a> (const <a class="el" href="classchessEngine_1_1Move.html">Move</a> &amp;move) const</td></tr>
+<tr class="memdesc:a6c4e0ac7b4bd7e19d0f1fb372a2927c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether a certain move is an attack move.  <a href="classchessEngine_1_1Board.html#a6c4e0ac7b4bd7e19d0f1fb372a2927c1">More...</a><br /></td></tr>
+<tr class="separator:a6c4e0ac7b4bd7e19d0f1fb372a2927c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -242,7 +245,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::runtime_error</td><td>If the piece is not at the start position of the move. </td></tr>
+    <tr><td class="paramname">std::runtime_error</td><td>If the piece is not at the start position of the move or the move is invalid. </td></tr>
   </table>
   </dd>
 </dl>
@@ -368,6 +371,38 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section attention"><dt>Attention</dt><dd>This does not cover attack moves from pawns! </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>Depends on isValid(const Move&amp; move) to be fully implemented. </dd></dl>
+
+</div>
+</div>
+<a id="a6c4e0ac7b4bd7e19d0f1fb372a2927c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c4e0ac7b4bd7e19d0f1fb372a2927c1">&#9670;&nbsp;</a></span>isAttackMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chessEngine::Board::isAttackMove </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classchessEngine_1_1Move.html">Move</a> &amp;&#160;</td>
+          <td class="paramname"><em>move</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns whether a certain move is an attack move. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">move</td><td>THe move to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>If the move is not valid. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
