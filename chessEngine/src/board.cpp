@@ -327,3 +327,48 @@ bool Board::isCheckMove(const Move &move) const {
   }
   return false;
 }
+
+void Board::getCheckInfo(bool &whiteCheck, bool &blackCheck) const {
+  // find a king
+  Position whitePos(0, 0);
+  Position blackPos(0, 0);
+
+  for (auto it = m_board.begin(); it != m_board.end(); it++) {
+    if (it->second.type() == PieceType::KING) {
+      if (it->second.color() == PlayerColor::WHITE) {
+        whitePos = it->first;
+      } else {
+        blackPos = it->first;
+      }
+    }
+  }
+
+  // iterate over all pieces in the field, get all valid moves from them and
+  // check if a check move can be performed to the king
+  for (auto it = m_board.begin(); it != m_board.end(); it++) {
+    if (it->second.color() == PlayerColor::WHITE) {
+      // if we already found a hit, continue
+      if (blackCheck)
+        continue;
+      // check against black king
+      Move m = Move(PlayerColor::WHITE, it->second.type(), it->first, blackPos);
+      try {
+        if (isCheckMove(m)) {
+          blackCheck = true;
+        }
+      } catch (std::runtime_error) {
+      }
+    } else {
+      // check against white king
+      if (whiteCheck)
+        continue;
+      Move m = Move(PlayerColor::BLACK, it->second.type(), it->first, whitePos);
+      try {
+        if (isCheckMove(m)) {
+          whiteCheck = true;
+        }
+      } catch (std::runtime_error) {
+      }
+    }
+  }
+}

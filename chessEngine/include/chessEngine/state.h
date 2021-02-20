@@ -29,10 +29,23 @@ public:
   Board getBoard() const;
 
   /**
+   * @brief Applies a full chess move.
+   * @param move The move to apply.
+   * @throws std::runtime_error If the move is from the wrong player or if the
+   * move is invalid.
+   */
+  void applyMove(const Move &move);
+
+  /**
    * @brief Set the next player to play.
    * @param next The player which can play next.
    */
   void setNextPlayer(PlayerColor next);
+
+  /**
+   * @brief Returns the next player to play.
+   */
+  PlayerColor getNextPlayer() const;
 
   /**
    * @brief Set castle information.

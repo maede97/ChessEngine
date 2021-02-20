@@ -10,6 +10,8 @@ Board GameState::getBoard() const { return m_board; }
 
 void GameState::setNextPlayer(PlayerColor color) { m_nextPlayer = color; }
 
+PlayerColor GameState::getNextPlayer() const { return m_nextPlayer; }
+
 void GameState::setCastleInformation(bool whiteKingSide, bool whiteQueenSide,
                                      bool blackKingSide, bool blackQueenSide) {
   m_whiteCastleKingSide = whiteKingSide;
@@ -26,4 +28,44 @@ void GameState::setFullMoves(unsigned int fullMoves) {
     throw std::runtime_error("Full Moves must be at least 1.");
   }
   m_fullMoves = fullMoves;
+}
+
+void GameState::applyMove(const Move &move) {
+  // check for the correct player
+  if (m_nextPlayer != move.player()) {
+    throw std::runtime_error("This player is not currently playing.");
+  }
+
+  if (m_board.isValid(move)) {
+    bool whiteCheck;
+    bool blackCheck;
+    m_board.getCheckInfo(whiteCheck, blackCheck);
+
+    if (m_nextPlayer == PlayerColor::WHITE) {
+      if (whiteCheck) {
+        // TODO: check if this move finishes check.
+      } else {
+        // TODO: check if this move would make white checked.
+      }
+    } else {
+      if (blackCheck) {
+        // TODO: check if this move finishes check.
+      } else {
+        // TODO: check if this move would make black checked.
+      }
+    }
+  }
+
+  // if we came all the way down to here, the move is valid and can be played.
+  m_board.applyMove(move);
+  // switch next player
+  m_nextPlayer = (m_nextPlayer == PlayerColor::WHITE) ? PlayerColor::BLACK
+                                                      : PlayerColor::WHITE;
+
+  // TODO: update counts (halfmoves)
+
+  // increase full moves
+  if (m_nextPlayer == PlayerColor::WHITE) {
+    m_fullMoves++;
+  }
 }

@@ -151,6 +151,13 @@ public:
    */
   bool isCheckMove(const Move &move) const;
 
+  /**
+   * @brief Get info about the check status of the board.
+   * @param[out] whiteCheck If the white king is in check.
+   * @param[out] blackCheck If the black king is in check.
+   */
+  void getCheckInfo(bool &whiteCheck, bool &blackCheck) const;
+
 private:
   friend IO;     ///< all IO functions should have access to private members.
   map_t m_board; ///< Internal storage of the board state (using map_t).
