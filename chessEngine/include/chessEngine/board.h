@@ -126,17 +126,16 @@ public:
    * @param position The position of the piece to get the valid moves.
    * @throws std::runtime_error If no piece is in this position.
    * @attention This does not cover attack moves from pawns!
-   * @todo Filter out moves which are not possible because of other pieces in
-   * the way.
+   * @todo Depends on isValid(const Move& move) to be fully implemented.
    */
-  std::vector<std::vector<bool>> getValidMoves(const Position &position);
+  std::vector<std::vector<bool>> getValidMoves(const Position &position) const;
 
   /**
    * @brief Returns whether a certain move is valid based on current board.
    * @param move The move to perform.
-   * @todo This routine is not implemented yet.
+   * @todo En-Passant checks are not yet implemented!
    */
-  bool isValid(const Move &move);
+  bool isValid(const Move &move) const;
 
 private:
   friend IO;     ///< all IO functions should have access to private members.

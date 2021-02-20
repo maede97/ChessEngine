@@ -134,7 +134,8 @@ std::ostream &operator<<(std::ostream &os, const Board &board) {
   return os;
 }
 
-std::vector<std::vector<bool>> Board::getValidMoves(const Position &position) {
+std::vector<std::vector<bool>>
+Board::getValidMoves(const Position &position) const {
   std::vector<std::vector<bool>> ret;
   std::vector<bool> empty;
   empty.resize(8, false);
@@ -147,14 +148,150 @@ std::vector<std::vector<bool>> Board::getValidMoves(const Position &position) {
 
   for (int i = 7; i > -1; i--) {
     for (int j = 0; j < 8; j++) {
-      ret[i][j] =
-          Move(it->second.color(), it->second.type(), it->first, Position(i, j))
-              .isValid();
+      ret[i][j] = isValid(Move(it->second.color(), it->second.type(), it->first,
+                               Position(i, j)));
     }
   }
 
-  // TODO: Filter out moves which are not possible because they would cross
-  // another piece idea: switch based on type and check
-
   return ret;
+}
+
+bool Board::isValid(const Move &move) const {
+  // if the move is not possible with this piece, return not valid.
+  // this takes into account both attack moves (pawns) and normal moves
+  if (!move.isValid() && !move.isValid(true)) {
+    return false;
+  }
+
+  switch (move.piece()) {
+  case PieceType::PAWN: {
+    // check if a piece is in front, front left or front right
+    bool canAttack = false;
+    // check if valid with attack
+    if (move.isValid(true)) {
+      // sideways, check to field
+      auto it = m_board.find(move.to());
+      if (it == m_board.cend()) {
+        // no piece is there
+        return false;
+      }
+      if (it->second.color() != move.player()) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    if (move.isValid()) {
+      // valid without attack --> straight, check for distance
+      if (std::abs(move.from().row() - move.to().row()) == 1) {
+        // check if piece there
+        auto it = m_board.find(move.to());
+        if (it == m_board.cend()) {
+          return true;
+        }
+        return false;
+      } else {
+        // check both places (1 and 2)
+        int midRow =
+            move.from().row() + (move.to().row() - move.from().row()) / 2;
+        auto it = m_board.find(Position(midRow, move.from().col()));
+        if (it == m_board.cend()) {
+          return true;
+        }
+        return false;
+      }
+    }
+
+    break;
+  }
+  case PieceType::BISHOP: {
+    // start from center and go outwards
+    int i = move.from().row();
+    int j = move.from().col();
+
+    int next_i = (move.to().row() - move.from().row()) /
+                 std::abs(move.to().row() - move.from().row());
+    int next_j = (move.to().col() - move.from().col()) /
+                 std::abs(move.to().col() - move.from().col());
+
+    while (Position(i, j) != move.to()) {
+      i += next_i;
+      j += next_j;
+      auto it = m_board.find(Position(i, j));
+      if (it != m_board.cend()) {
+        // if we are at the desired location, and the piece is of opponent
+        // color, the move is valid
+        if (Position(i, j) == move.to() &&
+            it->second.color() != move.player()) {
+          return true;
+        }
+        // we are not done yet or the color was our own.
+        return false;
+      }
+    }
+    break;
+  }
+  case PieceType::KNIGHT: {
+    // simply check the to location for opponent color
+    auto it = m_board.find(move.to());
+    if (it != m_board.cend()) {
+      return (it->second.color() != move.player());
+    } else {
+      return true;
+    }
+    break;
+  }
+  case PieceType::ROOK: {
+    // start from center and go outwards
+    int i = move.from().row();
+    int j = move.from().col();
+
+    int next_i = (move.to().row() - move.from().row()) != 0
+                     ? (move.to().row() - move.from().row()) /
+                           std::abs(move.to().row() - move.from().row())
+                     : 0;
+    int next_j = (move.to().col() - move.from().col()) != 0
+                     ? (move.to().col() - move.from().col()) /
+                           std::abs(move.to().col() - move.from().col())
+                     : 0;
+
+    while (Position(i, j) != move.to()) {
+      i += next_i;
+      j += next_j;
+      auto it = m_board.find(Position(i, j));
+      if (it != m_board.cend()) {
+        // if we are at the desired location, and the piece is of opponent
+        // color, the move is valid
+        if (Position(i, j) == move.to() &&
+            it->second.color() != move.player()) {
+          return true;
+        }
+        // we are not done yet or the color was our own.
+        return false;
+      }
+    }
+    break;
+  }
+  case PieceType::QUEEN: {
+    // create new moves (corresponding of rook and bishop) and test both
+    Move m1 = Move(move.player(), PieceType::BISHOP, move.from(), move.to());
+    Move m2 = Move(move.player(), PieceType::ROOK, move.from(), move.to());
+    return isValid(m1) || isValid(m2);
+    break;
+  }
+  case PieceType::KING: {
+    auto it = m_board.find(move.to());
+    if (it != m_board.cend()) {
+      return it->second.color() != move.player();
+    } else {
+      return true;
+    }
+    break;
+  }
+  }
+
+  // in all other cases: return true (since the move must be valid in order to
+  // get here)
+  return true;
 }
