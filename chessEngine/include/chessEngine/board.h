@@ -117,7 +117,7 @@ public:
    * @brief Applies a move to the board.
    * @param move The move to apply.
    * @throws std::runtime_error If the piece is not at the start position of the
-   * move.
+   * move or the move is invalid.
    */
   void applyMove(const Move &move);
 
@@ -136,6 +136,13 @@ public:
    * @todo En-Passant checks are not yet implemented!
    */
   bool isValid(const Move &move) const;
+
+  /**
+   * @brief Returns whether a certain move is an attack move.
+   * @param move THe move to check.
+   * @throws std::runtime_error If the move is not valid.
+   */
+  bool isAttackMove(const Move &move) const;
 
 private:
   friend IO;     ///< all IO functions should have access to private members.

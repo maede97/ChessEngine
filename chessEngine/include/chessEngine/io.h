@@ -72,6 +72,15 @@ public:
                                  const PieceType &type);
 
   /**
+   * @brief Returns the corresponding chess character (unicode, therefore 4
+   * chars) for the given piece.
+   * @param piece The piece.
+   * @attention The returned char array might not be in your character set. Use
+   * pieceToCharSimple for an ASCII-representation.
+   */
+  static const char *pieceToChar(const Piece &piece);
+
+  /**
    * @brief Returns the corresponding chess character (ascii, 2 chars) for the
    * given piece.
    * @param color The color of the piece.
@@ -79,6 +88,12 @@ public:
    */
   static const char *pieceToCharSimple(const PlayerColor &color,
                                        const PieceType &type);
+  /**
+   * @brief Returns the corresponding chess character (ascii, 2 chars) for the
+   * given piece.
+   * @param piece The piece.
+   */
+  static const char *pieceToCharSimple(const Piece &piece);
 };
 
 } // namespace chessEngine

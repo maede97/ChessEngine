@@ -116,13 +116,20 @@ void Board::applyMove(const Move &move) {
   }
   Piece currentPiece = found->second;
 
-  auto to = m_board.find(move.to());
-  if (to != m_board.cend()) {
-    // the to location is not empty
-    // we throw an error here, because this field should be empty
-    throw std::runtime_error("Move to location is not empty. Move invalid.");
+  if (!isValid(move)) {
+    throw std::runtime_error("This move is not valid.");
   }
 
+  auto it = m_board.find(move.to());
+  if (it != m_board.cend()) {
+    // there is a piece, check for opposite color
+    // could also use isAttackMove(), but this would require more runtime due to
+    // the second check to move validity.
+    if (it->second.color() != move.player()) {
+      // remove this piece
+      removePiece(move.to());
+    }
+  }
   // now move the piece
   // --> remove it in the old place and add in the new
   removePiece(move.from());
@@ -294,4 +301,16 @@ bool Board::isValid(const Move &move) const {
   // in all other cases: return true (since the move must be valid in order to
   // get here)
   return true;
+}
+
+bool Board::isAttackMove(const Move &move) const {
+  if (!isValid(move)) {
+    throw std::runtime_error("This move is not valid.");
+  }
+
+  auto it = m_board.find(move.to());
+  if (it != m_board.cend()) {
+    return (it->second.color() != move.player());
+  }
+  return false;
 }

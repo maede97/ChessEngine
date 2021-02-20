@@ -297,6 +297,14 @@ void IO::writeBoardToConsole(const Board &board, bool invertColors) {
   }
 }
 
+const char *IO::pieceToChar(const Piece &piece) {
+  return pieceToChar(piece.color(), piece.type());
+}
+
+const char *IO::pieceToCharSimple(const Piece &piece) {
+  return pieceToCharSimple(piece.color(), piece.type());
+}
+
 const char *IO::pieceToChar(const PlayerColor &color, const PieceType &type) {
   if (color == PlayerColor::WHITE) {
     switch (type) {
