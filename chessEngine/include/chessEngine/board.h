@@ -144,6 +144,13 @@ public:
    */
   bool isAttackMove(const Move &move) const;
 
+  /**
+   * @brief Checks whether a certain move is a checkmate move.
+   * @param move The move to check.
+   * @throws std::runtime_error If the move is not valid.
+   */
+  bool isCheckMateMove(const Move &move) const;
+
 private:
   friend IO;     ///< all IO functions should have access to private members.
   map_t m_board; ///< Internal storage of the board state (using map_t).

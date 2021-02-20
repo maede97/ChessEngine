@@ -314,3 +314,16 @@ bool Board::isAttackMove(const Move &move) const {
   }
   return false;
 }
+
+bool Board::isCheckMateMove(const Move &move) const {
+  if (!isValid(move)) {
+    throw std::runtime_error("This move is not valid.");
+  }
+
+  auto it = m_board.find(move.to());
+  if (it != m_board.cend()) {
+    return (it->second.color() != move.player()) &&
+           it->second.type() == PieceType::KING;
+  }
+  return false;
+}
