@@ -315,7 +315,7 @@ bool Board::isAttackMove(const Move &move) const {
   return false;
 }
 
-bool Board::isCheckMateMove(const Move &move) const {
+bool Board::isCheckMove(const Move &move) const {
   if (!isValid(move)) {
     throw std::runtime_error("This move is not valid.");
   }

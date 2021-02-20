@@ -145,11 +145,11 @@ public:
   bool isAttackMove(const Move &move) const;
 
   /**
-   * @brief Checks whether a certain move is a checkmate move.
+   * @brief Checks whether a certain move is a check move.
    * @param move The move to check.
    * @throws std::runtime_error If the move is not valid.
    */
-  bool isCheckMateMove(const Move &move) const;
+  bool isCheckMove(const Move &move) const;
 
 private:
   friend IO;     ///< all IO functions should have access to private members.
