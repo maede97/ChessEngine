@@ -296,3 +296,104 @@ void IO::writeBoardToConsole(const Board &board, bool invertColors) {
     std::cout << std::endl;
   }
 }
+
+const char *IO::pieceToChar(const PlayerColor &color, const PieceType &type) {
+  if (color == PlayerColor::WHITE) {
+    switch (type) {
+    case PieceType::PAWN:
+      return "\u2659";
+      break;
+    case PieceType::KNIGHT:
+      return "\u2658";
+      break;
+    case PieceType::BISHOP:
+      return "\u2657";
+      break;
+    case PieceType::ROOK:
+      return "\u2656";
+      break;
+    case PieceType::QUEEN:
+      return "\u2655";
+      break;
+    case PieceType::KING:
+      return "\u2654";
+      break;
+    default:
+      return "?";
+    }
+  } else {
+    switch (type) {
+    case PieceType::PAWN:
+      return "\u265F";
+      break;
+    case PieceType::KNIGHT:
+      return "\u265E";
+      break;
+    case PieceType::BISHOP:
+      return "\u265D";
+      break;
+    case PieceType::ROOK:
+      return "\u265C";
+      break;
+    case PieceType::QUEEN:
+      return "\u265B";
+      break;
+    case PieceType::KING:
+      return "\u265A";
+      break;
+    default:
+      return "?";
+    }
+  }
+}
+
+const char *IO::pieceToCharSimple(const PlayerColor &color,
+                                  const PieceType &type) {
+  if (color == PlayerColor::WHITE) {
+    switch (type) {
+    case PieceType::PAWN:
+      return "WP";
+      break;
+    case PieceType::KNIGHT:
+      return "WN";
+      break;
+    case PieceType::BISHOP:
+      return "WB";
+      break;
+    case PieceType::ROOK:
+      return "WR";
+      break;
+    case PieceType::QUEEN:
+      return "WQ";
+      break;
+    case PieceType::KING:
+      return "WK";
+      break;
+    default:
+      return "?";
+    }
+  } else {
+    switch (type) {
+    case PieceType::PAWN:
+      return "BP";
+      break;
+    case PieceType::KNIGHT:
+      return "BN";
+      break;
+    case PieceType::BISHOP:
+      return "BB";
+      break;
+    case PieceType::ROOK:
+      return "BR";
+      break;
+    case PieceType::QUEEN:
+      return "BQ";
+      break;
+    case PieceType::KING:
+      return "BK";
+      break;
+    default:
+      return "?";
+    }
+  }
+}

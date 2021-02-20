@@ -59,6 +59,26 @@ public:
    */
   static void writeBoardToConsole(const Board &board,
                                   bool invertColors = false);
+
+  /**
+   * @brief Returns the corresponding chess character (unicode, therefore 4
+   * chars) for the given piece.
+   * @param color The color of the piece.
+   * @param type The type of the piece.
+   * @attention The returned char array might not be in your character set. Use
+   * pieceToCharSimple for an ASCII-representation.
+   */
+  static const char *pieceToChar(const PlayerColor &color,
+                                 const PieceType &type);
+
+  /**
+   * @brief Returns the corresponding chess character (ascii, 2 chars) for the
+   * given piece.
+   * @param color The color of the piece.
+   * @param type The type of the piece.
+   */
+  static const char *pieceToCharSimple(const PlayerColor &color,
+                                       const PieceType &type);
 };
 
 } // namespace chessEngine

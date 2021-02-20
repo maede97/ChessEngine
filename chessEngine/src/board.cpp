@@ -153,8 +153,8 @@ std::vector<std::vector<bool>> Board::getValidMoves(const Position &position) {
     }
   }
 
-  // TODO: Filter out moves which are not possible because they would cross another piece
-  // idea: switch based on type and check
+  // TODO: Filter out moves which are not possible because they would cross
+  // another piece idea: switch based on type and check
 
   return ret;
 }
