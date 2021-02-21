@@ -162,9 +162,17 @@ public:
    */
   void getCheckInfo(bool &whiteCheck, bool &blackCheck) const;
 
+  bool isPositionUnderCheck(const Position &position,
+                            PlayerColor opponent) const;
+
+  std::vector<Position> getAttackingPieces(const Position &position,
+                                           PlayerColor opponent) const;
+
 private:
   friend IO;     ///< all IO functions should have access to private members.
   map_t m_board; ///< Internal storage of the board state (using map_t).
+
+  bool doesMoveResolveCheck(const Move &move, PlayerColor opponent) const;
 };
 
 } // namespace chessEngine

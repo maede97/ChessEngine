@@ -118,6 +118,7 @@ public:
    *
    * This should be called before performing the pawn-move (reaches end).
    * @param type The type to convert to.
+   * @throw std::runtime_error If the type is invalid.
    */
   void setWhitePromotionType(PieceType type);
   /**
@@ -125,6 +126,7 @@ public:
    *
    * This should be called before performing the pawn-move (reaches end).
    * @param type The type to convert to.
+   * @throw std::runtime_error If the type is invalid.
    */
   void setBlackPromotionType(PieceType type);
 

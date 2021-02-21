@@ -46,27 +46,7 @@ bool GameState::isValid(const Move &move) const {
     return false;
   }
   if (m_board.isValid(move)) {
-    bool whiteCheck;
-    bool blackCheck;
-    m_board.getCheckInfo(whiteCheck, blackCheck);
-
-    if (m_nextPlayer == PlayerColor::WHITE) {
-      if (whiteCheck) {
-        // TODO: check if this move finishes check.
-      } else {
-        // TODO: check if this move would make white checked.
-      }
-    } else {
-      if (blackCheck) {
-        // TODO: check if this move finishes check.
-      } else {
-        // TODO: check if this move would make black checked.
-      }
-    }
-
     // check for castling
-    // TODO check if this castle move would make this person checked.
-
     if (move.piece() == PieceType::KING) {
       if (m_nextPlayer == PlayerColor::WHITE) {
         if (move.from() == Position(0, 4) && move.to() == Position(0, 6)) {
@@ -273,7 +253,10 @@ void GameState::applyMove(const Move &move) {
     }
   }
 
-  // TODO: update counts (halfmoves)
+  // TODO: update half-moves count.
+  // castling does increase it
+  // destroying castling right also increases it
+  // pawn movement or capturing resets it.
 
   // if it is a en-passant killer move, remove the pawn
   if (m_nextPlayer == PlayerColor::WHITE) {
@@ -326,6 +309,11 @@ void GameState::applyMove(const Move &move) {
     }
   }
 
+  // TODO:
+  // check if the other player is in check now and has no possibility to resolve
+  // this.
+  // --> checkmate
+
   // switch next player
   m_nextPlayer = (m_nextPlayer == PlayerColor::WHITE) ? PlayerColor::BLACK
                                                       : PlayerColor::WHITE;
@@ -373,8 +361,15 @@ void GameState::getCapturedPieces(std::vector<Piece> &whiteCaptured,
 }
 
 void GameState::setWhitePromotionType(PieceType type) {
+  if (type == PieceType::PAWN || type == PieceType::KING) {
+    throw std::runtime_error("This Promotion is not valid.");
+  }
   m_whitePromotionType = type;
 }
+
 void GameState::setBlackPromotionType(PieceType type) {
+  if (type == PieceType::PAWN || type == PieceType::KING) {
+    throw std::runtime_error("This Promotion is not valid.");
+  }
   m_blackPromotionType = type;
 }

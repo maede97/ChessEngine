@@ -163,11 +163,166 @@ Board::getValidMoves(const Position &position) const {
   return ret;
 }
 
+std::vector<Position> getPositionsInBetween(Position p1, Position p2) {
+  std::vector<Position> ret;
+  int cur_r = p1.row();
+  int cur_c = p1.col();
+  int dir_r = (p2.row() - p1.row());
+  if (dir_r != 0)
+    dir_r /= std::abs(dir_r);
+  int dir_c = (p2.col() - p1.col());
+  if (dir_c != 0)
+    dir_c /= std::abs(dir_c);
+
+  while (Position(cur_r + dir_r, cur_c + dir_c) != p2) {
+    cur_r += dir_r;
+    cur_c += dir_c;
+
+    ret.emplace_back(cur_r, cur_c);
+  }
+  return ret;
+}
+
+bool Board::isPositionUnderCheck(const Position &position,
+                                 PlayerColor opponent) const {
+  return getAttackingPieces(position, opponent).size() > 0;
+}
+
+std::vector<Position> Board::getAttackingPieces(const Position &position,
+                                                PlayerColor opponent) const {
+  // idea:
+  // iterate over opponent pieces and check for move validity
+  std::vector<Position> ret;
+
+  for (auto it = m_board.cbegin(); it != m_board.cend(); it++) {
+    if (it->second.color() == opponent) {
+      if (Move(opponent, it->second.type(), it->first, position)
+              .isValid(true)) {
+        // need to check for pieces in between
+        // need to check for pieces inbetween
+
+        switch (it->second.type()) {
+        case PieceType::KNIGHT:
+        case PieceType::PAWN: {
+          break;
+        }
+
+        case PieceType::ROOK:
+        case PieceType::BISHOP:
+        case PieceType::QUEEN: {
+          // check for a piece on any position
+          auto pos = getPositionsInBetween(it->first, position);
+          bool hasOne = false;
+          for (auto p : pos) {
+            if (m_board.find(p) != m_board.cend()) {
+              // another piece is blocking this attack.
+              if (m_board.find(p)->second.type() == PieceType::KING) {
+
+              } else {
+                hasOne = true;
+              }
+              break;
+            }
+          }
+          if (hasOne)
+            continue; // skip this
+          break;
+        }
+        }
+        ret.push_back(it->first);
+      }
+    }
+  }
+  return ret;
+}
+
+bool Board::doesMoveResolveCheck(const Move &move, PlayerColor opponent) const {
+  Position kingPos(0, 0);
+  for (auto it = m_board.cbegin(); it != m_board.cend(); it++) {
+    if (it->second.color() != opponent &&
+        it->second.type() == PieceType::KING) {
+      kingPos = it->first;
+      break;
+    }
+  }
+  std::vector<Position> attackers = getAttackingPieces(kingPos, opponent);
+
+  if (attackers.size() == 1 && move.to() == attackers[0]) {
+    // we will kill the attacker
+    // this move will resolve check.
+    return true;
+  } else {
+    // iterate over attackers, check if the attack is still possible with
+    // this move done.
+    // this move MUST be done by the king in order to get rid of both checks.
+
+    if (attackers.size() == 1) {
+      // the move was not to the attacker
+      if (move.piece() == PieceType::KING &&
+          !isPositionUnderCheck(move.to(), opponent)) {
+        return true;
+      }
+
+      if (move.piece() != PieceType::KING) {
+
+        // Check if this place is now a position inbetween
+        std::vector<Position> pos =
+            getPositionsInBetween(attackers[0], kingPos);
+        for (auto p : pos) {
+          if (p == move.to()) {
+            return true;
+          }
+        }
+      }
+      return false;
+
+    } else {
+      if (move.piece() != PieceType::KING) {
+        return false;
+      }
+
+      // this check is now easy: simply check if the move would resolve check.
+      // do like the king moved there.
+      return !isPositionUnderCheck(move.to(), opponent);
+    }
+  }
+  // this move seems to resolve check.
+  return false;
+}
+
 bool Board::isValid(const Move &move) const {
   // if the move is not possible with this piece, return not valid.
   // this takes into account both attack moves (pawns) and normal moves
   if (!move.isValid() && !move.isValid(true)) {
     return false;
+  }
+
+  // Check for check :-)
+  bool whiteCheck;
+  bool blackCheck;
+  getCheckInfo(whiteCheck, blackCheck);
+
+  if (move.player() == PlayerColor::WHITE) {
+    if (whiteCheck) {
+      // check if the check is no longer possible because of the new move.
+      if (!doesMoveResolveCheck(move, PlayerColor::BLACK)) {
+        return false;
+      }
+    }
+
+    // check if this move would make white checked.
+    // TODO
+
+  } else {
+    if (blackCheck) {
+
+      // check if the check is no longer possible because of the new move.
+      if (!doesMoveResolveCheck(move, PlayerColor::WHITE)) {
+        return false;
+      }
+    }
+    // check if this move would make black checked.
+    // TODO
   }
 
   switch (move.piece()) {
@@ -321,17 +476,25 @@ bool Board::isValid(const Move &move) const {
     if (move.player() == PlayerColor::WHITE) {
       if (move.from() == Position(0, 4) && move.to() == Position(0, 6)) {
         // check for empty fields
-        return !(hasPiece(Position(0, 5)) || hasPiece(Position(0, 6)));
+        return !(hasPiece(Position(0, 5)) || hasPiece(Position(0, 6)) ||
+                 isPositionUnderCheck(Position(0, 5), PlayerColor::BLACK) ||
+                 isPositionUnderCheck(Position(0, 6), PlayerColor::BLACK));
       }
       if (move.from() == Position(0, 4) && move.to() == Position(0, 2)) {
-        return !(hasPiece(Position(0, 2)) || hasPiece(Position(0, 3)));
+        return !(hasPiece(Position(0, 2)) || hasPiece(Position(0, 3)) ||
+                 isPositionUnderCheck(Position(0, 2), PlayerColor::BLACK) ||
+                 isPositionUnderCheck(Position(0, 3), PlayerColor::BLACK));
       }
     } else {
       if (move.from() == Position(7, 4) && move.to() == Position(7, 6)) {
-        return !(hasPiece(Position(0, 5)) || hasPiece(Position(0, 6)));
+        return !(hasPiece(Position(7, 5)) || hasPiece(Position(7, 6)) ||
+                 isPositionUnderCheck(Position(7, 5), PlayerColor::WHITE) ||
+                 isPositionUnderCheck(Position(7, 6), PlayerColor::WHITE));
       }
       if (move.from() == Position(7, 4) && move.to() == Position(7, 2)) {
-        return !(hasPiece(Position(0, 2)) || hasPiece(Position(0, 3)));
+        return !(hasPiece(Position(7, 2)) || hasPiece(Position(7, 3)) ||
+                 isPositionUnderCheck(Position(7, 2), PlayerColor::WHITE) ||
+                 isPositionUnderCheck(Position(7, 3), PlayerColor::WHITE));
       }
     }
 
@@ -417,6 +580,10 @@ void Board::getCheckInfo(bool &whiteCheck, bool &blackCheck) const {
     }
   }
 
+  whiteCheck = isPositionUnderCheck(whitePos, PlayerColor::BLACK);
+  blackCheck = isPositionUnderCheck(blackPos, PlayerColor::WHITE);
+
+  /*
   // iterate over all pieces in the field, get all valid moves from them and
   // check if a check move can be performed to the king
   for (auto it = m_board.begin(); it != m_board.end(); it++) {
@@ -425,10 +592,8 @@ void Board::getCheckInfo(bool &whiteCheck, bool &blackCheck) const {
       if (blackCheck)
         continue;
       // check against black king
-      Move m = Move(PlayerColor::WHITE, it->second.type(), it->first, blackPos);
-      try {
-        if (isCheckMove(m)) {
-          blackCheck = true;
+      Move m = Move(PlayerColor::WHITE, it->second.type(), it->first,
+  blackPos); try { if (isCheckMove(m)) { blackCheck = true;
         }
       } catch (std::runtime_error) {
       }
@@ -436,15 +601,13 @@ void Board::getCheckInfo(bool &whiteCheck, bool &blackCheck) const {
       // check against white king
       if (whiteCheck)
         continue;
-      Move m = Move(PlayerColor::BLACK, it->second.type(), it->first, whitePos);
-      try {
-        if (isCheckMove(m)) {
-          whiteCheck = true;
+      Move m = Move(PlayerColor::BLACK, it->second.type(), it->first,
+  whitePos); try { if (isCheckMove(m)) { whiteCheck = true;
         }
       } catch (std::runtime_error) {
       }
     }
-  }
+  }*/
 }
 
 bool Board::hasPiece(const Position &position) const {
