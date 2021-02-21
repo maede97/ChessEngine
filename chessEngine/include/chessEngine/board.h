@@ -173,6 +173,8 @@ private:
   map_t m_board; ///< Internal storage of the board state (using map_t).
 
   bool doesMoveResolveCheck(const Move &move, PlayerColor opponent) const;
+
+  bool doesMoveCreateCheck(const Move &move, PlayerColor opponent) const;
 };
 
 } // namespace chessEngine

@@ -290,6 +290,28 @@ bool Board::doesMoveResolveCheck(const Move &move, PlayerColor opponent) const {
   return false;
 }
 
+bool Board::doesMoveCreateCheck(const Move &move, PlayerColor opponent) const {
+  // if we move the king, this is easy
+  if (move.piece() == PieceType::KING) {
+    return isPositionUnderCheck(move.to(), opponent);
+  } else {
+    Board copy = Board(m_board);
+    copy.removePiece(move.from());
+    try {
+      copy.placePiece(move.to(), Piece(move.player(), move.piece()));
+    } catch (std::runtime_error e) {
+      return false;
+    }
+    bool whiteCheck, blackCheck;
+    copy.getCheckInfo(whiteCheck, blackCheck);
+    if (opponent == PlayerColor::WHITE) {
+      return blackCheck;
+    } else {
+      return whiteCheck;
+    }
+  }
+}
+
 bool Board::isValid(const Move &move) const {
   // if the move is not possible with this piece, return not valid.
   // this takes into account both attack moves (pawns) and normal moves
@@ -311,7 +333,9 @@ bool Board::isValid(const Move &move) const {
     }
 
     // check if this move would make white checked.
-    // TODO
+    if (doesMoveCreateCheck(move, PlayerColor::BLACK)) {
+      return false;
+    }
 
   } else {
     if (blackCheck) {
@@ -322,7 +346,9 @@ bool Board::isValid(const Move &move) const {
       }
     }
     // check if this move would make black checked.
-    // TODO
+    if (doesMoveCreateCheck(move, PlayerColor::WHITE)) {
+      return false;
+    }
   }
 
   switch (move.piece()) {
