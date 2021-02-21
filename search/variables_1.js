@@ -2,8 +2,8 @@ var searchData=
 [
   ['m_5fblackcastlekingside_179',['m_blackCastleKingSide',['../classchessEngine_1_1GameState.html#a9d4a2556bcc7a5f18a6030f5be98f46c',1,'chessEngine::GameState']]],
   ['m_5fblackcastlequeenside_180',['m_blackCastleQueenSide',['../classchessEngine_1_1GameState.html#ac590f99481676cce51c797eeaeaf127e',1,'chessEngine::GameState']]],
-  ['m_5fblackconversiontype_181',['m_blackConversionType',['../classchessEngine_1_1GameState.html#a4ac7c9195eab51250f7a8babe9c9e473',1,'chessEngine::GameState']]],
-  ['m_5fblackenpassant_182',['m_blackEnPassant',['../classchessEngine_1_1GameState.html#a5bbb8818d6017c95eb3b6550801b2001',1,'chessEngine::GameState']]],
+  ['m_5fblackenpassant_181',['m_blackEnPassant',['../classchessEngine_1_1GameState.html#a5bbb8818d6017c95eb3b6550801b2001',1,'chessEngine::GameState']]],
+  ['m_5fblackpromotiontype_182',['m_blackPromotionType',['../classchessEngine_1_1GameState.html#ac7159a9c586a305c12c50fab51893f1d',1,'chessEngine::GameState']]],
   ['m_5fboard_183',['m_board',['../classchessEngine_1_1Board.html#a52821144f40f7fb6fa11661e4366c18d',1,'chessEngine::Board::m_board()'],['../classchessEngine_1_1GameState.html#adc24d6b845a1e919739a79c080ca48ab',1,'chessEngine::GameState::m_board()']]],
   ['m_5fcapturedpiecesblack_184',['m_capturedPiecesBlack',['../classchessEngine_1_1GameState.html#a217658c58a77e3c8b065800945cc9f59',1,'chessEngine::GameState']]],
   ['m_5fcapturedpieceswhite_185',['m_capturedPiecesWhite',['../classchessEngine_1_1GameState.html#a0222a44bae3a691e66646b1f9fb36437',1,'chessEngine::GameState']]],
@@ -20,6 +20,6 @@ var searchData=
   ['m_5ftype_196',['m_type',['../classchessEngine_1_1Piece.html#a4d49e802958347410895e8386efbd366',1,'chessEngine::Piece']]],
   ['m_5fwhitecastlekingside_197',['m_whiteCastleKingSide',['../classchessEngine_1_1GameState.html#ae3ef1abaf42a41e7d3157621a4290458',1,'chessEngine::GameState']]],
   ['m_5fwhitecastlequeenside_198',['m_whiteCastleQueenSide',['../classchessEngine_1_1GameState.html#af2e81f7f6d23138f8119c5b479587e9e',1,'chessEngine::GameState']]],
-  ['m_5fwhiteconversiontype_199',['m_whiteConversionType',['../classchessEngine_1_1GameState.html#aa2758d96685679429e3f502aba5b37e5',1,'chessEngine::GameState']]],
-  ['m_5fwhiteenpassant_200',['m_whiteEnPassant',['../classchessEngine_1_1GameState.html#abea465b10cfe23533c3b119236344830',1,'chessEngine::GameState']]]
+  ['m_5fwhiteenpassant_199',['m_whiteEnPassant',['../classchessEngine_1_1GameState.html#abea465b10cfe23533c3b119236344830',1,'chessEngine::GameState']]],
+  ['m_5fwhitepromotiontype_200',['m_whitePromotionType',['../classchessEngine_1_1GameState.html#af0348927c1be3a1e6e33a0fc636c467e',1,'chessEngine::GameState']]]
 ];
