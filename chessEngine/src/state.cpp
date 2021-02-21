@@ -339,10 +339,24 @@ void GameState::applyMove(const Move &move) {
 std::vector<std::vector<bool>>
 GameState::getValidMoves(const Position &position) const {
 
-  // get all valid moves from the board and remove those, who do not work
+  std::vector<std::vector<bool>> ret;
+  std::vector<bool> empty;
+  empty.resize(8, false);
+  ret.resize(8, empty);
 
-  // for now: return board moves
-  return m_board.getValidMoves(position);
+  if (!m_board.hasPiece(position)) {
+    throw std::runtime_error("There is no piece in this position.");
+  }
+
+  Piece p = m_board.getPiece(position);
+
+  for (int i = 7; i > -1; i--) {
+    for (int j = 0; j < 8; j++) {
+      ret[i][j] = isValid(Move(p.color(), p.type(), position, Position(i, j)));
+    }
+  }
+
+  return ret;
 }
 
 void GameState::getCapturedPieces(std::vector<Piece> &whiteCaptured,

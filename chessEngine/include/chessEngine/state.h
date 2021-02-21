@@ -33,7 +33,6 @@ public:
    * @param move The move to apply.
    * @throws std::runtime_error If the move is from the wrong player or if the
    * move is invalid.
-   * @todo Promotion if a pawn reaches the end.
    */
   void applyMove(const Move &move);
 
@@ -49,9 +48,7 @@ public:
 
   /**
    * @brief Get all valid moves for the current piece at the position given.
-   *
-   * Internally relies on applyMove, therefore still incomplete.
-   * @todo Not done.
+   * @attention Internally relies on isValid.
    * @param position The position to get all valid moves for.
    */
   std::vector<std::vector<bool>> getValidMoves(const Position &position) const;
