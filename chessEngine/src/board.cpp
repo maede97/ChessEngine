@@ -333,6 +333,9 @@ void Board::getCheckInfo(bool &whiteCheck, bool &blackCheck) const {
   Position whitePos(0, 0);
   Position blackPos(0, 0);
 
+  whiteCheck = false;
+  blackCheck = false;
+
   for (auto it = m_board.begin(); it != m_board.end(); it++) {
     if (it->second.type() == PieceType::KING) {
       if (it->second.color() == PlayerColor::WHITE) {
@@ -371,4 +374,8 @@ void Board::getCheckInfo(bool &whiteCheck, bool &blackCheck) const {
       }
     }
   }
+}
+
+bool Board::hasPiece(const Position &position) const {
+  return m_board.find(position) != m_board.cend();
 }

@@ -37,6 +37,25 @@ public:
   void applyMove(const Move &move);
 
   /**
+   * @brief Checks if a move is valid.
+   *
+   * This takes into account the move validity but also the current game state
+   * (en-passant, castling, check, etc).
+   * @param move The move to check.
+   * @todo This is still incomplete.
+   */
+  bool isValid(const Move &move) const;
+
+  /**
+   * @brief Get all valid moves for the current piece at the position given.
+   *
+   * Internally relies on applyMove, therefore still incomplete.
+   * @todo Still not done.
+   * @param position The position to get all valid moves for.
+   */
+  std::vector<std::vector<bool>> getValidMoves(const Position &position) const;
+
+  /**
    * @brief Set the next player to play.
    * @param next The player which can play next.
    */
@@ -75,7 +94,8 @@ private:
   std::vector<Move> m_moves; ///< All moves previously done in this game.
   Board m_board;             ///< Current Board
 
-  PlayerColor m_nextPlayer; ///< The player which comes next.
+  PlayerColor m_nextPlayer =
+      PlayerColor::WHITE; ///< The player which comes next. White should start.
   bool m_whiteCastleKingSide =
       false; ///< If the white player can castle king side
   bool m_whiteCastleQueenSide =
@@ -90,7 +110,13 @@ private:
   unsigned int m_fullMoves = 1; ///< The number of the full move. It starts at
                                 ///< 1, and is incremented after Black's move.
 
+  std::vector<Piece>
+      m_capturedPiecesWhite; ///< vector to store captured white pieces.
+  std::vector<Piece>
+      m_capturedPiecesBlack; ///< vector to store captured black pieces
+
   // TODO: store enpassant information
+  // TODO: store castle information
 };
 
 } // namespace chessEngine

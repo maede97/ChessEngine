@@ -3,7 +3,7 @@
 #include <ChessEngineGui/timer.h>
 #include <ChessEngineGui/utils.h>
 
-#include <chessEngine/board.h>
+#include <chessEngine/state.h>
 
 // clang-format off
 #include <glad/glad.h>
@@ -42,10 +42,8 @@ private:
 
   Timer fpsTimer;
 
-  chessEngine::Board *board = nullptr;
+  chessEngine::GameState game;
   chessEngine::Position *clickedPosition = nullptr;
-  chessEngine::PieceType currentPieceType = chessEngine::PieceType::PAWN;
-  chessEngine::PlayerColor currentPlayerColor = chessEngine::PlayerColor::WHITE;
 };
 
 CHESS_NAMESPACE_END

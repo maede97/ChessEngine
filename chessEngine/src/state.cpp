@@ -2,7 +2,8 @@
 
 using namespace chessEngine;
 
-GameState::GameState() : m_board(Board::defaultBoard()) {}
+GameState::GameState()
+    : m_board(Board::defaultBoard()), m_nextPlayer(PlayerColor::WHITE) {}
 
 void GameState::setBoard(const Board &board) { m_board = board; }
 
@@ -30,12 +31,11 @@ void GameState::setFullMoves(unsigned int fullMoves) {
   m_fullMoves = fullMoves;
 }
 
-void GameState::applyMove(const Move &move) {
+bool GameState::isValid(const Move &move) const {
   // check for the correct player
   if (m_nextPlayer != move.player()) {
-    throw std::runtime_error("This player is not currently playing.");
+    return false;
   }
-
   if (m_board.isValid(move)) {
     bool whiteCheck;
     bool blackCheck;
@@ -54,6 +54,17 @@ void GameState::applyMove(const Move &move) {
         // TODO: check if this move would make black checked.
       }
     }
+
+    return true; // for now.
+  } else {
+    return false;
+  }
+}
+
+void GameState::applyMove(const Move &move) {
+
+  if (!isValid(move)) {
+    throw std::runtime_error("This move is not valid.");
   }
 
   // if we came all the way down to here, the move is valid and can be played.
@@ -63,9 +74,19 @@ void GameState::applyMove(const Move &move) {
                                                       : PlayerColor::WHITE;
 
   // TODO: update counts (halfmoves)
+  // TODO: add captured pieces to vectors
 
   // increase full moves
   if (m_nextPlayer == PlayerColor::WHITE) {
     m_fullMoves++;
   }
+}
+
+std::vector<std::vector<bool>>
+GameState::getValidMoves(const Position &position) const {
+
+  // get all valid moves from the board and remove those, who do not work
+
+  // for now: return board moves
+  return m_board.getValidMoves(position);
 }

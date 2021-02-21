@@ -1,3 +1,4 @@
+#include <chessEngine/io.h>
 #include <chessEngine/move.h>
 
 using namespace chessEngine;
@@ -155,4 +156,10 @@ bool Move::isValid(bool attack) const {
 
   // all seems good, return true
   return true;
+}
+
+std::ostream &operator<<(std::ostream &out, const Move &move) {
+  out << "Move from " << move.from() << " to " << move.to() << " with "
+      << IO::pieceToCharSimple(move.player(), move.piece());
+  return out;
 }

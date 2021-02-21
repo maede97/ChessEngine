@@ -2,6 +2,7 @@
 
 #include <chessEngine/definitions.h>
 #include <chessEngine/position.h>
+#include <iostream>
 
 namespace chessEngine {
 
@@ -69,6 +70,7 @@ public:
    * @param attack Whether this piece attacks with this move (required for
    * proper Pawn movement check).
    * @attention This does not check for pieces inbetween!
+   * @todo En-Passant and Castle-Moves are not yet implemented.
    */
   bool isValid(bool attack = false) const;
 
@@ -80,3 +82,10 @@ private:
 };
 
 } // namespace chessEngine
+
+/**
+ * @brief Write move information to the output stream.
+ * @param os The stream to write to.
+ * @param move The move to write out.
+ */
+std::ostream &operator<<(std::ostream &os, const chessEngine::Move &move);

@@ -86,6 +86,12 @@ public:
   void placePiece(const Position &position, const Piece &piece);
 
   /**
+   * @brief Returns whether a piece exists in this place.
+   * @param position The position to check.
+   */
+  bool hasPiece(const Position &position) const;
+
+  /**
    * @brief Removes a piece from the board given a position.
    * @param position The position from where the piece should be removed.
    * @throws std::runtime_error If no piece is at that position.
