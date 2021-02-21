@@ -105,9 +105,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9c0c6b55c0d76502e92c3426244f2d2d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a9c0c6b55c0d76502e92c3426244f2d2d">isValid</a> (const <a class="el" href="classchessEngine_1_1Move.html">Move</a> &amp;move) const</td></tr>
 <tr class="memdesc:a9c0c6b55c0d76502e92c3426244f2d2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a move is valid.  <a href="classchessEngine_1_1GameState.html#a9c0c6b55c0d76502e92c3426244f2d2d">More...</a><br /></td></tr>
 <tr class="separator:a9c0c6b55c0d76502e92c3426244f2d2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab886aed9fb64e9f630d214dccf37d44a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; bool &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#ab886aed9fb64e9f630d214dccf37d44a">getValidMoves</a> (const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;position) const</td></tr>
-<tr class="memdesc:ab886aed9fb64e9f630d214dccf37d44a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all valid moves for the current piece at the position given.  <a href="classchessEngine_1_1GameState.html#ab886aed9fb64e9f630d214dccf37d44a">More...</a><br /></td></tr>
-<tr class="separator:ab886aed9fb64e9f630d214dccf37d44a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ef24a5a25eba1018add44b31caf5db9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; bool &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a0ef24a5a25eba1018add44b31caf5db9">getValidMovesBool</a> (const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;position) const</td></tr>
+<tr class="memdesc:a0ef24a5a25eba1018add44b31caf5db9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all valid moves for the current piece at the position given.  <a href="classchessEngine_1_1GameState.html#a0ef24a5a25eba1018add44b31caf5db9">More...</a><br /></td></tr>
+<tr class="separator:a0ef24a5a25eba1018add44b31caf5db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3aaf4c507c73cbc404f6f90a3c6fa868"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classchessEngine_1_1Move.html">Move</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a3aaf4c507c73cbc404f6f90a3c6fa868">getValidMoves</a> (const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;position) const</td></tr>
+<tr class="memdesc:a3aaf4c507c73cbc404f6f90a3c6fa868"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all valid moves from a position.  <a href="classchessEngine_1_1GameState.html#a3aaf4c507c73cbc404f6f90a3c6fa868">More...</a><br /></td></tr>
+<tr class="separator:a3aaf4c507c73cbc404f6f90a3c6fa868"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5dc43576d68da9a94d5a402726248d89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a5dc43576d68da9a94d5a402726248d89">setNextPlayer</a> (<a class="el" href="namespacechessEngine.html#a0e3db173099459967c9a248c6289e3ca">PlayerColor</a> next)</td></tr>
 <tr class="memdesc:a5dc43576d68da9a94d5a402726248d89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the next player to play.  <a href="classchessEngine_1_1GameState.html#a5dc43576d68da9a94d5a402726248d89">More...</a><br /></td></tr>
 <tr class="separator:a5dc43576d68da9a94d5a402726248d89"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,6 +141,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8ebcceb7bf7e2b7bf4dd80d5ef4c6884"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a8ebcceb7bf7e2b7bf4dd80d5ef4c6884">setBlackPromotionType</a> (<a class="el" href="namespacechessEngine.html#a0a4ae963ec379905420b849d2ec1c5e9">PieceType</a> type)</td></tr>
 <tr class="memdesc:a8ebcceb7bf7e2b7bf4dd80d5ef4c6884"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the promotion type for black.  <a href="classchessEngine_1_1GameState.html#a8ebcceb7bf7e2b7bf4dd80d5ef4c6884">More...</a><br /></td></tr>
 <tr class="separator:a8ebcceb7bf7e2b7bf4dd80d5ef4c6884"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79f5afee773c6ba00af2b81f7bcc43dc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a79f5afee773c6ba00af2b81f7bcc43dc">isCheckMate</a> () const</td></tr>
+<tr class="memdesc:a79f5afee773c6ba00af2b81f7bcc43dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the game is over.  <a href="classchessEngine_1_1GameState.html#a79f5afee773c6ba00af2b81f7bcc43dc">More...</a><br /></td></tr>
+<tr class="separator:a79f5afee773c6ba00af2b81f7bcc43dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a795a00aeee712005ca3ceeb126e359"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacechessEngine.html#a0e3db173099459967c9a248c6289e3ca">PlayerColor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a3a795a00aeee712005ca3ceeb126e359">getWinner</a> () const</td></tr>
+<tr class="memdesc:a3a795a00aeee712005ca3ceeb126e359"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the winner if the game is over.  <a href="classchessEngine_1_1GameState.html#a3a795a00aeee712005ca3ceeb126e359">More...</a><br /></td></tr>
+<tr class="separator:a3a795a00aeee712005ca3ceeb126e359"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -182,6 +191,9 @@ Private Attributes</h2></td></tr>
 <tr class="separator:af0348927c1be3a1e6e33a0fc636c467e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7159a9c586a305c12c50fab51893f1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacechessEngine.html#a0a4ae963ec379905420b849d2ec1c5e9">PieceType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#ac7159a9c586a305c12c50fab51893f1d">m_blackPromotionType</a> = <a class="el" href="namespacechessEngine.html#a0a4ae963ec379905420b849d2ec1c5e9a02d144e18eda99bcb94f3a764756805e">PieceType::QUEEN</a></td></tr>
 <tr class="separator:ac7159a9c586a305c12c50fab51893f1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a866b54c733e39f73a98fc32e59d1bb42"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a866b54c733e39f73a98fc32e59d1bb42">m_winner</a> = 0</td></tr>
+<tr class="memdesc:a866b54c733e39f73a98fc32e59d1bb42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds information about the winner.  <a href="classchessEngine_1_1GameState.html#a866b54c733e39f73a98fc32e59d1bb42">More...</a><br /></td></tr>
+<tr class="separator:a866b54c733e39f73a98fc32e59d1bb42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to hold the current state of the game. </p>
@@ -401,14 +413,46 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ab886aed9fb64e9f630d214dccf37d44a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab886aed9fb64e9f630d214dccf37d44a">&#9670;&nbsp;</a></span>getValidMoves()</h2>
+<a id="a3aaf4c507c73cbc404f6f90a3c6fa868"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3aaf4c507c73cbc404f6f90a3c6fa868">&#9670;&nbsp;</a></span>getValidMoves()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::vector&lt;bool&gt; &gt; chessEngine::GameState::getValidMoves </td>
+          <td class="memname">std::vector&lt;<a class="el" href="classchessEngine_1_1Move.html">Move</a>&gt; chessEngine::GameState::getValidMoves </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;&#160;</td>
+          <td class="paramname"><em>position</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get all valid moves from a position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>The position to get all valid moves. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if the position is invalid. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0ef24a5a25eba1018add44b31caf5db9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ef24a5a25eba1018add44b31caf5db9">&#9670;&nbsp;</a></span>getValidMovesBool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;bool&gt; &gt; chessEngine::GameState::getValidMovesBool </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;&#160;</td>
           <td class="paramname"><em>position</em></td><td>)</td>
@@ -425,6 +469,50 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a3a795a00aeee712005ca3ceeb126e359"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a795a00aeee712005ca3ceeb126e359">&#9670;&nbsp;</a></span>getWinner()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacechessEngine.html#a0e3db173099459967c9a248c6289e3ca">PlayerColor</a> chessEngine::GameState::getWinner </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the winner if the game is over. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>If the game is not over. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a79f5afee773c6ba00af2b81f7bcc43dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79f5afee773c6ba00af2b81f7bcc43dc">&#9670;&nbsp;</a></span>isCheckMate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chessEngine::GameState::isCheckMate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns true if the game is over. </p>
 
 </div>
 </div>
@@ -1041,6 +1129,30 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a866b54c733e39f73a98fc32e59d1bb42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a866b54c733e39f73a98fc32e59d1bb42">&#9670;&nbsp;</a></span>m_winner</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int chessEngine::GameState::m_winner = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Holds information about the winner. </p>
 
 </div>
 </div>

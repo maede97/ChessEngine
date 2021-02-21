@@ -10,5 +10,7 @@ var searchData=
   ['getenpassantinformation_25',['getEnPassantInformation',['../classchessEngine_1_1GameState.html#a2a13753571e3896ec2d6f2411cfbeb8c',1,'chessEngine::GameState']]],
   ['getnextplayer_26',['getNextPlayer',['../classchessEngine_1_1GameState.html#aa2756a226bed662e818c749033c01c90',1,'chessEngine::GameState']]],
   ['getpiece_27',['getPiece',['../classchessEngine_1_1Board.html#a3708a938653f145342c33a154b5d5580',1,'chessEngine::Board']]],
-  ['getvalidmoves_28',['getValidMoves',['../classchessEngine_1_1Board.html#a1f8ae8fdc9d62a8df695a4c8c929c3bf',1,'chessEngine::Board::getValidMoves()'],['../classchessEngine_1_1GameState.html#ab886aed9fb64e9f630d214dccf37d44a',1,'chessEngine::GameState::getValidMoves()']]]
+  ['getvalidmoves_28',['getValidMoves',['../classchessEngine_1_1Board.html#a1f8ae8fdc9d62a8df695a4c8c929c3bf',1,'chessEngine::Board::getValidMoves()'],['../classchessEngine_1_1GameState.html#a3aaf4c507c73cbc404f6f90a3c6fa868',1,'chessEngine::GameState::getValidMoves(const Position &amp;position) const']]],
+  ['getvalidmovesbool_29',['getValidMovesBool',['../classchessEngine_1_1GameState.html#a0ef24a5a25eba1018add44b31caf5db9',1,'chessEngine::GameState']]],
+  ['getwinner_30',['getWinner',['../classchessEngine_1_1GameState.html#a3a795a00aeee712005ca3ceeb126e359',1,'chessEngine::GameState']]]
 ];
