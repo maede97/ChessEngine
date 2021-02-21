@@ -137,8 +137,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a28b19903b38ba79c41fffd6abdb27e9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get info about the check status of the board.  <a href="classchessEngine_1_1Board.html#a28b19903b38ba79c41fffd6abdb27e9a">More...</a><br /></td></tr>
 <tr class="separator:a28b19903b38ba79c41fffd6abdb27e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1920b81762c5d414ad0434b42b52a34e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#a1920b81762c5d414ad0434b42b52a34e">isPositionUnderCheck</a> (const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;position, <a class="el" href="namespacechessEngine.html#a0e3db173099459967c9a248c6289e3ca">PlayerColor</a> opponent) const</td></tr>
+<tr class="memdesc:a1920b81762c5d414ad0434b42b52a34e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether a position is under check by the opponent color.  <a href="classchessEngine_1_1Board.html#a1920b81762c5d414ad0434b42b52a34e">More...</a><br /></td></tr>
 <tr class="separator:a1920b81762c5d414ad0434b42b52a34e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac11380a919c6b42d5f3773f9f957a327"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classchessEngine_1_1Position.html">Position</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#ac11380a919c6b42d5f3773f9f957a327">getAttackingPieces</a> (const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;position, <a class="el" href="namespacechessEngine.html#a0e3db173099459967c9a248c6289e3ca">PlayerColor</a> opponent) const</td></tr>
+<tr class="memdesc:ac11380a919c6b42d5f3773f9f957a327"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all pieces which attack a certain spot.  <a href="classchessEngine_1_1Board.html#ac11380a919c6b42d5f3773f9f957a327">More...</a><br /></td></tr>
 <tr class="separator:ac11380a919c6b42d5f3773f9f957a327"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
@@ -153,8 +155,10 @@ Static Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a558987b1e6b880f70acdf94fe38e6d1d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#a558987b1e6b880f70acdf94fe38e6d1d">doesMoveResolveCheck</a> (const <a class="el" href="classchessEngine_1_1Move.html">Move</a> &amp;move, <a class="el" href="namespacechessEngine.html#a0e3db173099459967c9a248c6289e3ca">PlayerColor</a> opponent) const</td></tr>
+<tr class="memdesc:a558987b1e6b880f70acdf94fe38e6d1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether a certain move resolves check.  <a href="classchessEngine_1_1Board.html#a558987b1e6b880f70acdf94fe38e6d1d">More...</a><br /></td></tr>
 <tr class="separator:a558987b1e6b880f70acdf94fe38e6d1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9d0509ce148063debdc416ae7ac4eda"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#aa9d0509ce148063debdc416ae7ac4eda">doesMoveCreateCheck</a> (const <a class="el" href="classchessEngine_1_1Move.html">Move</a> &amp;move, <a class="el" href="namespacechessEngine.html#a0e3db173099459967c9a248c6289e3ca">PlayerColor</a> opponent) const</td></tr>
+<tr class="memdesc:aa9d0509ce148063debdc416ae7ac4eda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether a certain move creates check.  <a href="classchessEngine_1_1Board.html#aa9d0509ce148063debdc416ae7ac4eda">More...</a><br /></td></tr>
 <tr class="separator:aa9d0509ce148063debdc416ae7ac4eda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -335,6 +339,15 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns whether a certain move creates check. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">move</td><td>The move to check. </td></tr>
+    <tr><td class="paramname">opponent</td><td>The color of the opponent. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a558987b1e6b880f70acdf94fe38e6d1d"></a>
@@ -370,6 +383,15 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns whether a certain move resolves check. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">move</td><td>The move to check. </td></tr>
+    <tr><td class="paramname">opponent</td><td>The color of the opponent. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -426,6 +448,15 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns all pieces which attack a certain spot. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>The position to check. </td></tr>
+    <tr><td class="paramname">opponent</td><td>The color of the opponent. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -646,6 +677,15 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns whether a position is under check by the opponent color. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>The position to check. </td></tr>
+    <tr><td class="paramname">opponent</td><td>The color of the opponent. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
