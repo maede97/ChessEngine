@@ -51,7 +51,15 @@ public:
    * @attention Internally relies on isValid.
    * @param position The position to get all valid moves for.
    */
-  std::vector<std::vector<bool>> getValidMoves(const Position &position) const;
+  std::vector<std::vector<bool>>
+  getValidMovesBool(const Position &position) const;
+
+  /**
+   * @brief Get all valid moves from a position.
+   * @param position The position to get all valid moves.
+   * @throws std::runtime_error if the position is invalid.
+   */
+  std::vector<Move> getValidMoves(const Position &position) const;
 
   /**
    * @brief Set the next player to play.
@@ -130,6 +138,16 @@ public:
    */
   void setBlackPromotionType(PieceType type);
 
+  /**
+   * @brief Returns true if the game is over.
+   */
+  bool isCheckMate() const;
+  /**
+   * @brief Returns the winner if the game is over.
+   * @throws std::runtime_error If the game is not over.
+   */
+  PlayerColor getWinner() const;
+
 private:
   std::vector<Move> m_moves; ///< All moves previously done in this game.
   Board m_board;             ///< Current Board
@@ -162,6 +180,8 @@ private:
 
   PieceType m_whitePromotionType = PieceType::QUEEN;
   PieceType m_blackPromotionType = PieceType::QUEEN;
+
+  int m_winner = 0; ///< Holds information about the winner.
 };
 
 } // namespace chessEngine

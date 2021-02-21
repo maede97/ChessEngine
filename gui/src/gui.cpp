@@ -137,6 +137,15 @@ void Application::run() {
         ImGui::Text(ss.str().c_str());
       }
 
+      bool isGameOver = game.isCheckMate();
+      if (isGameOver) {
+        if (game.getWinner() == chessEngine::PlayerColor::WHITE) {
+          ImGui::Text("White won!");
+        } else {
+          ImGui::Text("Black won!");
+        }
+      }
+
       // DRAW THE BOARD
       for (int i = 7; i > -1; i--) {
         for (int j = 0; j < 8; j++) {
@@ -224,63 +233,69 @@ void Application::run() {
           }
 
           bool performMove = false;
-          if (ImGui::Button(toPrint, ImVec2(50, 50))) {
-            // a button was clicked, perform action based on state.
 
-            if (clickedPosition) {
-              // second click, perform move if valid.
-              chessEngine::Piece piece =
-                  game.getBoard().getPiece(*clickedPosition);
+          if (!isGameOver) {
+            if (ImGui::Button(toPrint, ImVec2(50, 50))) {
+              // a button was clicked, perform action based on state.
 
-              if (game.getBoard().hasPiece(chessEngine::Position(i, j))) {
-                // check if there is a piece with our color
-                chessEngine::Piece newPiece =
-                    game.getBoard().getPiece(chessEngine::Position(i, j));
-                if (newPiece.color() == game.getNextPlayer()) {
-                  // reset the clicked position to this
-                  delete clickedPosition;
-                  clickedPosition = new chessEngine::Position(i, j);
+              if (clickedPosition) {
+                // second click, perform move if valid.
+                chessEngine::Piece piece =
+                    game.getBoard().getPiece(*clickedPosition);
+
+                if (game.getBoard().hasPiece(chessEngine::Position(i, j))) {
+                  // check if there is a piece with our color
+                  chessEngine::Piece newPiece =
+                      game.getBoard().getPiece(chessEngine::Position(i, j));
+                  if (newPiece.color() == game.getNextPlayer()) {
+                    // reset the clicked position to this
+                    delete clickedPosition;
+                    clickedPosition = new chessEngine::Position(i, j);
+                  } else {
+                    performMove = true;
+                  }
                 } else {
                   performMove = true;
                 }
+                if (performMove) {
+                  chessEngine::Move move = chessEngine::Move(
+                      piece.color(), piece.type(), *clickedPosition,
+                      chessEngine::Position(i, j));
+                  try {
+                    std::cout << move << std::endl;
+
+                    game.applyMove(move);
+
+                    std::stringstream ss;
+                    ss << "Moved from " << *clickedPosition << " to "
+                       << chessEngine::Position(i, j) << ".";
+                    Logger::logInfo(ss.str());
+
+                    delete clickedPosition;
+                    clickedPosition = nullptr;
+                  } catch (const std::runtime_error e) {
+                    Logger::logWarning("This move is not valid.");
+                  }
+                }
               } else {
-                performMove = true;
-              }
-              if (performMove) {
-                chessEngine::Move move = chessEngine::Move(
-                    piece.color(), piece.type(), *clickedPosition,
-                    chessEngine::Position(i, j));
+                // first button, check if this piece is actually valid to play.
                 try {
-                  std::cout << move << std::endl;
-
-                  game.applyMove(move);
-
-                  std::stringstream ss;
-                  ss << "Moved from " << *clickedPosition << " to "
-                     << chessEngine::Position(i, j) << ".";
-                  Logger::logInfo(ss.str());
-
-                  delete clickedPosition;
-                  clickedPosition = nullptr;
-                } catch (const std::runtime_error e) {
-                  Logger::logWarning("This move is not valid.");
+                  if (game.getBoard()
+                          .getPiece(chessEngine::Position(i, j))
+                          .color() == game.getNextPlayer()) {
+                    // valid.
+                    clickedPosition = new chessEngine::Position(i, j);
+                  } else {
+                    Logger::logWarning("This piece is not valid.");
+                  }
+                } catch (std::runtime_error e) {
+                  Logger::logWarning("No piece there.");
                 }
-              }
-            } else {
-              // first button, check if this piece is actually valid to play.
-              try {
-                if (game.getBoard()
-                        .getPiece(chessEngine::Position(i, j))
-                        .color() == game.getNextPlayer()) {
-                  // valid.
-                  clickedPosition = new chessEngine::Position(i, j);
-                } else {
-                  Logger::logWarning("This piece is not valid.");
-                }
-              } catch (std::runtime_error e) {
-                Logger::logWarning("No piece there.");
               }
             }
+          } else {
+            // disable buttons if game is over.
+            ImGui::Button(toPrint, ImVec2(50, 50));
           }
 
           if (isCurrent) {

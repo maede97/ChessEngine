@@ -41,6 +41,9 @@ void GameState::setFullMoves(unsigned int fullMoves) {
 }
 
 bool GameState::isValid(const Move &move) const {
+  if (m_winner != 0) {
+    return false;
+  }
   // check for the correct player
   if (m_nextPlayer != move.player()) {
     return false;
@@ -158,6 +161,9 @@ void GameState::getEnPassantInformation(int &whiteEnPassant,
 }
 
 void GameState::applyMove(const Move &move) {
+  if (m_winner != 0) {
+    return;
+  }
 
   if (!isValid(move)) {
     throw std::runtime_error("This move is not valid.");
@@ -315,10 +321,59 @@ void GameState::applyMove(const Move &move) {
     }
   }
 
-  // TODO:
   // check if the other player is in check now and has no possibility to resolve
   // this.
   // --> checkmate
+  bool whiteCheck, blackCheck;
+  m_board.getCheckInfo(whiteCheck, blackCheck);
+
+  if (m_nextPlayer == PlayerColor::WHITE) {
+    // see if black has at least one move left.
+    if (blackCheck) {
+      bool hasOne = false;
+      for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 8; j++) {
+          if (m_board.hasPiece(Position(i, j))) {
+            Piece p = m_board.getPiece(Position(i, j));
+            if (p.color() == PlayerColor::BLACK) {
+              if (getValidMoves(Position(i, j)).size() > 0) {
+                hasOne = true;
+                break;
+              }
+            }
+          }
+        }
+        if (hasOne)
+          break;
+      }
+      if (!hasOne) {
+        m_winner = (int)PlayerColor::WHITE;
+      }
+    }
+  } else {
+    // see if white has at least one move left...
+    if (whiteCheck) {
+      bool hasOne = false;
+      for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 8; j++) {
+          if (m_board.hasPiece(Position(i, j))) {
+            Piece p = m_board.getPiece(Position(i, j));
+            if (p.color() == PlayerColor::WHITE) {
+              if (getValidMoves(Position(i, j)).size() > 0) {
+                hasOne = true;
+                break;
+              }
+            }
+          }
+        }
+        if (hasOne)
+          break;
+      }
+      if (!hasOne) {
+        m_winner = (int)PlayerColor::BLACK;
+      }
+    }
+  }
 
   // switch next player
   m_nextPlayer = (m_nextPlayer == PlayerColor::WHITE) ? PlayerColor::BLACK
@@ -331,7 +386,7 @@ void GameState::applyMove(const Move &move) {
 }
 
 std::vector<std::vector<bool>>
-GameState::getValidMoves(const Position &position) const {
+GameState::getValidMovesBool(const Position &position) const {
 
   std::vector<std::vector<bool>> ret;
   std::vector<bool> empty;
@@ -378,4 +433,34 @@ void GameState::setBlackPromotionType(PieceType type) {
     throw std::runtime_error("This Promotion is not valid.");
   }
   m_blackPromotionType = type;
+}
+
+bool GameState::isCheckMate() const { return m_winner != 0; }
+
+PlayerColor GameState::getWinner() const {
+  if (!isCheckMate()) {
+    throw std::runtime_error("The game is not over yet.");
+  }
+  return PlayerColor(m_winner);
+}
+
+std::vector<Move> GameState::getValidMoves(const Position &position) const {
+  std::vector<Move> ret;
+
+  if (!m_board.hasPiece(position)) {
+    throw std::runtime_error("There is no piece in this position.");
+  }
+
+  Piece p = m_board.getPiece(position);
+
+  for (int i = 0; i < 8; i++) {
+    for (int j = 0; j < 8; j++) {
+      Move m = Move(p.color(), p.type(), position, Position(i, j));
+      if (isValid(m)) {
+        ret.push_back(m);
+      }
+    }
+  }
+
+  return ret;
 }
