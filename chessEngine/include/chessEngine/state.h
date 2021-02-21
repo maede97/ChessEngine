@@ -116,6 +116,21 @@ public:
   void getCapturedPieces(std::vector<Piece> &whiteCaptured,
                          std::vector<Piece> &blackCaptured) const;
 
+  /**
+   * @brief Set the conversion type for white.
+   *
+   * This should be called before performing the pawn-move (reaches end).
+   * @param type The type to convert to.
+   */
+  void setWhiteConversionType(PieceType type);
+  /**
+   * @brief Set the conversion type for black.
+   *
+   * This should be called before performing the pawn-move (reaches end).
+   * @param type The type to convert to.
+   */
+  void setBlackConversionType(PieceType type);
+
 private:
   std::vector<Move> m_moves; ///< All moves previously done in this game.
   Board m_board;             ///< Current Board
@@ -145,6 +160,9 @@ private:
       -1; ///< Stores with pawn (column) was just moved (to enable En-Passant)
   int m_blackEnPassant =
       -1; ///< Stores with pawn (column) was just moved (to enable En-Passant)
+
+  PieceType m_whiteConversionType = PieceType::QUEEN;
+  PieceType m_blackConversionType = PieceType::QUEEN;
 };
 
 } // namespace chessEngine

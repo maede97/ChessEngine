@@ -183,6 +183,12 @@ bool Board::isValid(const Move &move) const {
         if (move.player() == PlayerColor::WHITE) {
           auto it2 =
               m_board.find(Position(move.to().row() - 1, move.to().col()));
+          if (move.player() == PlayerColor::WHITE && move.from().row() != 4) {
+            return false;
+          } else if (move.player() == PlayerColor::BLACK &&
+                     move.from().row() != 3) {
+            return false;
+          }
           if (it2 != m_board.cend()) {
             return it2->second.type() == PieceType::PAWN &&
                    it2->second.color() == PlayerColor::BLACK;
@@ -224,7 +230,9 @@ bool Board::isValid(const Move &move) const {
         int midRow =
             move.from().row() + (move.to().row() - move.from().row()) / 2;
         auto it = m_board.find(Position(midRow, move.from().col()));
-        if (it == m_board.cend()) {
+        auto it2 = m_board.find(move.to());
+
+        if (it == m_board.cend() && it2 == m_board.cend()) {
           return true;
         }
         return false;
