@@ -172,6 +172,8 @@ bool Board::isValid(const Move &move) const {
 
   switch (move.piece()) {
   case PieceType::PAWN: {
+    // TODO En-Passant
+
     // check if a piece is in front, front left or front right
     bool canAttack = false;
     // check if valid with attack
@@ -288,6 +290,24 @@ bool Board::isValid(const Move &move) const {
     break;
   }
   case PieceType::KING: {
+    // for castling: check for certain fields
+    if (move.player() == PlayerColor::WHITE) {
+      if (move.from() == Position(0, 4) && move.to() == Position(0, 6)) {
+        // check for empty fields
+        return !(hasPiece(Position(0, 5)) || hasPiece(Position(0, 6)));
+      }
+      if (move.from() == Position(0, 4) && move.to() == Position(0, 2)) {
+        return !(hasPiece(Position(0, 2)) || hasPiece(Position(0, 3)));
+      }
+    } else {
+      if (move.from() == Position(7, 4) && move.to() == Position(7, 6)) {
+        return !(hasPiece(Position(0, 5)) || hasPiece(Position(0, 6)));
+      }
+      if (move.from() == Position(7, 4) && move.to() == Position(7, 2)) {
+        return !(hasPiece(Position(0, 2)) || hasPiece(Position(0, 3)));
+      }
+    }
+
     auto it = m_board.find(move.to());
     if (it != m_board.cend()) {
       return it->second.color() != move.player();

@@ -69,8 +69,8 @@ public:
    * @brief Checks if this move is valid based on the current piece.
    * @param attack Whether this piece attacks with this move (required for
    * proper Pawn movement check).
-   * @attention This does not check for pieces inbetween!
-   * @todo En-Passant and Castle-Moves are not yet implemented.
+   * @attention This does not check for pieces inbetween! En-Passant is
+   * implemented with attack=true. Castling is also implemented.
    */
   bool isValid(bool attack = false) const;
 

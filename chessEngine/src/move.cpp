@@ -27,6 +27,9 @@ bool Move::isValid(bool attack) const {
     // if black, can only move towards negative row count
     // then check for distance: should be between 1 and 2 (only if from initial
     // line)
+
+    // En-passant move is already in here (with attack = true)
+
     if (m_player == PlayerColor::WHITE) {
       if (m_to.row() <= m_from.row())
         return false;
@@ -97,6 +100,8 @@ bool Move::isValid(bool attack) const {
     // 1. change only in rows
     // 2. change only in cols
 
+    // castling is not needed here, because the rook does not start it.
+
     bool case1 = std::abs(m_from.row() - m_to.row()) > 0 &&
                  std::abs(m_from.col() - m_to.col()) == 0;
     bool case2 = std::abs(m_from.row() - m_to.row()) == 0 &&
@@ -134,6 +139,24 @@ bool Move::isValid(bool attack) const {
     // valid in two cases:
     // 1. rook with length 1
     // 2. bishop with length 1
+
+    // check for castling:
+    // if we are in the correct space, the two places are also possible
+    if (m_player == PlayerColor::WHITE) {
+      // king side
+      if (m_from == Position(0, 4) && m_to == Position(0, 6))
+        return true;
+      // queen side
+      if (m_from == Position(0, 4) && m_to == Position(0, 2))
+        return true;
+    } else {
+      // king side
+      if (m_from == Position(7, 4) && m_to == Position(7, 6))
+        return true;
+      // queen side
+      if (m_from == Position(7, 4) && m_to == Position(7, 2))
+        return true;
+    }
 
     // rook can be expressed in 2 conditions, resulting in 3
     bool case1 = std::abs(m_from.row() - m_to.row()) == 1 &&

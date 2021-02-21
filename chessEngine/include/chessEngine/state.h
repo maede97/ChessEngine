@@ -77,6 +77,16 @@ public:
                             bool blackKingSide, bool blackQueenSide);
 
   /**
+   * @brief Get castle information.
+   * @param[out] whiteKingSide If the white player can castle king side.
+   * @param[out] whiteQueenSide If the white player can castle queen side.
+   * @param[out] blackKingSide If the black player can castle king side.
+   * @param[out] blackQueenSide If the black player can castle queen side.
+   */
+  void getCastleInformation(bool &whiteKingSide, bool &whiteQueenSide,
+                            bool &blackKingSide, bool &blackQueenSide) const;
+
+  /**
    * @brief Sets the half moves. That is the number of halfmoves since the last
    * capture or pawn advance.
    * @param halfMoves The number to set.
@@ -97,13 +107,13 @@ private:
   PlayerColor m_nextPlayer =
       PlayerColor::WHITE; ///< The player which comes next. White should start.
   bool m_whiteCastleKingSide =
-      false; ///< If the white player can castle king side
+      true; ///< If the white player can castle king side
   bool m_whiteCastleQueenSide =
-      false; ///< If the white player can castle queen side
+      true; ///< If the white player can castle queen side
   bool m_blackCastleKingSide =
-      false; ///< If the black player can castle king side
+      true; ///< If the black player can castle king side
   bool m_blackCastleQueenSide =
-      false; ///< If the black player can castle queen side
+      true; ///< If the black player can castle queen side
 
   unsigned int m_halfMoves = 0; ///< This is the number of halfmoves since the
                                 ///< last capture or pawn advance
