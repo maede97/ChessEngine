@@ -162,9 +162,18 @@ public:
    */
   void getCheckInfo(bool &whiteCheck, bool &blackCheck) const;
 
+  /**
+   * @brief Returns whether a position is under check by the opponent color.
+   * @param position The position to check.
+   * @param opponent The color of the opponent.
+   */
   bool isPositionUnderCheck(const Position &position,
                             PlayerColor opponent) const;
-
+  /**
+   * @brief Returns all pieces which attack a certain spot.
+   * @param position The position to check.
+   * @param opponent The color of the opponent.
+   */
   std::vector<Position> getAttackingPieces(const Position &position,
                                            PlayerColor opponent) const;
 
@@ -172,8 +181,18 @@ private:
   friend IO;     ///< all IO functions should have access to private members.
   map_t m_board; ///< Internal storage of the board state (using map_t).
 
+  /**
+   * @brief Returns whether a certain move resolves check.
+   * @param move The move to check.
+   * @param opponent The color of the opponent.
+   */
   bool doesMoveResolveCheck(const Move &move, PlayerColor opponent) const;
 
+  /**
+   * @brief Returns whether a certain move creates check.
+   * @param move The move to check.
+   * @param opponent The color of the opponent.
+   */
   bool doesMoveCreateCheck(const Move &move, PlayerColor opponent) const;
 };
 
