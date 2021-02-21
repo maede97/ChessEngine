@@ -66,34 +66,109 @@ bool GameState::isValid(const Move &move) const {
 
     // check for castling
     // TODO check if this castle move would make this person checked.
+
     if (move.piece() == PieceType::KING) {
       if (m_nextPlayer == PlayerColor::WHITE) {
-        if (m_whiteCastleKingSide) {
-          if (move.from() == Position(0, 4) && move.to() == Position(0, 6))
-            return true;
+        if (move.from() == Position(0, 4) && move.to() == Position(0, 6)) {
+          if (!m_whiteCastleKingSide)
+            return false;
         }
-        if (m_whiteCastleQueenSide) {
-          if (move.from() == Position(0, 4) && move.to() == Position(0, 2))
-            return true;
+        if (move.from() == Position(0, 4) && move.to() == Position(0, 2)) {
+          if (!m_whiteCastleQueenSide)
+            return false;
         }
-      } else {
-        if (m_blackCastleKingSide) {
-          if (move.from() == Position(7, 4) && move.to() == Position(7, 6))
-            return true;
-        }
-        if (m_blackCastleQueenSide) {
-          if (move.from() == Position(7, 4) && move.to() == Position(7, 2))
-            return true;
+
+        else {
+          if (move.from() == Position(7, 4) && move.to() == Position(7, 6)) {
+            if (!m_blackCastleKingSide)
+              return false;
+          }
+
+          if (move.from() == Position(7, 4) && move.to() == Position(7, 2)) {
+            if (!m_blackCastleQueenSide)
+              return false;
+          }
         }
       }
     }
 
-    // TODO check for en-passant
+    bool removeIfEnPassant = false;
+
+    if (!m_whiteEnPassant && !m_blackEnPassant) {
+      removeIfEnPassant = true;
+    }
+    if (move.piece() == PieceType::PAWN) {
+      if (m_blackEnPassant != -1 && m_nextPlayer == PlayerColor::WHITE) {
+        if (m_blackEnPassant == move.to().col() && move.to().row() == 5) {
+          return true;
+        } else {
+          // filter out moves which are not en-passant
+          removeIfEnPassant = true;
+        }
+      }
+      if (m_whiteEnPassant != -1 && m_nextPlayer == PlayerColor::BLACK) {
+        if (m_whiteEnPassant == move.to().col() && move.to().row() == 2) {
+          return true;
+        } else {
+          removeIfEnPassant = true;
+        }
+      }
+    }
+
+    if (removeIfEnPassant) {
+      // check for en-passant, if it is, return false.
+      if (move.piece() == PieceType::PAWN) {
+        // check if to location is 2 from border
+        int sum = std::abs(move.from().row() - move.to().row()) +
+                  std::abs(move.from().col() - move.to().col());
+        if (m_nextPlayer == PlayerColor::WHITE && move.to().row() == 5) {
+          // check if diagonally moved
+          if (sum == 2) {
+            // check for empty field there
+            if (!m_board.hasPiece(move.to())) {
+              // check for pawn one line before
+              if (m_board.hasPiece(
+                      Position(move.to().row() - 1, move.to().col()))) {
+                Piece p = m_board.getPiece(
+                    Position(move.to().row() - 1, move.to().col()));
+                if (p.type() == PieceType::PAWN &&
+                    p.color() == PlayerColor::BLACK) {
+                  // this was an en-passant move, remove it
+                  return false;
+                }
+              }
+            }
+          }
+        } else if (m_nextPlayer == PlayerColor::BLACK && move.to().row() == 2) {
+          if (sum == 2) {
+            // check for empty field there
+            if (!m_board.hasPiece(move.to())) {
+              if (m_board.hasPiece(
+                      Position(move.to().row() + 1, move.to().col()))) {
+                Piece p = m_board.getPiece(
+                    Position(move.to().row() + 1, move.to().col()));
+                if (p.type() == PieceType::PAWN &&
+                    p.color() == PlayerColor::WHITE) {
+                  // this was an en-passant move, remove it
+                  return false;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
 
     return true; // for now.
   } else {
     return false;
   }
+}
+
+void GameState::getEnPassantInformation(int &whiteEnPassant,
+                                        int &blackEnPassant) const {
+  whiteEnPassant = m_whiteEnPassant;
+  blackEnPassant = m_blackEnPassant;
 }
 
 void GameState::applyMove(const Move &move) {
@@ -102,8 +177,7 @@ void GameState::applyMove(const Move &move) {
     throw std::runtime_error("This move is not valid.");
   }
 
-  // check if this is an castling move, if it is, board.applyMove can not be
-  // used.
+  // check if this is an castling move
   bool isCastlingMove = false;
   bool isCastlingMoveKingWhite = false;
   bool isCastlingMoveQueenWhite = false;
@@ -189,14 +263,46 @@ void GameState::applyMove(const Move &move) {
     }
   }
 
-  // switch next player
-  m_nextPlayer = (m_nextPlayer == PlayerColor::WHITE) ? PlayerColor::BLACK
-                                                      : PlayerColor::WHITE;
-
   // TODO: update counts (halfmoves)
   // TODO: add captured pieces to vectors
 
-  // 1. check if this move is a castling move.
+  // if it is a en-passant killer move, remove the pawn
+  if (m_nextPlayer == PlayerColor::WHITE) {
+    if (move.piece() == PieceType::PAWN && move.from().row() == 4) {
+      if (m_blackEnPassant == move.to().col() &&
+          move.to() == Position(5, m_blackEnPassant)) {
+        m_board.removePiece(Position(4, m_blackEnPassant));
+      }
+    }
+  } else {
+    if (move.piece() == PieceType::PAWN && move.from().row() == 3) {
+      if (m_whiteEnPassant == move.to().col() &&
+          move.to() == Position(2, m_whiteEnPassant)) {
+        m_board.removePiece(Position(3, m_whiteEnPassant));
+      }
+    }
+  }
+
+  // reset en-passant
+  if (m_nextPlayer == PlayerColor::BLACK && m_whiteEnPassant != -1)
+    m_whiteEnPassant = -1;
+  if (m_nextPlayer == PlayerColor::WHITE && m_blackEnPassant != -1)
+    m_blackEnPassant = -1;
+
+  // En-Passant: set corresponding column
+  if (move.piece() == PieceType::PAWN) {
+    if (std::abs(move.from().row() - move.to().row()) == 2) {
+      // two steps are only valid if en-passant
+      if (m_nextPlayer == PlayerColor::WHITE)
+        m_whiteEnPassant = move.to().col();
+      if (m_nextPlayer == PlayerColor::BLACK)
+        m_blackEnPassant = move.to().col();
+    }
+  }
+
+  // switch next player
+  m_nextPlayer = (m_nextPlayer == PlayerColor::WHITE) ? PlayerColor::BLACK
+                                                      : PlayerColor::WHITE;
 
   // increase full moves
   if (m_nextPlayer == PlayerColor::WHITE) {

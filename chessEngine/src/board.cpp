@@ -172,8 +172,6 @@ bool Board::isValid(const Move &move) const {
 
   switch (move.piece()) {
   case PieceType::PAWN: {
-    // TODO En-Passant
-
     // check if a piece is in front, front left or front right
     bool canAttack = false;
     // check if valid with attack
@@ -181,6 +179,27 @@ bool Board::isValid(const Move &move) const {
       // sideways, check to field
       auto it = m_board.find(move.to());
       if (it == m_board.cend()) {
+        // check if a pawn is one further (en-passant)
+        if (move.player() == PlayerColor::WHITE) {
+          auto it2 =
+              m_board.find(Position(move.to().row() - 1, move.to().col()));
+          if (it2 != m_board.cend()) {
+            return it2->second.type() == PieceType::PAWN &&
+                   it2->second.color() == PlayerColor::BLACK;
+          } else {
+            return false;
+          }
+        } else {
+          auto it2 =
+              m_board.find(Position(move.to().row() + 1, move.to().col()));
+          if (it2 != m_board.cend()) {
+            return it2->second.type() == PieceType::PAWN &&
+                   it2->second.color() == PlayerColor::WHITE;
+          } else {
+            return false;
+          }
+        }
+
         // no piece is there
         return false;
       }
@@ -329,10 +348,33 @@ bool Board::isAttackMove(const Move &move) const {
   }
 
   auto it = m_board.find(move.to());
-  if (it != m_board.cend()) {
-    return (it->second.color() != move.player());
+  if (it == m_board.cend()) {
+    // check if a pawn is one further (en-passant)
+
+    if (move.piece() == PieceType::PAWN) {
+      if (move.player() == PlayerColor::WHITE) {
+        auto it2 = m_board.find(Position(move.to().row() - 1, move.to().col()));
+        if (it2 != m_board.cend()) {
+          return it2->second.type() == PieceType::PAWN &&
+                 it2->second.color() == PlayerColor::BLACK;
+        } else {
+          return false;
+        }
+      } else {
+        auto it2 = m_board.find(Position(move.to().row() + 1, move.to().col()));
+        if (it2 != m_board.cend()) {
+          return it2->second.type() == PieceType::PAWN &&
+                 it2->second.color() == PlayerColor::WHITE;
+        } else {
+          return false;
+        }
+      }
+      // no piece is there
+      return false;
+    }
+  } else {
+    return it->second.color() != move.player();
   }
-  return false;
 }
 
 bool Board::isCheckMove(const Move &move) const {

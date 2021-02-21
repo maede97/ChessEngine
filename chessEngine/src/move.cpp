@@ -68,6 +68,13 @@ bool Move::isValid(bool attack) const {
         return false;
     }
 
+    // remove double forward and attack
+    if (std::abs(m_from.row() - m_to.row()) +
+            std::abs(m_from.col() - m_to.col()) >
+        2) {
+      return false;
+    }
+
     break;
   }
   case PieceType::BISHOP: {

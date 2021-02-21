@@ -33,6 +33,7 @@ public:
    * @param move The move to apply.
    * @throws std::runtime_error If the move is from the wrong player or if the
    * move is invalid.
+   * @todo Conversion if a pawn reaches the end.
    */
   void applyMove(const Move &move);
 
@@ -50,7 +51,7 @@ public:
    * @brief Get all valid moves for the current piece at the position given.
    *
    * Internally relies on applyMove, therefore still incomplete.
-   * @todo Still not done.
+   * @todo Not done.
    * @param position The position to get all valid moves for.
    */
   std::vector<std::vector<bool>> getValidMoves(const Position &position) const;
@@ -100,6 +101,13 @@ public:
    */
   void setFullMoves(unsigned int fullMoves);
 
+  /**
+   * @brief Get information about the current En-Passant status.
+   * @param whiteEnPassant Which column white is En-Passant-ready (-1 if none)
+   * @param blackEnPassant Which column black is En-Passant-ready (-1 if none)
+   */
+  void getEnPassantInformation(int &whiteEnPassant, int &blackEnPassant) const;
+
 private:
   std::vector<Move> m_moves; ///< All moves previously done in this game.
   Board m_board;             ///< Current Board
@@ -125,8 +133,10 @@ private:
   std::vector<Piece>
       m_capturedPiecesBlack; ///< vector to store captured black pieces
 
-  // TODO: store enpassant information
-  // TODO: store castle information
+  int m_whiteEnPassant =
+      -1; ///< Stores with pawn (column) was just moved (to enable En-Passant)
+  int m_blackEnPassant =
+      -1; ///< Stores with pawn (column) was just moved (to enable En-Passant)
 };
 
 } // namespace chessEngine
