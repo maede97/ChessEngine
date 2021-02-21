@@ -129,6 +129,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2a13753571e3896ec2d6f2411cfbeb8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a2a13753571e3896ec2d6f2411cfbeb8c">getEnPassantInformation</a> (int &amp;whiteEnPassant, int &amp;blackEnPassant) const</td></tr>
 <tr class="memdesc:a2a13753571e3896ec2d6f2411cfbeb8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information about the current En-Passant status.  <a href="classchessEngine_1_1GameState.html#a2a13753571e3896ec2d6f2411cfbeb8c">More...</a><br /></td></tr>
 <tr class="separator:a2a13753571e3896ec2d6f2411cfbeb8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a759b1599632413f566685ab5975aa934"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a759b1599632413f566685ab5975aa934">getCapturedPieces</a> (std::vector&lt; <a class="el" href="classchessEngine_1_1Piece.html">Piece</a> &gt; &amp;whiteCaptured, std::vector&lt; <a class="el" href="classchessEngine_1_1Piece.html">Piece</a> &gt; &amp;blackCaptured) const</td></tr>
+<tr class="memdesc:a759b1599632413f566685ab5975aa934"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all captured pieces by color.  <a href="classchessEngine_1_1GameState.html#a759b1599632413f566685ab5975aa934">More...</a><br /></td></tr>
+<tr class="separator:a759b1599632413f566685ab5975aa934"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -242,6 +245,43 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the current board. </p>
+
+</div>
+</div>
+<a id="a759b1599632413f566685ab5975aa934"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a759b1599632413f566685ab5975aa934">&#9670;&nbsp;</a></span>getCapturedPieces()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chessEngine::GameState::getCapturedPieces </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classchessEngine_1_1Piece.html">Piece</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>whiteCaptured</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classchessEngine_1_1Piece.html">Piece</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>blackCaptured</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get all captured pieces by color. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">whiteCaptured</td><td>All pieces that white captured. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">blackCaptured</td><td>All pieces that black captured. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
