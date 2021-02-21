@@ -33,7 +33,7 @@ public:
    * @param move The move to apply.
    * @throws std::runtime_error If the move is from the wrong player or if the
    * move is invalid.
-   * @todo Conversion if a pawn reaches the end.
+   * @todo Promotion if a pawn reaches the end.
    */
   void applyMove(const Move &move);
 
@@ -117,19 +117,19 @@ public:
                          std::vector<Piece> &blackCaptured) const;
 
   /**
-   * @brief Set the conversion type for white.
+   * @brief Set the promotion type for white.
    *
    * This should be called before performing the pawn-move (reaches end).
    * @param type The type to convert to.
    */
-  void setWhiteConversionType(PieceType type);
+  void setWhitePromotionType(PieceType type);
   /**
-   * @brief Set the conversion type for black.
+   * @brief Set the promotion type for black.
    *
    * This should be called before performing the pawn-move (reaches end).
    * @param type The type to convert to.
    */
-  void setBlackConversionType(PieceType type);
+  void setBlackPromotionType(PieceType type);
 
 private:
   std::vector<Move> m_moves; ///< All moves previously done in this game.
@@ -161,8 +161,8 @@ private:
   int m_blackEnPassant =
       -1; ///< Stores with pawn (column) was just moved (to enable En-Passant)
 
-  PieceType m_whiteConversionType = PieceType::QUEEN;
-  PieceType m_blackConversionType = PieceType::QUEEN;
+  PieceType m_whitePromotionType = PieceType::QUEEN;
+  PieceType m_blackPromotionType = PieceType::QUEEN;
 };
 
 } // namespace chessEngine

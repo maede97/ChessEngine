@@ -313,16 +313,16 @@ void GameState::applyMove(const Move &move) {
     }
   }
 
-  // if a pawn reached the opposite border, perform a conversion
+  // if a pawn reached the opposite border, perform a promotion
   if (move.piece() == PieceType::PAWN) {
     if (move.player() == PlayerColor::WHITE && move.to().row() == 7) {
       m_board.removePiece(move.to());
       m_board.placePiece(move.to(),
-                         Piece(m_whiteConversionType, PlayerColor::WHITE));
+                         Piece(m_whitePromotionType, PlayerColor::WHITE));
     } else if (move.player() == PlayerColor::BLACK && move.to().row() == 0) {
       m_board.removePiece(move.to());
       m_board.placePiece(move.to(),
-                         Piece(m_blackConversionType, PlayerColor::BLACK));
+                         Piece(m_blackPromotionType, PlayerColor::BLACK));
     }
   }
 
@@ -358,9 +358,9 @@ void GameState::getCapturedPieces(std::vector<Piece> &whiteCaptured,
   }
 }
 
-void GameState::setWhiteConversionType(PieceType type) {
-  m_whiteConversionType = type;
+void GameState::setWhitePromotionType(PieceType type) {
+  m_whitePromotionType = type;
 }
-void GameState::setBlackConversionType(PieceType type) {
-  m_blackConversionType = type;
+void GameState::setBlackPromotionType(PieceType type) {
+  m_blackPromotionType = type;
 }

@@ -105,6 +105,28 @@ void Application::run() {
 
       game.getCapturedPieces(whiteCaptured, blackCaptured);
 
+      const char *promotionTypes[] = {"Knight", "Bishop", "Rook", "Queen"};
+      static const char *current_promotion_white = "Queen";
+      static const char *current_promotion_black = "Queen";
+
+      // promotion box for black
+      ImGui::Text("Promotion:");
+      ImGui::SameLine();
+      if (ImGui::BeginCombo("##blackpromotion", current_promotion_black)) {
+        for (int i = 0; i < 4; i++) {
+          bool is_selected = (current_promotion_black == promotionTypes[i]);
+          if (ImGui::Selectable(promotionTypes[i], is_selected)) {
+            current_promotion_black = promotionTypes[i];
+            // update
+            game.setBlackPromotionType(chessEngine::PieceType(i + 2));
+          }
+          if (is_selected) {
+            ImGui::SetItemDefaultFocus();
+          }
+        }
+        ImGui::EndCombo();
+      }
+
       if (blackCaptured.size() == 0) {
         ImGui::Text("No captures.");
       } else {
@@ -230,6 +252,7 @@ void Application::run() {
                     chessEngine::Position(i, j));
                 try {
                   std::cout << move << std::endl;
+
                   game.applyMove(move);
 
                   std::stringstream ss;
@@ -291,6 +314,24 @@ void Application::run() {
           ss << p << " ";
         }
         ImGui::Text(ss.str().c_str());
+      }
+
+      // promotion box for white
+      ImGui::Text("Promotion:");
+      ImGui::SameLine();
+      if (ImGui::BeginCombo("##whitepromotion", current_promotion_white)) {
+        for (int i = 0; i < 4; i++) {
+          bool is_selected = (current_promotion_white == promotionTypes[i]);
+          if (ImGui::Selectable(promotionTypes[i], is_selected)) {
+            current_promotion_white = promotionTypes[i];
+            // update
+            game.setWhitePromotionType(chessEngine::PieceType(i + 2));
+          }
+          if (is_selected) {
+            ImGui::SetItemDefaultFocus();
+          }
+        }
+        ImGui::EndCombo();
       }
 
       // print check info
