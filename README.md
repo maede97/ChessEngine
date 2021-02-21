@@ -6,13 +6,26 @@ My try in creating a chess engine from scratch, using optimizations.
 
 We shall see how far this goes...
 
-## Features
-- Unit tests (Work in progress)
-- GUI frontend (TODO)
+## Features (Work in Progress)
+- Chess Engine
+- Unit tests
+- GUI frontend
+
+## GUI-Frontend
+In order to build the frontend, you need to enable the CMake flag `BUILD_GUI`:
+```
+cmake .. -DBUILD_GUI=ON
+make
+./gui/ChessEngineGui
+```
+If the build process fails, make sure that you have `mesa-common-dev` installed:
+```
+sudo apt-get install mesa-common-dev
+```
 
 ## Unit tests
 Build the project and run the `unittests` binary:
-```[bash]
+```
 cmake ..
 make
 ./tests/unittests
