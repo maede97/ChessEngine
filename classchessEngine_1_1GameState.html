@@ -117,6 +117,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abd23965b48c38030bc639f164903e0a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#abd23965b48c38030bc639f164903e0a4">setCastleInformation</a> (bool whiteKingSide, bool whiteQueenSide, bool blackKingSide, bool blackQueenSide)</td></tr>
 <tr class="memdesc:abd23965b48c38030bc639f164903e0a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set castle information.  <a href="classchessEngine_1_1GameState.html#abd23965b48c38030bc639f164903e0a4">More...</a><br /></td></tr>
 <tr class="separator:abd23965b48c38030bc639f164903e0a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedcdfba0c6ea5bfc75538e70b5c0cff6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#aedcdfba0c6ea5bfc75538e70b5c0cff6">getCastleInformation</a> (bool &amp;whiteKingSide, bool &amp;whiteQueenSide, bool &amp;blackKingSide, bool &amp;blackQueenSide) const</td></tr>
+<tr class="memdesc:aedcdfba0c6ea5bfc75538e70b5c0cff6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get castle information.  <a href="classchessEngine_1_1GameState.html#aedcdfba0c6ea5bfc75538e70b5c0cff6">More...</a><br /></td></tr>
+<tr class="separator:aedcdfba0c6ea5bfc75538e70b5c0cff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa71264df519d90ea2648d772608df3e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#aa71264df519d90ea2648d772608df3e4">setHalfMoves</a> (unsigned int halfMoves)</td></tr>
 <tr class="memdesc:aa71264df519d90ea2648d772608df3e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the half moves. That is the number of halfmoves since the last capture or pawn advance.  <a href="classchessEngine_1_1GameState.html#aa71264df519d90ea2648d772608df3e4">More...</a><br /></td></tr>
 <tr class="separator:aa71264df519d90ea2648d772608df3e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,7 +163,7 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to hold the current state of the game. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">Todo:</a></b></dt><dd>This class is still incomplete. In addition, all unittests are still needed. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo:</a></b></dt><dd>This class is still incomplete. In addition, all unittests are still needed. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aedcff58ec06e2b0b9bbee3a278212173"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aedcff58ec06e2b0b9bbee3a278212173">&#9670;&nbsp;</a></span>GameState()</h2>
@@ -232,6 +235,57 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="aedcdfba0c6ea5bfc75538e70b5c0cff6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedcdfba0c6ea5bfc75538e70b5c0cff6">&#9670;&nbsp;</a></span>getCastleInformation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chessEngine::GameState::getCastleInformation </td>
+          <td>(</td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>whiteKingSide</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>whiteQueenSide</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>blackKingSide</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>blackQueenSide</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get castle information. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">whiteKingSide</td><td>If the white player can castle king side. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">whiteQueenSide</td><td>If the white player can castle queen side. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">blackKingSide</td><td>If the black player can castle king side. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">blackQueenSide</td><td>If the black player can castle queen side. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aa2756a226bed662e818c749033c01c90"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa2756a226bed662e818c749033c01c90">&#9670;&nbsp;</a></span>getNextPlayer()</h2>
 
@@ -268,7 +322,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get all valid moves for the current piece at the position given. </p>
-<p>Internally relies on applyMove, therefore still incomplete. </p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000008">Todo:</a></b></dt><dd>Still not done. </dd></dl>
+<p>Internally relies on applyMove, therefore still incomplete. </p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">Todo:</a></b></dt><dd>Still not done. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">position</td><td>The position to get all valid moves for. </td></tr>
@@ -301,7 +355,7 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">Todo:</a></b></dt><dd>This is still incomplete. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">Todo:</a></b></dt><dd>This is still incomplete. </dd></dl>
 
 </div>
 </div>
@@ -481,7 +535,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
-<div class="line">      <span class="keyword">false</span></div>
+<div class="line">      <span class="keyword">true</span></div>
 </div><!-- fragment -->
 <p>If the black player can castle king side. </p>
 
@@ -507,7 +561,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
-<div class="line">      <span class="keyword">false</span></div>
+<div class="line">      <span class="keyword">true</span></div>
 </div><!-- fragment -->
 <p>If the black player can castle queen side. </p>
 
@@ -702,7 +756,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
-<div class="line">      <span class="keyword">false</span></div>
+<div class="line">      <span class="keyword">true</span></div>
 </div><!-- fragment -->
 <p>If the white player can castle king side. </p>
 
@@ -728,7 +782,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
-<div class="line">      <span class="keyword">false</span></div>
+<div class="line">      <span class="keyword">true</span></div>
 </div><!-- fragment -->
 <p>If the white player can castle queen side. </p>
 
