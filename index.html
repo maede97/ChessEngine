@@ -70,15 +70,21 @@ $(function() {
 <p>My try in creating a chess engine from scratch, using optimizations.</p>
 <p>We shall see how far this goes...</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
-Features</h1>
+Features (Work in Progress)</h1>
 <ul>
-<li>Unit tests (Work in progress)</li>
-<li>GUI frontend (TODO)</li>
+<li>Chess Engine</li>
+<li>Unit tests</li>
+<li>GUI frontend</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md2"></a>
+GUI-Frontend</h1>
+<p>In order to build the frontend, you need to enable the CMake flag <code>BUILD_GUI</code>: </p><div class="fragment"><div class="line">cmake .. -DBUILD_GUI=ON</div>
+<div class="line">make</div>
+<div class="line">./gui/ChessEngineGui</div>
+</div><!-- fragment --><p> If the build process fails, make sure that you have <code>mesa-common-dev</code> installed: </p><div class="fragment"><div class="line">sudo apt-get install mesa-common-dev</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md3"></a>
 Unit tests</h1>
-<p>Build the project and run the <code>unittests</code> binary: </p><div class="fragment"><div class="line"> {[bash]}</div>
-<div class="line">cmake ..</div>
+<p>Build the project and run the <code>unittests</code> binary: </p><div class="fragment"><div class="line">cmake ..</div>
 <div class="line">make</div>
 <div class="line">./tests/unittests</div>
 </div><!-- fragment --> </div></div><!-- PageDoc -->

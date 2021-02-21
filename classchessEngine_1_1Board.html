@@ -102,6 +102,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9d45e238fa8724cec7aa1f59ab303e75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#a9d45e238fa8724cec7aa1f59ab303e75">placePiece</a> (const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;position, const <a class="el" href="classchessEngine_1_1Piece.html">Piece</a> &amp;piece)</td></tr>
 <tr class="memdesc:a9d45e238fa8724cec7aa1f59ab303e75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place a piece on the board.  <a href="classchessEngine_1_1Board.html#a9d45e238fa8724cec7aa1f59ab303e75">More...</a><br /></td></tr>
 <tr class="separator:a9d45e238fa8724cec7aa1f59ab303e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5b7b2db2e124feedf2362052cac54a8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#ae5b7b2db2e124feedf2362052cac54a8">hasPiece</a> (const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;position) const</td></tr>
+<tr class="memdesc:ae5b7b2db2e124feedf2362052cac54a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether a piece exists in this place.  <a href="classchessEngine_1_1Board.html#ae5b7b2db2e124feedf2362052cac54a8">More...</a><br /></td></tr>
+<tr class="separator:ae5b7b2db2e124feedf2362052cac54a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac86fc8b1034a8e1e8f182a0509f04029"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1Board.html#ac86fc8b1034a8e1e8f182a0509f04029">removePiece</a> (const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;position)</td></tr>
 <tr class="memdesc:ac86fc8b1034a8e1e8f182a0509f04029"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a piece from the board given a position.  <a href="classchessEngine_1_1Board.html#ac86fc8b1034a8e1e8f182a0509f04029">More...</a><br /></td></tr>
 <tr class="separator:ac86fc8b1034a8e1e8f182a0509f04029"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -414,6 +417,32 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section attention"><dt>Attention</dt><dd>This does not cover attack moves from pawns! </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>Depends on isValid(const Move&amp; move) to be fully implemented. </dd></dl>
+
+</div>
+</div>
+<a id="ae5b7b2db2e124feedf2362052cac54a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5b7b2db2e124feedf2362052cac54a8">&#9670;&nbsp;</a></span>hasPiece()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chessEngine::Board::hasPiece </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;&#160;</td>
+          <td class="paramname"><em>position</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns whether a piece exists in this place. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>The position to check. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

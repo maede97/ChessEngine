@@ -102,6 +102,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a11d48ad07b2dfbeb631c5cada78181ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a11d48ad07b2dfbeb631c5cada78181ba">applyMove</a> (const <a class="el" href="classchessEngine_1_1Move.html">Move</a> &amp;move)</td></tr>
 <tr class="memdesc:a11d48ad07b2dfbeb631c5cada78181ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a full chess move.  <a href="classchessEngine_1_1GameState.html#a11d48ad07b2dfbeb631c5cada78181ba">More...</a><br /></td></tr>
 <tr class="separator:a11d48ad07b2dfbeb631c5cada78181ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c0c6b55c0d76502e92c3426244f2d2d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a9c0c6b55c0d76502e92c3426244f2d2d">isValid</a> (const <a class="el" href="classchessEngine_1_1Move.html">Move</a> &amp;move) const</td></tr>
+<tr class="memdesc:a9c0c6b55c0d76502e92c3426244f2d2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a move is valid.  <a href="classchessEngine_1_1GameState.html#a9c0c6b55c0d76502e92c3426244f2d2d">More...</a><br /></td></tr>
+<tr class="separator:a9c0c6b55c0d76502e92c3426244f2d2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab886aed9fb64e9f630d214dccf37d44a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; bool &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#ab886aed9fb64e9f630d214dccf37d44a">getValidMoves</a> (const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;position) const</td></tr>
+<tr class="memdesc:ab886aed9fb64e9f630d214dccf37d44a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all valid moves for the current piece at the position given.  <a href="classchessEngine_1_1GameState.html#ab886aed9fb64e9f630d214dccf37d44a">More...</a><br /></td></tr>
+<tr class="separator:ab886aed9fb64e9f630d214dccf37d44a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5dc43576d68da9a94d5a402726248d89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a5dc43576d68da9a94d5a402726248d89">setNextPlayer</a> (<a class="el" href="namespacechessEngine.html#a0e3db173099459967c9a248c6289e3ca">PlayerColor</a> next)</td></tr>
 <tr class="memdesc:a5dc43576d68da9a94d5a402726248d89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the next player to play.  <a href="classchessEngine_1_1GameState.html#a5dc43576d68da9a94d5a402726248d89">More...</a><br /></td></tr>
 <tr class="separator:a5dc43576d68da9a94d5a402726248d89"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -127,7 +133,7 @@ Private Attributes</h2></td></tr>
 <tr class="memdesc:adc24d6b845a1e919739a79c080ca48ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current <a class="el" href="classchessEngine_1_1Board.html" title="Class to store a chess board.">Board</a>.  <a href="classchessEngine_1_1GameState.html#adc24d6b845a1e919739a79c080ca48ab">More...</a><br /></td></tr>
 <tr class="separator:adc24d6b845a1e919739a79c080ca48ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac29cf57aa9bc3eec80d2f4e5d7d05e01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacechessEngine.html#a0e3db173099459967c9a248c6289e3ca">PlayerColor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#ac29cf57aa9bc3eec80d2f4e5d7d05e01">m_nextPlayer</a></td></tr>
-<tr class="memdesc:ac29cf57aa9bc3eec80d2f4e5d7d05e01"><td class="mdescLeft">&#160;</td><td class="mdescRight">The player which comes next.  <a href="classchessEngine_1_1GameState.html#ac29cf57aa9bc3eec80d2f4e5d7d05e01">More...</a><br /></td></tr>
+<tr class="memdesc:ac29cf57aa9bc3eec80d2f4e5d7d05e01"><td class="mdescLeft">&#160;</td><td class="mdescRight">The player which comes next. White should start.  <a href="classchessEngine_1_1GameState.html#ac29cf57aa9bc3eec80d2f4e5d7d05e01">More...</a><br /></td></tr>
 <tr class="separator:ac29cf57aa9bc3eec80d2f4e5d7d05e01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3ef1abaf42a41e7d3157621a4290458"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#ae3ef1abaf42a41e7d3157621a4290458">m_whiteCastleKingSide</a></td></tr>
 <tr class="memdesc:ae3ef1abaf42a41e7d3157621a4290458"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the white player can castle king side.  <a href="classchessEngine_1_1GameState.html#ae3ef1abaf42a41e7d3157621a4290458">More...</a><br /></td></tr>
@@ -145,10 +151,16 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a19942309ce42955d10de1c7982532a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85c80d7e7e34a804c3c11fffaba7fb91"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a85c80d7e7e34a804c3c11fffaba7fb91">m_fullMoves</a> = 1</td></tr>
 <tr class="separator:a85c80d7e7e34a804c3c11fffaba7fb91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0222a44bae3a691e66646b1f9fb36437"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classchessEngine_1_1Piece.html">Piece</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a0222a44bae3a691e66646b1f9fb36437">m_capturedPiecesWhite</a></td></tr>
+<tr class="memdesc:a0222a44bae3a691e66646b1f9fb36437"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector to store captured white pieces.  <a href="classchessEngine_1_1GameState.html#a0222a44bae3a691e66646b1f9fb36437">More...</a><br /></td></tr>
+<tr class="separator:a0222a44bae3a691e66646b1f9fb36437"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a217658c58a77e3c8b065800945cc9f59"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classchessEngine_1_1Piece.html">Piece</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a217658c58a77e3c8b065800945cc9f59">m_capturedPiecesBlack</a></td></tr>
+<tr class="memdesc:a217658c58a77e3c8b065800945cc9f59"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector to store captured black pieces  <a href="classchessEngine_1_1GameState.html#a217658c58a77e3c8b065800945cc9f59">More...</a><br /></td></tr>
+<tr class="separator:a217658c58a77e3c8b065800945cc9f59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to hold the current state of the game. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo:</a></b></dt><dd>This class is still incomplete. In addition, all unittests are still needed. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">Todo:</a></b></dt><dd>This class is still incomplete. In addition, all unittests are still needed. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aedcff58ec06e2b0b9bbee3a278212173"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aedcff58ec06e2b0b9bbee3a278212173">&#9670;&nbsp;</a></span>GameState()</h2>
@@ -236,6 +248,60 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the next player to play. </p>
+
+</div>
+</div>
+<a id="ab886aed9fb64e9f630d214dccf37d44a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab886aed9fb64e9f630d214dccf37d44a">&#9670;&nbsp;</a></span>getValidMoves()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;bool&gt; &gt; chessEngine::GameState::getValidMoves </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;&#160;</td>
+          <td class="paramname"><em>position</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get all valid moves for the current piece at the position given. </p>
+<p>Internally relies on applyMove, therefore still incomplete. </p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000008">Todo:</a></b></dt><dd>Still not done. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>The position to get all valid moves for. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9c0c6b55c0d76502e92c3426244f2d2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c0c6b55c0d76502e92c3426244f2d2d">&#9670;&nbsp;</a></span>isValid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chessEngine::GameState::isValid </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classchessEngine_1_1Move.html">Move</a> &amp;&#160;</td>
+          <td class="paramname"><em>move</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if a move is valid. </p>
+<p>This takes into account the move validity but also the current game state (en-passant, castling, check, etc). </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">move</td><td>The move to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">Todo:</a></b></dt><dd>This is still incomplete. </dd></dl>
 
 </div>
 </div>
@@ -471,6 +537,54 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a217658c58a77e3c8b065800945cc9f59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a217658c58a77e3c8b065800945cc9f59">&#9670;&nbsp;</a></span>m_capturedPiecesBlack</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classchessEngine_1_1Piece.html">Piece</a>&gt; chessEngine::GameState::m_capturedPiecesBlack</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>vector to store captured black pieces </p>
+
+</div>
+</div>
+<a id="a0222a44bae3a691e66646b1f9fb36437"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0222a44bae3a691e66646b1f9fb36437">&#9670;&nbsp;</a></span>m_capturedPiecesWhite</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classchessEngine_1_1Piece.html">Piece</a>&gt; chessEngine::GameState::m_capturedPiecesWhite</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>vector to store captured white pieces. </p>
+
+</div>
+</div>
 <a id="a85c80d7e7e34a804c3c11fffaba7fb91"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a85c80d7e7e34a804c3c11fffaba7fb91">&#9670;&nbsp;</a></span>m_fullMoves</h2>
 
@@ -560,8 +674,11 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>The player which comes next. </p>
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">      <a class="code" href="namespacechessEngine.html#a0e3db173099459967c9a248c6289e3caab5bf627e448384cf3a4c35121ca6008d">PlayerColor::WHITE</a></div>
+<div class="ttc" id="anamespacechessEngine_html_a0e3db173099459967c9a248c6289e3caab5bf627e448384cf3a4c35121ca6008d"><div class="ttname"><a href="namespacechessEngine.html#a0e3db173099459967c9a248c6289e3caab5bf627e448384cf3a4c35121ca6008d">chessEngine::PlayerColor::WHITE</a></div><div class="ttdeci">@ WHITE</div><div class="ttdoc">w</div></div>
+</div><!-- fragment -->
+<p>The player which comes next. White should start. </p>
 
 </div>
 </div>

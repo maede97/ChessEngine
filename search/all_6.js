@@ -6,5 +6,5 @@ var searchData=
   ['getcheckinfo_19',['getCheckInfo',['../classchessEngine_1_1Board.html#a28b19903b38ba79c41fffd6abdb27e9a',1,'chessEngine::Board']]],
   ['getnextplayer_20',['getNextPlayer',['../classchessEngine_1_1GameState.html#aa2756a226bed662e818c749033c01c90',1,'chessEngine::GameState']]],
   ['getpiece_21',['getPiece',['../classchessEngine_1_1Board.html#a3708a938653f145342c33a154b5d5580',1,'chessEngine::Board']]],
-  ['getvalidmoves_22',['getValidMoves',['../classchessEngine_1_1Board.html#a1f8ae8fdc9d62a8df695a4c8c929c3bf',1,'chessEngine::Board']]]
+  ['getvalidmoves_22',['getValidMoves',['../classchessEngine_1_1Board.html#a1f8ae8fdc9d62a8df695a4c8c929c3bf',1,'chessEngine::Board::getValidMoves()'],['../classchessEngine_1_1GameState.html#ab886aed9fb64e9f630d214dccf37d44a',1,'chessEngine::GameState::getValidMoves()']]]
 ];

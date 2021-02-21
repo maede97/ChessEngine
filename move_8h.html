@@ -68,13 +68,15 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">move.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="definitions_8h_source.html">chessEngine/definitions.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="position_8h_source.html">chessEngine/position.h</a>&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
 </div>
 <p><a href="move_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -88,7 +90,51 @@ Classes</h2></td></tr>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacechessEngine"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacechessEngine.html">chessEngine</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a772e968f1b407c369e0db65b2d3d8f7a"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="move_8h.html#a772e968f1b407c369e0db65b2d3d8f7a">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classchessEngine_1_1Move.html">chessEngine::Move</a> &amp;move)</td></tr>
+<tr class="memdesc:a772e968f1b407c369e0db65b2d3d8f7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write move information to the output stream.  <a href="move_8h.html#a772e968f1b407c369e0db65b2d3d8f7a">More...</a><br /></td></tr>
+<tr class="separator:a772e968f1b407c369e0db65b2d3d8f7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a772e968f1b407c369e0db65b2d3d8f7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a772e968f1b407c369e0db65b2d3d8f7a">&#9670;&nbsp;</a></span>operator&lt;&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classchessEngine_1_1Move.html">chessEngine::Move</a> &amp;&#160;</td>
+          <td class="paramname"><em>move</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write move information to the output stream. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>The stream to write to. </td></tr>
+    <tr><td class="paramname">move</td><td>The move to write out. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
