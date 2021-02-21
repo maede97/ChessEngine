@@ -100,6 +100,21 @@ void Application::run() {
       bool isAttack = false;
       bool isCurrent = false;
 
+      std::vector<chessEngine::Piece> whiteCaptured;
+      std::vector<chessEngine::Piece> blackCaptured;
+
+      game.getCapturedPieces(whiteCaptured, blackCaptured);
+
+      if (blackCaptured.size() == 0) {
+        ImGui::Text("No captures.");
+      } else {
+        std::stringstream ss;
+        for (auto &p : blackCaptured) {
+          ss << p << " ";
+        }
+        ImGui::Text(ss.str().c_str());
+      }
+
       // DRAW THE BOARD
       for (int i = 7; i > -1; i--) {
         for (int j = 0; j < 8; j++) {
@@ -266,6 +281,16 @@ void Application::run() {
           ImGui::PopID();
         }
         ImGui::NewLine();
+      }
+
+      if (whiteCaptured.size() == 0) {
+        ImGui::Text("No captures.");
+      } else {
+        std::stringstream ss;
+        for (auto &p : whiteCaptured) {
+          ss << p << " ";
+        }
+        ImGui::Text(ss.str().c_str());
       }
 
       // print check info

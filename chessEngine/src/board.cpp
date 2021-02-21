@@ -375,6 +375,7 @@ bool Board::isAttackMove(const Move &move) const {
   } else {
     return it->second.color() != move.player();
   }
+  return false;
 }
 
 bool Board::isCheckMove(const Move &move) const {

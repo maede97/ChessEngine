@@ -1,3 +1,4 @@
+#include <chessEngine/io.h>
 #include <chessEngine/piece.h>
 
 using namespace chessEngine;
@@ -20,6 +21,6 @@ bool Piece::operator==(const Piece &rhs) const {
 bool Piece::operator!=(const Piece &rhs) const { return !operator==(rhs); }
 
 std::ostream &operator<<(std::ostream &out, const Piece &piece) {
-  out << "Piece(" << (int)piece.type() << "/" << (int)piece.color() << ")";
+  out << IO::pieceToCharSimple(piece);
   return out;
 }

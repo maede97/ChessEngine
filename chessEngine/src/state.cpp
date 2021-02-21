@@ -206,6 +206,16 @@ void GameState::applyMove(const Move &move) {
     }
   }
 
+  // if the goal location has an opponent piece, set this to capture it.
+  if (m_board.hasPiece(move.to())) {
+    Piece p = m_board.getPiece(move.to());
+    if (m_nextPlayer == PlayerColor::WHITE) {
+      m_capturedPiecesWhite.push_back(Piece(PlayerColor::BLACK, p.type()));
+    } else {
+      m_capturedPiecesBlack.push_back(Piece(PlayerColor::WHITE, p.type()));
+    }
+  }
+
   // if we came all the way down to here, the move is valid and can be played.
   m_board.applyMove(move);
 
@@ -264,7 +274,6 @@ void GameState::applyMove(const Move &move) {
   }
 
   // TODO: update counts (halfmoves)
-  // TODO: add captured pieces to vectors
 
   // if it is a en-passant killer move, remove the pawn
   if (m_nextPlayer == PlayerColor::WHITE) {
@@ -272,6 +281,8 @@ void GameState::applyMove(const Move &move) {
       if (m_blackEnPassant == move.to().col() &&
           move.to() == Position(5, m_blackEnPassant)) {
         m_board.removePiece(Position(4, m_blackEnPassant));
+        m_capturedPiecesWhite.push_back(
+            Piece(PieceType::PAWN, PlayerColor::BLACK));
       }
     }
   } else {
@@ -279,6 +290,8 @@ void GameState::applyMove(const Move &move) {
       if (m_whiteEnPassant == move.to().col() &&
           move.to() == Position(2, m_whiteEnPassant)) {
         m_board.removePiece(Position(3, m_whiteEnPassant));
+        m_capturedPiecesBlack.push_back(
+            Piece(PieceType::PAWN, PlayerColor::WHITE));
       }
     }
   }
@@ -317,4 +330,17 @@ GameState::getValidMoves(const Position &position) const {
 
   // for now: return board moves
   return m_board.getValidMoves(position);
+}
+
+void GameState::getCapturedPieces(std::vector<Piece> &whiteCaptured,
+                                  std::vector<Piece> &blackCaptured) const {
+  whiteCaptured.reserve(m_capturedPiecesWhite.size());
+  blackCaptured.reserve(m_capturedPiecesBlack.size());
+
+  for (auto p : m_capturedPiecesWhite) {
+    whiteCaptured.push_back(p);
+  }
+  for (auto p : m_capturedPiecesBlack) {
+    blackCaptured.push_back(p);
+  }
 }

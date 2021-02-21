@@ -108,6 +108,14 @@ public:
    */
   void getEnPassantInformation(int &whiteEnPassant, int &blackEnPassant) const;
 
+  /**
+   * @brief Get all captured pieces by color.
+   * @param[out] whiteCaptured All pieces that white captured.
+   * @param[out] blackCaptured All pieces that black captured.
+   */
+  void getCapturedPieces(std::vector<Piece> &whiteCaptured,
+                         std::vector<Piece> &blackCaptured) const;
+
 private:
   std::vector<Move> m_moves; ///< All moves previously done in this game.
   Board m_board;             ///< Current Board
