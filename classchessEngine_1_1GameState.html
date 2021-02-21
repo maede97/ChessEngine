@@ -126,6 +126,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aec786b784dfffb03d24ea70594dd3900"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#aec786b784dfffb03d24ea70594dd3900">setFullMoves</a> (unsigned int fullMoves)</td></tr>
 <tr class="memdesc:aec786b784dfffb03d24ea70594dd3900"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the full moves. Starts at 1 and gets increased after blacks move.  <a href="classchessEngine_1_1GameState.html#aec786b784dfffb03d24ea70594dd3900">More...</a><br /></td></tr>
 <tr class="separator:aec786b784dfffb03d24ea70594dd3900"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a13753571e3896ec2d6f2411cfbeb8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a2a13753571e3896ec2d6f2411cfbeb8c">getEnPassantInformation</a> (int &amp;whiteEnPassant, int &amp;blackEnPassant) const</td></tr>
+<tr class="memdesc:a2a13753571e3896ec2d6f2411cfbeb8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information about the current En-Passant status.  <a href="classchessEngine_1_1GameState.html#a2a13753571e3896ec2d6f2411cfbeb8c">More...</a><br /></td></tr>
+<tr class="separator:a2a13753571e3896ec2d6f2411cfbeb8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -160,10 +163,16 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a217658c58a77e3c8b065800945cc9f59"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classchessEngine_1_1Piece.html">Piece</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a217658c58a77e3c8b065800945cc9f59">m_capturedPiecesBlack</a></td></tr>
 <tr class="memdesc:a217658c58a77e3c8b065800945cc9f59"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector to store captured black pieces  <a href="classchessEngine_1_1GameState.html#a217658c58a77e3c8b065800945cc9f59">More...</a><br /></td></tr>
 <tr class="separator:a217658c58a77e3c8b065800945cc9f59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abea465b10cfe23533c3b119236344830"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#abea465b10cfe23533c3b119236344830">m_whiteEnPassant</a></td></tr>
+<tr class="memdesc:abea465b10cfe23533c3b119236344830"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores with pawn (column) was just moved (to enable En-Passant)  <a href="classchessEngine_1_1GameState.html#abea465b10cfe23533c3b119236344830">More...</a><br /></td></tr>
+<tr class="separator:abea465b10cfe23533c3b119236344830"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bbb8818d6017c95eb3b6550801b2001"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a5bbb8818d6017c95eb3b6550801b2001">m_blackEnPassant</a></td></tr>
+<tr class="memdesc:a5bbb8818d6017c95eb3b6550801b2001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores with pawn (column) was just moved (to enable En-Passant)  <a href="classchessEngine_1_1GameState.html#a5bbb8818d6017c95eb3b6550801b2001">More...</a><br /></td></tr>
+<tr class="separator:a5bbb8818d6017c95eb3b6550801b2001"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to hold the current state of the game. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo:</a></b></dt><dd>This class is still incomplete. In addition, all unittests are still needed. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>This class is still incomplete. In addition, all unittests are still needed. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aedcff58ec06e2b0b9bbee3a278212173"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aedcff58ec06e2b0b9bbee3a278212173">&#9670;&nbsp;</a></span>GameState()</h2>
@@ -213,6 +222,7 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo:</a></b></dt><dd>Conversion if a pawn reaches the end. </dd></dl>
 
 </div>
 </div>
@@ -286,6 +296,43 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a2a13753571e3896ec2d6f2411cfbeb8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a13753571e3896ec2d6f2411cfbeb8c">&#9670;&nbsp;</a></span>getEnPassantInformation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chessEngine::GameState::getEnPassantInformation </td>
+          <td>(</td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>whiteEnPassant</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>blackEnPassant</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get information about the current En-Passant status. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">whiteEnPassant</td><td>Which column white is En-Passant-ready (-1 if none) </td></tr>
+    <tr><td class="paramname">blackEnPassant</td><td>Which column black is En-Passant-ready (-1 if none) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aa2756a226bed662e818c749033c01c90"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa2756a226bed662e818c749033c01c90">&#9670;&nbsp;</a></span>getNextPlayer()</h2>
 
@@ -322,7 +369,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get all valid moves for the current piece at the position given. </p>
-<p>Internally relies on applyMove, therefore still incomplete. </p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">Todo:</a></b></dt><dd>Still not done. </dd></dl>
+<p>Internally relies on applyMove, therefore still incomplete. </p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">Todo:</a></b></dt><dd>Not done. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">position</td><td>The position to get all valid moves for. </td></tr>
@@ -355,7 +402,7 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">Todo:</a></b></dt><dd>This is still incomplete. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo:</a></b></dt><dd>This is still incomplete. </dd></dl>
 
 </div>
 </div>
@@ -564,6 +611,32 @@ Private Attributes</h2></td></tr>
 <div class="line">      <span class="keyword">true</span></div>
 </div><!-- fragment -->
 <p>If the black player can castle queen side. </p>
+
+</div>
+</div>
+<a id="a5bbb8818d6017c95eb3b6550801b2001"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bbb8818d6017c95eb3b6550801b2001">&#9670;&nbsp;</a></span>m_blackEnPassant</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int chessEngine::GameState::m_blackEnPassant</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">      -1</div>
+</div><!-- fragment -->
+<p>Stores with pawn (column) was just moved (to enable En-Passant) </p>
 
 </div>
 </div>
@@ -785,6 +858,32 @@ Private Attributes</h2></td></tr>
 <div class="line">      <span class="keyword">true</span></div>
 </div><!-- fragment -->
 <p>If the white player can castle queen side. </p>
+
+</div>
+</div>
+<a id="abea465b10cfe23533c3b119236344830"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abea465b10cfe23533c3b119236344830">&#9670;&nbsp;</a></span>m_whiteEnPassant</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int chessEngine::GameState::m_whiteEnPassant</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">      -1</div>
+</div><!-- fragment -->
+<p>Stores with pawn (column) was just moved (to enable En-Passant) </p>
 
 </div>
 </div>
