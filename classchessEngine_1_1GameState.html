@@ -132,6 +132,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a759b1599632413f566685ab5975aa934"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a759b1599632413f566685ab5975aa934">getCapturedPieces</a> (std::vector&lt; <a class="el" href="classchessEngine_1_1Piece.html">Piece</a> &gt; &amp;whiteCaptured, std::vector&lt; <a class="el" href="classchessEngine_1_1Piece.html">Piece</a> &gt; &amp;blackCaptured) const</td></tr>
 <tr class="memdesc:a759b1599632413f566685ab5975aa934"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all captured pieces by color.  <a href="classchessEngine_1_1GameState.html#a759b1599632413f566685ab5975aa934">More...</a><br /></td></tr>
 <tr class="separator:a759b1599632413f566685ab5975aa934"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4720c9c17948c5be3ffa29b4bf536180"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a4720c9c17948c5be3ffa29b4bf536180">setWhiteConversionType</a> (<a class="el" href="namespacechessEngine.html#a0a4ae963ec379905420b849d2ec1c5e9">PieceType</a> type)</td></tr>
+<tr class="memdesc:a4720c9c17948c5be3ffa29b4bf536180"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the conversion type for white.  <a href="classchessEngine_1_1GameState.html#a4720c9c17948c5be3ffa29b4bf536180">More...</a><br /></td></tr>
+<tr class="separator:a4720c9c17948c5be3ffa29b4bf536180"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a288788c2dace299769280d9e72d7625e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a288788c2dace299769280d9e72d7625e">setBlackConversionType</a> (<a class="el" href="namespacechessEngine.html#a0a4ae963ec379905420b849d2ec1c5e9">PieceType</a> type)</td></tr>
+<tr class="memdesc:a288788c2dace299769280d9e72d7625e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the conversion type for black.  <a href="classchessEngine_1_1GameState.html#a288788c2dace299769280d9e72d7625e">More...</a><br /></td></tr>
+<tr class="separator:a288788c2dace299769280d9e72d7625e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -172,6 +178,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a5bbb8818d6017c95eb3b6550801b2001"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a5bbb8818d6017c95eb3b6550801b2001">m_blackEnPassant</a></td></tr>
 <tr class="memdesc:a5bbb8818d6017c95eb3b6550801b2001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores with pawn (column) was just moved (to enable En-Passant)  <a href="classchessEngine_1_1GameState.html#a5bbb8818d6017c95eb3b6550801b2001">More...</a><br /></td></tr>
 <tr class="separator:a5bbb8818d6017c95eb3b6550801b2001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2758d96685679429e3f502aba5b37e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacechessEngine.html#a0a4ae963ec379905420b849d2ec1c5e9">PieceType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#aa2758d96685679429e3f502aba5b37e5">m_whiteConversionType</a> = <a class="el" href="namespacechessEngine.html#a0a4ae963ec379905420b849d2ec1c5e9a02d144e18eda99bcb94f3a764756805e">PieceType::QUEEN</a></td></tr>
+<tr class="separator:aa2758d96685679429e3f502aba5b37e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ac7c9195eab51250f7a8babe9c9e473"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacechessEngine.html#a0a4ae963ec379905420b849d2ec1c5e9">PieceType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a4ac7c9195eab51250f7a8babe9c9e473">m_blackConversionType</a> = <a class="el" href="namespacechessEngine.html#a0a4ae963ec379905420b849d2ec1c5e9a02d144e18eda99bcb94f3a764756805e">PieceType::QUEEN</a></td></tr>
+<tr class="separator:a4ac7c9195eab51250f7a8babe9c9e473"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to hold the current state of the game. </p>
@@ -446,6 +456,32 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a288788c2dace299769280d9e72d7625e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a288788c2dace299769280d9e72d7625e">&#9670;&nbsp;</a></span>setBlackConversionType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chessEngine::GameState::setBlackConversionType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacechessEngine.html#a0a4ae963ec379905420b849d2ec1c5e9">PieceType</a>&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the conversion type for black. </p>
+<p>This should be called before performing the pawn-move (reaches end). </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>The type to convert to. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ac17309755843e125b556ace923d3a39f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac17309755843e125b556ace923d3a39f">&#9670;&nbsp;</a></span>setBoard()</h2>
 
@@ -601,6 +637,32 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a4720c9c17948c5be3ffa29b4bf536180"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4720c9c17948c5be3ffa29b4bf536180">&#9670;&nbsp;</a></span>setWhiteConversionType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chessEngine::GameState::setWhiteConversionType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacechessEngine.html#a0a4ae963ec379905420b849d2ec1c5e9">PieceType</a>&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the conversion type for white. </p>
+<p>This should be called before performing the pawn-move (reaches end). </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>The type to convert to. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a9d4a2556bcc7a5f18a6030f5be98f46c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9d4a2556bcc7a5f18a6030f5be98f46c">&#9670;&nbsp;</a></span>m_blackCastleKingSide</h2>
@@ -651,6 +713,28 @@ Private Attributes</h2></td></tr>
 <div class="line">      <span class="keyword">true</span></div>
 </div><!-- fragment -->
 <p>If the black player can castle queen side. </p>
+
+</div>
+</div>
+<a id="a4ac7c9195eab51250f7a8babe9c9e473"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ac7c9195eab51250f7a8babe9c9e473">&#9670;&nbsp;</a></span>m_blackConversionType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacechessEngine.html#a0a4ae963ec379905420b849d2ec1c5e9">PieceType</a> chessEngine::GameState::m_blackConversionType = <a class="el" href="namespacechessEngine.html#a0a4ae963ec379905420b849d2ec1c5e9a02d144e18eda99bcb94f3a764756805e">PieceType::QUEEN</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -898,6 +982,28 @@ Private Attributes</h2></td></tr>
 <div class="line">      <span class="keyword">true</span></div>
 </div><!-- fragment -->
 <p>If the white player can castle queen side. </p>
+
+</div>
+</div>
+<a id="aa2758d96685679429e3f502aba5b37e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2758d96685679429e3f502aba5b37e5">&#9670;&nbsp;</a></span>m_whiteConversionType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacechessEngine.html#a0a4ae963ec379905420b849d2ec1c5e9">PieceType</a> chessEngine::GameState::m_whiteConversionType = <a class="el" href="namespacechessEngine.html#a0a4ae963ec379905420b849d2ec1c5e9a02d144e18eda99bcb94f3a764756805e">PieceType::QUEEN</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
