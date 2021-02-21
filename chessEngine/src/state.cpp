@@ -72,17 +72,23 @@ bool GameState::isValid(const Move &move) const {
       }
     }
 
+    // filter out moves which are not en-passant
+    // the board does not know this because it does not know it's temporal
+    // state.
     bool removeIfEnPassant = false;
 
-    if (!m_whiteEnPassant && !m_blackEnPassant) {
+    if (m_whiteEnPassant == -1 && m_nextPlayer == PlayerColor::BLACK) {
       removeIfEnPassant = true;
     }
+    if (m_blackEnPassant == -1 && m_nextPlayer == PlayerColor::WHITE) {
+      removeIfEnPassant = true;
+    }
+
     if (move.piece() == PieceType::PAWN) {
       if (m_blackEnPassant != -1 && m_nextPlayer == PlayerColor::WHITE) {
         if (m_blackEnPassant == move.to().col() && move.to().row() == 5) {
           return true;
         } else {
-          // filter out moves which are not en-passant
           removeIfEnPassant = true;
         }
       }
