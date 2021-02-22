@@ -160,13 +160,23 @@ void GameState::getEnPassantInformation(int &whiteEnPassant,
   blackEnPassant = m_blackEnPassant;
 }
 
+void GameState::setEnPassantInformation(int whiteEnPassant,
+                                        int blackEnPassant) {
+  if (whiteEnPassant < -1 || whiteEnPassant > 7 || blackEnPassant < -1 ||
+      blackEnPassant > 7) {
+    throw std::out_of_range("En-Passant information out of range.");
+  }
+  m_whiteEnPassant = whiteEnPassant;
+  m_blackEnPassant = blackEnPassant;
+}
+
 void GameState::applyMove(const Move &move) {
   if (m_winner != 0) {
     return;
   }
 
   if (!isValid(move)) {
-    throw std::runtime_error("This move is not valid.");
+    throw std::runtime_error("This move is not valid. (GameState::applyMove)");
   }
 
   // check if this is an castling move
@@ -462,5 +472,23 @@ std::vector<Move> GameState::getValidMoves(const Position &position) const {
     }
   }
 
+  return ret;
+}
+
+std::vector<Move>
+GameState::getAllValidMovesForPlayer(PlayerColor player) const {
+  std::vector<Move> ret;
+  for (int i = 0; i < 8; i++) {
+    for (int j = 0; j < 8; j++) {
+      if (m_board.hasPiece(Position(i, j))) {
+        if (m_board.getPiece(Position(i, j)).color() == player) {
+          std::vector<Move> validMoves = getValidMoves(Position(i, j));
+          for (auto m : validMoves) {
+            ret.push_back(m);
+          }
+        }
+      }
+    }
+  }
   return ret;
 }

@@ -62,6 +62,12 @@ public:
   std::vector<Move> getValidMoves(const Position &position) const;
 
   /**
+   * @brief Returns all valid moves for a player.
+   * @param player The player to check.
+   */
+  std::vector<Move> getAllValidMovesForPlayer(PlayerColor player) const;
+
+  /**
    * @brief Set the next player to play.
    * @param next The player which can play next.
    */
@@ -112,6 +118,14 @@ public:
    * @param blackEnPassant Which column black is En-Passant-ready (-1 if none)
    */
   void getEnPassantInformation(int &whiteEnPassant, int &blackEnPassant) const;
+
+  /**
+   * @brief Set en-passant information
+   * @param whiteEnPassant The column which is en-passant (-1 if none)
+   * @param blackEnPassant The column which is en-passant (-1 if none)
+   * @throws std::out_of_range If out of bounds.
+   */
+  void setEnPassantInformation(int whiteEnPassant, int blackEnPassant);
 
   /**
    * @brief Get all captured pieces by color.
