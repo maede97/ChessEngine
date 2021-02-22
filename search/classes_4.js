@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['move_117',['Move',['../classchessEngine_1_1Move.html',1,'chessEngine']]]
+  ['keyequal_126',['KeyEqual',['../structchessEngine_1_1KeyEqual.html',1,'chessEngine']]],
+  ['keyhash_127',['KeyHash',['../structchessEngine_1_1KeyHash.html',1,'chessEngine']]]
 ];

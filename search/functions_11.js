@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['writeblackpiecestostring_189',['writeBlackPiecesToString',['../classchessEngine_1_1IO.html#a1bce97c38bf85306429bdb64177e219e',1,'chessEngine::IO']]],
-  ['writeboardtoconsole_190',['writeBoardToConsole',['../classchessEngine_1_1IO.html#af2917e9cba29a68530a7800c2f0a7120',1,'chessEngine::IO']]],
-  ['writeboardtostring_191',['writeBoardToString',['../classchessEngine_1_1IO.html#ab44e72165915aeebbadd96af4dac7975',1,'chessEngine::IO']]],
-  ['writewhitepiecestostring_192',['writeWhitePiecesToString',['../classchessEngine_1_1IO.html#a8adffa1fd0f106c2d70d066ebacec21e',1,'chessEngine::IO']]]
+  ['writeblackpiecestostring_207',['writeBlackPiecesToString',['../classchessEngine_1_1IO.html#a1bce97c38bf85306429bdb64177e219e',1,'chessEngine::IO']]],
+  ['writeboardtoconsole_208',['writeBoardToConsole',['../classchessEngine_1_1IO.html#af2917e9cba29a68530a7800c2f0a7120',1,'chessEngine::IO']]],
+  ['writeboardtostring_209',['writeBoardToString',['../classchessEngine_1_1IO.html#ab44e72165915aeebbadd96af4dac7975',1,'chessEngine::IO']]],
+  ['writewhitepiecestostring_210',['writeWhitePiecesToString',['../classchessEngine_1_1IO.html#a8adffa1fd0f106c2d70d066ebacec21e',1,'chessEngine::IO']]]
 ];

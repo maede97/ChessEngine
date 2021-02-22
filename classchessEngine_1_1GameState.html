@@ -111,6 +111,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3aaf4c507c73cbc404f6f90a3c6fa868"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classchessEngine_1_1Move.html">Move</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a3aaf4c507c73cbc404f6f90a3c6fa868">getValidMoves</a> (const <a class="el" href="classchessEngine_1_1Position.html">Position</a> &amp;position) const</td></tr>
 <tr class="memdesc:a3aaf4c507c73cbc404f6f90a3c6fa868"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all valid moves from a position.  <a href="classchessEngine_1_1GameState.html#a3aaf4c507c73cbc404f6f90a3c6fa868">More...</a><br /></td></tr>
 <tr class="separator:a3aaf4c507c73cbc404f6f90a3c6fa868"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5577b972de593344abf227aa6b5403e0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classchessEngine_1_1Move.html">Move</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a5577b972de593344abf227aa6b5403e0">getAllValidMovesForPlayer</a> (<a class="el" href="namespacechessEngine.html#a0e3db173099459967c9a248c6289e3ca">PlayerColor</a> player) const</td></tr>
+<tr class="memdesc:a5577b972de593344abf227aa6b5403e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all valid moves for a player.  <a href="classchessEngine_1_1GameState.html#a5577b972de593344abf227aa6b5403e0">More...</a><br /></td></tr>
+<tr class="separator:a5577b972de593344abf227aa6b5403e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5dc43576d68da9a94d5a402726248d89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a5dc43576d68da9a94d5a402726248d89">setNextPlayer</a> (<a class="el" href="namespacechessEngine.html#a0e3db173099459967c9a248c6289e3ca">PlayerColor</a> next)</td></tr>
 <tr class="memdesc:a5dc43576d68da9a94d5a402726248d89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the next player to play.  <a href="classchessEngine_1_1GameState.html#a5dc43576d68da9a94d5a402726248d89">More...</a><br /></td></tr>
 <tr class="separator:a5dc43576d68da9a94d5a402726248d89"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,6 +135,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2a13753571e3896ec2d6f2411cfbeb8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a2a13753571e3896ec2d6f2411cfbeb8c">getEnPassantInformation</a> (int &amp;whiteEnPassant, int &amp;blackEnPassant) const</td></tr>
 <tr class="memdesc:a2a13753571e3896ec2d6f2411cfbeb8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information about the current En-Passant status.  <a href="classchessEngine_1_1GameState.html#a2a13753571e3896ec2d6f2411cfbeb8c">More...</a><br /></td></tr>
 <tr class="separator:a2a13753571e3896ec2d6f2411cfbeb8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4255df6df28bc4d6f7bfa27ea9ca79c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a4255df6df28bc4d6f7bfa27ea9ca79c3">setEnPassantInformation</a> (int whiteEnPassant, int blackEnPassant)</td></tr>
+<tr class="memdesc:a4255df6df28bc4d6f7bfa27ea9ca79c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set en-passant information.  <a href="classchessEngine_1_1GameState.html#a4255df6df28bc4d6f7bfa27ea9ca79c3">More...</a><br /></td></tr>
+<tr class="separator:a4255df6df28bc4d6f7bfa27ea9ca79c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a759b1599632413f566685ab5975aa934"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchessEngine_1_1GameState.html#a759b1599632413f566685ab5975aa934">getCapturedPieces</a> (std::vector&lt; <a class="el" href="classchessEngine_1_1Piece.html">Piece</a> &gt; &amp;whiteCaptured, std::vector&lt; <a class="el" href="classchessEngine_1_1Piece.html">Piece</a> &gt; &amp;blackCaptured) const</td></tr>
 <tr class="memdesc:a759b1599632413f566685ab5975aa934"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all captured pieces by color.  <a href="classchessEngine_1_1GameState.html#a759b1599632413f566685ab5975aa934">More...</a><br /></td></tr>
 <tr class="separator:a759b1599632413f566685ab5975aa934"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -197,7 +203,7 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to hold the current state of the game. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>This class is still incomplete. In addition, all unittests are still needed. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo:</a></b></dt><dd>This class is still incomplete. In addition, all unittests are still needed. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aedcff58ec06e2b0b9bbee3a278212173"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aedcff58ec06e2b0b9bbee3a278212173">&#9670;&nbsp;</a></span>GameState()</h2>
@@ -244,6 +250,32 @@ Private Attributes</h2></td></tr>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">std::runtime_error</td><td>If the move is from the wrong player or if the move is invalid. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5577b972de593344abf227aa6b5403e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5577b972de593344abf227aa6b5403e0">&#9670;&nbsp;</a></span>getAllValidMovesForPlayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classchessEngine_1_1Move.html">Move</a>&gt; chessEngine::GameState::getAllValidMovesForPlayer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacechessEngine.html#a0e3db173099459967c9a248c6289e3ca">PlayerColor</a>&#160;</td>
+          <td class="paramname"><em>player</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns all valid moves for a player. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">player</td><td>The player to check. </td></tr>
   </table>
   </dd>
 </dl>
@@ -539,7 +571,7 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo:</a></b></dt><dd>This is still incomplete. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo:</a></b></dt><dd>This is still incomplete. </dd></dl>
 
 </div>
 </div>
@@ -646,6 +678,49 @@ Private Attributes</h2></td></tr>
     <tr><td class="paramname">whiteQueenSide</td><td>If the white player can castle queen side. </td></tr>
     <tr><td class="paramname">blackKingSide</td><td>If the black player can castle king side. </td></tr>
     <tr><td class="paramname">blackQueenSide</td><td>If the black player can castle queen side. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4255df6df28bc4d6f7bfa27ea9ca79c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4255df6df28bc4d6f7bfa27ea9ca79c3">&#9670;&nbsp;</a></span>setEnPassantInformation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chessEngine::GameState::setEnPassantInformation </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>whiteEnPassant</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>blackEnPassant</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set en-passant information. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">whiteEnPassant</td><td>The column which is en-passant (-1 if none) </td></tr>
+    <tr><td class="paramname">blackEnPassant</td><td>The column which is en-passant (-1 if none) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::out_of_range</td><td>If out of bounds. </td></tr>
   </table>
   </dd>
 </dl>
