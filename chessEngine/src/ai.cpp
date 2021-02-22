@@ -28,11 +28,10 @@ int AI::countRecursive(int depth, GameState state) {
   // TODO: promotion move should be done 4 times (for each piece).
 
 #pragma omp parallel for reduction(+ : sum)
-  for (auto move_it = validMoves.begin(); move_it != validMoves.end();
-       ++move_it) {
+  for (int i = 0; i < validMoves.size(); i++) {
     GameState myState = GameState(state);
     // apply the move
-    myState.applyMove(*move_it);
+    myState.applyMove(validMoves[i]);
     sum += countRecursive(depth - 1, GameState(myState)); // recursive call.
   }
 
