@@ -315,7 +315,10 @@ bool Board::doesMoveCreateCheck(const Move &move, PlayerColor opponent) const {
 bool Board::isValid(const Move &move) const {
   // if the move is not possible with this piece, return not valid.
   // this takes into account both attack moves (pawns) and normal moves
-  if (!move.isValid() && !move.isValid(true)) {
+  bool moveIsValidNoAttack = move.isValid();
+  bool moveIsValidAttack = move.isValid(true);
+
+  if (!moveIsValidNoAttack && !moveIsValidAttack) {
     return false;
   }
 
@@ -356,7 +359,7 @@ bool Board::isValid(const Move &move) const {
     // check if a piece is in front, front left or front right
     bool canAttack = false;
     // check if valid with attack
-    if (move.isValid(true)) {
+    if (moveIsValidAttack) {
       // sideways, check to field
       auto it = m_board.find(move.to());
       if (it == m_board.cend()) {
@@ -364,10 +367,7 @@ bool Board::isValid(const Move &move) const {
         if (move.player() == PlayerColor::WHITE) {
           auto it2 =
               m_board.find(Position(move.to().row() - 1, move.to().col()));
-          if (move.player() == PlayerColor::WHITE && move.from().row() != 4) {
-            return false;
-          } else if (move.player() == PlayerColor::BLACK &&
-                     move.from().row() != 3) {
+          if (move.from().row() != 4) {
             return false;
           }
           if (it2 != m_board.cend()) {
@@ -379,6 +379,9 @@ bool Board::isValid(const Move &move) const {
         } else {
           auto it2 =
               m_board.find(Position(move.to().row() + 1, move.to().col()));
+          if (move.from().row() != 3) {
+            return false;
+          }
           if (it2 != m_board.cend()) {
             return it2->second.type() == PieceType::PAWN &&
                    it2->second.color() == PlayerColor::WHITE;
@@ -397,7 +400,7 @@ bool Board::isValid(const Move &move) const {
       }
     }
 
-    if (move.isValid()) {
+    if (moveIsValidNoAttack) {
       // valid without attack --> straight, check for distance
       if (std::abs(move.from().row() - move.to().row()) == 1) {
         // check if piece there
